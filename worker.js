@@ -2681,17 +2681,20 @@ function populateConsultantDashboard() {
   const stageMap = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
   const selectedStage = stageMap[state.orgInfo.stage] || null;
 
-  const requiredItems = ORG_SYSTEMS.flatMap(d => d.items.filter(i =>
-    !selectedStage || i.stages.includes(selectedStage)
-  ));
+  const requiredItems = [];
+  ORG_SYSTEMS.forEach(d => {
+    d.items.forEach(i => {
+      if (!selectedStage || i.stages.includes(selectedStage)) {
+        requiredItems.push({ driver: d.driver, item: i });
+      }
+    });
+  });
   const total = requiredItems.length;
-  const scored = requiredItems.filter(i => {
-    const key = \`\${ORG_SYSTEMS.find(d => d.items.includes(i)).driver}|\${i.name}\`;
-    return state.scores[key] !== undefined;
+  const scored = requiredItems.filter(({driver, item}) => {
+    return state.scores[\`\${driver}|\${item.name}\`] !== undefined;
   }).length;
-  const allScores = requiredItems.map(i => {
-    const key = \`\${ORG_SYSTEMS.find(d => d.items.includes(i)).driver}|\${i.name}\`;
-    return state.scores[key];
+  const allScores = requiredItems.map(({driver, item}) => {
+    return state.scores[\`\${driver}|\${item.name}\`];
   }).filter(s => s !== undefined);
   const avg = allScores.length ? (allScores.reduce((a,b)=>a+b,0)/allScores.length).toFixed(1) : '—';
   const gaps = allScores.filter(s => s <= 1).length;
@@ -2914,9 +2917,7 @@ function buildAssessmentContext() {
       lines.push(\`  - \${item.name}: \${score !== undefined ? score : 'Not scored'}\${notes ? \` [Note: \${notes}]\` : ''}\${link ? \` [Doc: \${link}]\` : ''}\`);
     });
   });
-  if (state.files.length > 0) {
-    lines.push(\`\\nUPLOADED DOCUMENTS: \${state.files.map(f=>f.name).join(', ')}\`);
-  }
+
   if (state.extraLinks && state.extraLinks.length > 0) {
     lines.push(\`\\nADDITIONAL LINKS: \${state.extraLinks.join(', ')}\`);
   }
@@ -3078,7 +3079,7 @@ function checkPassword() {
     document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
     document.getElementById('view-consultant').classList.add('active');
     document.getElementById('tab-consultant').classList.add('active');
-    document.getElementById('tab-client').classList.remove('active');
+
     if (state.submitted) populateConsultantDashboard();
   } else {
     const inp = document.getElementById('pw-input');
