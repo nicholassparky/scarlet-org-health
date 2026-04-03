@@ -2951,10 +2951,14 @@ function useSuggest(el) {
 
 function formatAIText(text) {
   return text
-    .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')
-    .replace(/\\*(.*?)\\*/g, '<em>$1</em>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\\/li>)/gs, m => \`<ul>\${m}</ul>\`)
+    .replace(/^### (.+)$/gm, '<div style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--brand);margin:12px 0 4px">$1</div>')
+    .replace(/^## (.+)$/gm, '<div style="font-size:1rem;font-weight:700;margin:14px 0 5px;color:var(--charcoal)">$1</div>')
+    .replace(/^# (.+)$/gm, '<div style="font-size:1.05rem;font-weight:700;margin:14px 0 6px;color:var(--charcoal)">$1</div>')
+    .replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>')
+    .replace(/\\*(.+?)\\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '<li style="margin-bottom:3px">$1</li>')
+    .replace(/(<li[^>]*>.*?<\\/li>\\n?)+/gs, m => '<ul style="margin:6px 0 6px 16px;padding:0">' + m + '</ul>')
+    .replace(/^\\d+\\. (.+)$/gm, '<li style="margin-bottom:3px">$1</li>')
     .replace(/\\n\\n/g, '<br><br>')
     .replace(/\\n/g, '<br>');
 }
@@ -2998,7 +3002,7 @@ Your role is to:
 5. Compare client self-scores with ScarSpark consultant scores where available and highlight discrepancies
 6. Be honest, constructive, and practically focused
 
-Keep responses concise, well-structured, and actionable. Use bullet points for lists.
+Keep responses concise, well-structured, and actionable. Use bullet points for lists. Avoid using ## headers — use plain section labels instead. Do not use excessive line breaks.
 
 ASSESSMENT DATA:
 \${buildAssessmentContext()}\`;
