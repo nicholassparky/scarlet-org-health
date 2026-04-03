@@ -16,15 +16,26 @@ export default {
     // Claude API proxy
     if (url.pathname === '/claude' && request.method === 'POST') {
       const apiKey = env.ANTHROPIC_API_KEY;
+      
       if (!apiKey) {
-        return new Response(JSON.stringify({ error: { message: 'ANTHROPIC_API_KEY not set' } }), {
+        return new Response(JSON.stringify({ error: { message: 'ANTHROPIC_API_KEY not configured' } }), {
           status: 500,
           headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
         });
       }
+
+      let body;
       try {
-        const body = await request.json();
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        body = await request.json();
+      } catch(e) {
+        return new Response(JSON.stringify({ error: { message: 'Invalid JSON in request: ' + e.message } }), {
+          status: 400,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      }
+
+      try {
+        const anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -33,13 +44,19 @@ export default {
           },
           body: JSON.stringify(body),
         });
-        const data = await response.json();
-        return new Response(JSON.stringify(data), {
-          status: response.status,
-          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+
+        const responseText = await anthropicRes.text();
+        
+        return new Response(responseText, {
+          status: anthropicRes.status,
+          headers: { 
+            'Content-Type': 'application/json', 
+            'Access-Control-Allow-Origin': '*',
+            'X-Anthropic-Status': String(anthropicRes.status)
+          }
         });
       } catch (err) {
-        return new Response(JSON.stringify({ error: { message: err.message } }), {
+        return new Response(JSON.stringify({ error: { message: 'Fetch failed: ' + err.message } }), {
           status: 500,
           headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
         });
@@ -2959,76 +2976,74 @@ async function sendAIMessage() {
   const input = document.getElementById('ai-input');
   const msg = input.value.trim();
   if (!msg) return;
-  input.value = '';
 
+  const btn = document.getElementById('ai-send-btn');
+  if (btn.disabled) return; // prevent double-click
+  
+  input.value = '';
   appendMessage('user', msg);
   state.chatHistory.push({ role: 'user', content: msg });
 
-  const btn = document.getElementById('ai-send-btn');
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span>';
 
-  const systemPrompt = \`You are an expert organizational health consultant specializing in nonprofits in the animal protection movement. You are helping the Scarlet Spark consulting team analyze an org health self-assessment before their consulting engagement.
+  const systemPrompt = \`You are an expert organizational health consultant specializing in nonprofits in the animal protection movement. You are helping the Scarlet Spark consulting team analyze an org health self-assessment.
 
 Your role is to:
-1. Analyze the assessment data provided and surface key insights, patterns, and risks
+1. Analyze the assessment data and surface key insights, patterns, and risks
 2. Help consultants identify priority areas to focus on
 3. Compare the organization's self-assessment to what's expected for their stage
 4. Flag any red flags, particularly in Safety & Fairness, Leadership, or Goal Clarity
-5. Compare client self-scores with any ScarSpark consultant scores where available and highlight discrepancies
+5. Compare client self-scores with ScarSpark consultant scores where available and highlight discrepancies
 6. Be honest, constructive, and practically focused
 
-Keep responses concise, well-structured, and actionable. Use bullet points for lists. Be specific about which drivers or systems you're referencing.
+Keep responses concise, well-structured, and actionable. Use bullet points for lists.
 
 ASSESSMENT DATA:
 \${buildAssessmentContext()}\`;
 
   try {
     const messages = state.chatHistory.map(m => ({ role: m.role, content: m.content }));
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 30000);
-
-    const res = await fetch("/claude", {
-      method: "POST",
-      signal: controller.signal,
-      headers: { "Content-Type": "application/json" },
+    
+    const res = await fetch('/claude', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
+        model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
         system: systemPrompt,
         messages,
       })
     });
-    clearTimeout(timeout);
+
+    const text = await res.text();
+    console.log('Worker response status:', res.status);
+    console.log('Worker response body:', text.slice(0, 500));
 
     if (!res.ok) {
-      const errText = await res.text().catch(() => '');
-      let errMsg = \`Status \${res.status}\`;
-      if (res.status === 404) errMsg = 'Worker endpoint not found — make sure worker.js is deployed correctly.';
-      else if (res.status === 500) errMsg = 'Server error — check that ANTHROPIC_API_KEY is set in Cloudflare Worker settings.';
-      else if (errText) errMsg += ': ' + errText.slice(0, 200);
-      console.error('API error:', res.status, errText);
-      appendMessage('claude', \`⚠️ \${errMsg}\`);
-      btn.disabled = false;
-      btn.innerHTML = 'Send';
+      appendMessage('claude', \`⚠️ Error \${res.status}: \${text.slice(0, 300)}\`);
       return;
     }
 
-    const data = await res.json();
-    const reply = data.content?.map(c => c.text || '').join('') || 'Sorry, I could not generate a response.';
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch(e) {
+      appendMessage('claude', \`⚠️ Could not parse response: \${text.slice(0, 200)}\`);
+      return;
+    }
+
+    const reply = data.content?.map(c => c.text || '').join('') || 'No response content.';
     appendMessage('claude', reply);
     state.chatHistory.push({ role: 'assistant', content: reply });
-  } catch (err) {
-    if (err.name === 'AbortError') {
-      appendMessage('claude', '⚠️ Request timed out after 30 seconds. Make sure the Cloudflare function is deployed and ANTHROPIC_API_KEY is set in Cloudflare Pages → Settings → Environment variables.');
-    } else {
-      appendMessage('claude', \`⚠️ Connection error: \${err.message}. Open browser DevTools (F12) → Network tab and look for the /functions/claude-proxy request to see what's failing.\`);
-    }
-    console.error('Fetch error:', err);
-  }
 
-  btn.disabled = false;
-  btn.innerHTML = 'Send';
+  } catch (err) {
+    console.error('sendAIMessage error:', err);
+    appendMessage('claude', \`⚠️ Connection error: \${err.message}\`);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Send';
+  }
 }
 
 // ═══════════════ PASSWORD GATE ═══════════════
