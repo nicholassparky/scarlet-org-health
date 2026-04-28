@@ -3361,6 +3361,12 @@ async function loadSubmission(recordId) {
       { headers: { Authorization: \`Bearer \${AIRTABLE_TOKEN}\` } }
     );
     const data = await res.json();
+    if (!res.ok) {
+      throw new Error(\`Airtable API error \${res.status}: \${data.error?.message || JSON.stringify(data)}\`);
+    }
+    if (!data.fields) {
+      throw new Error(\`No fields in response: \${JSON.stringify(data).slice(0, 200)}\`);
+    }
     const f = data.fields;
 
     // Populate state.orgInfo
@@ -3613,8 +3619,8 @@ async function loadSubmission(recordId) {
     document.getElementById('panel-overview').style.display = 'block';
 
   } catch (err) {
-    status.textContent = 'Error loading submission.';
-    console.error(err);
+    status.textContent = \`Error: \${err.message}\`;
+    console.error('loadSubmission error:', err);
   }
 }
 
