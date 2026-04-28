@@ -2399,7 +2399,7 @@ const consultantState = {
   notes: {},
   recordId: null,
   reviewerName: '',
-  reviewedAt: '',
+  reviewDate: '',
 };
 
 // ═══════════════ BUILD CLIENT FORM ═══════════════
@@ -2688,7 +2688,7 @@ function populateConsultantDashboard() {
     \`\${contactParts.join('  ·  ')}  ·  Stage: \${formatStage(state.orgInfo.stage)}  ·  Submitted: \${state.orgInfo.submittedAt || 'recently'}\`;
   // Set timestamp on review meta
   const ts = document.getElementById('review-timestamp');
-  if (ts && consultantState.reviewedAt) ts.textContent = consultantState.reviewedAt;
+  if (ts && consultantState.reviewDate) ts.textContent = consultantState.reviewDate;
 
   // Metrics — scoped to required items for the org's stage
   const stageMap = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
@@ -3161,7 +3161,7 @@ function updateConsultantMeta() {
   }
   // Store in consultantState
   consultantState.reviewerName = name || '';
-  consultantState.reviewedAt = name ? \`\${dateStr} at \${timeStr}\` : '';
+  consultantState.reviewDate = name ? \`\${dateStr} at \${timeStr}\` : '';
 }
 
 async function saveConsultantScores() {
@@ -3589,14 +3589,14 @@ async function loadSubmission(recordId) {
     }
 
     // Restore reviewer name if previously saved
-    if (f.reviewer_name) {
-      consultantState.reviewerName = f.reviewer_name;
-      consultantState.reviewedAt = f.reviewed_at || '';
+    if (f.consultant_reviewer) {
+      consultantState.reviewerName = f.consultant_reviewer;
+      consultantState.reviewDate = f.consultant_review_date || '';
       setTimeout(() => {
         const nameInput = document.getElementById('consultant-name');
         const ts = document.getElementById('review-timestamp');
-        if (nameInput) nameInput.value = f.reviewer_name;
-        if (ts) ts.textContent = f.reviewed_at || '';
+        if (nameInput) nameInput.value = f.consultant_reviewer;
+        if (ts) ts.textContent = f.consultant_review_date || '';
       }, 300);
     }
 
