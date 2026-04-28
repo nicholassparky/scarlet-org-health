@@ -2681,7 +2681,7 @@ function populateConsultantDashboard() {
   if (!state.submitted) return;
 
   // Header
-  initConsultantDate();
+  updateConsultantMeta();
   document.getElementById('c-org-name').textContent = state.orgInfo.name || 'Assessment Submitted';
   const contactParts = [state.orgInfo.contact, state.orgInfo.role, state.orgInfo.email].filter(Boolean);
   document.getElementById('c-org-meta').textContent =
