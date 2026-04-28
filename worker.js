@@ -1565,6 +1565,13 @@ export default {
           <div class="consultant-eyebrow">Org Health Assessment · Pre-Analysis</div>
           <h1 class="consultant-title" id="c-org-name">Awaiting Submission</h1>
           <div class="consultant-meta" id="c-org-meta">No assessment data yet. Ask the client to complete the form.</div>
+          <div style="margin-top:16px;padding:16px 20px;background:var(--brand-pale);border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;gap:10px;flex:1">
+              <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--brand);white-space:nowrap">Reviewed by</label>
+              <input type="text" id="consultant-name" placeholder="Your name" style="border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;background:white;min-width:180px" onfocus="this.style.borderColor='var(--brand)'" onblur="this.style.borderColor='var(--border)'" oninput="updateConsultantMeta()">
+            </div>
+            <div id="review-timestamp" style="font-size:0.82rem;color:var(--mid)"></div>
+          </div>
         </div>
         <div class="metric-grid">
           <div class="metric-card" id="m-completion">
@@ -2390,7 +2397,9 @@ const state = {
 const consultantState = {
   scores: {},
   notes: {},
-  recordId: null, // Airtable record ID of the loaded submission
+  recordId: null,
+  reviewerName: '',
+  reviewedAt: '',
 };
 
 // ═══════════════ BUILD CLIENT FORM ═══════════════
@@ -2672,10 +2681,14 @@ function populateConsultantDashboard() {
   if (!state.submitted) return;
 
   // Header
+  initConsultantDate();
   document.getElementById('c-org-name').textContent = state.orgInfo.name || 'Assessment Submitted';
   const contactParts = [state.orgInfo.contact, state.orgInfo.role, state.orgInfo.email].filter(Boolean);
   document.getElementById('c-org-meta').textContent =
-    \`\${contactParts.join('  ·  ')}  ·  Stage: \${formatStage(state.orgInfo.stage)}  ·  Submitted just now\`;
+    \`\${contactParts.join('  ·  ')}  ·  Stage: \${formatStage(state.orgInfo.stage)}  ·  Submitted: \${state.orgInfo.submittedAt || 'recently'}\`;
+  // Set timestamp on review meta
+  const ts = document.getElementById('review-timestamp');
+  if (ts && consultantState.reviewedAt) ts.textContent = consultantState.reviewedAt;
 
   // Metrics — scoped to required items for the org's stage
   const stageMap = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
@@ -2902,6 +2915,8 @@ function buildAssessmentContext() {
   if (!state.submitted) return "No assessment has been submitted yet.";
   const lines = [
     \`Organization: \${state.orgInfo.name}\`,
+    consultantState.reviewerName ? \`Reviewed by: \${consultantState.reviewerName}\` : '',
+    consultantState.reviewDate ? \`Review date: \${consultantState.reviewDate}\` : '',
     \`Contact: \${state.orgInfo.contact || ''}\${state.orgInfo.role ? ', ' + state.orgInfo.role : ''}\`,
     \`Stage: \${formatStage(state.orgInfo.stage)} (\${STAGE_DEFS[state.orgInfo.stage]?.headcount || ''})\`,
     '',
@@ -3135,12 +3150,33 @@ function setConsultantNote(key, val) {
   consultantState.notes[key] = val;
 }
 
+function updateConsultantMeta() {
+  const name = document.getElementById('consultant-name')?.value?.trim();
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+  const ts = document.getElementById('review-timestamp');
+  if (ts) {
+    ts.textContent = name ? \`\${dateStr} at \${timeStr}\` : '';
+  }
+  // Store in consultantState
+  consultantState.reviewerName = name || '';
+  consultantState.reviewedAt = name ? \`\${dateStr} at \${timeStr}\` : '';
+}
+
 async function saveConsultantScores() {
   if (!consultantState.recordId) return;
   const btn = document.getElementById('save-consultant-btn');
   if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
 
   const fields = {};
+
+  // Add reviewer info
+  if (consultantState.reviewerName) {
+    fields.consultant_reviewer = consultantState.reviewerName;
+    fields.consultant_review_date = consultantState.reviewDate;
+  }
+
   const CS_SAVE_MAP = {
     'Goal Clarity|Mission & vision': 'cs_mission_vision', 'Goal Clarity|Strategy & theory of change': 'cs_strategy_theory',
     'Goal Clarity|Impact measurement': 'cs_impact_measurement', 'Goal Clarity|Strategic planning & goal-setting process': 'cs_strategic_planning',
@@ -3343,6 +3379,14 @@ async function loadSubmission(recordId) {
     consultantState.recordId = recordId;
     consultantState.scores = {};
     consultantState.notes  = {};
+    consultantState.reviewerName = f.consultant_reviewer || '';
+    consultantState.reviewDate = f.consultant_review_date || '';
+    // Restore to UI after dashboard populates
+    setTimeout(() => {
+      const nameEl = document.getElementById('consultant-name');
+      if (nameEl && consultantState.reviewerName) nameEl.value = consultantState.reviewerName;
+      updateConsultantMeta();
+    }, 300);
 
     // Reverse field maps
     const SCORE_FIELDS = {
@@ -3542,6 +3586,18 @@ async function loadSubmission(recordId) {
       if (f[aField] !== undefined && f[aField] !== '') consultantState.scores[stateKey] = parseInt(f[aField]);
       const nField = aField.replace('cs_','cn_');
       if (f[nField]) consultantState.notes[stateKey] = f[nField];
+    }
+
+    // Restore reviewer name if previously saved
+    if (f.reviewer_name) {
+      consultantState.reviewerName = f.reviewer_name;
+      consultantState.reviewedAt = f.reviewed_at || '';
+      setTimeout(() => {
+        const nameInput = document.getElementById('consultant-name');
+        const ts = document.getElementById('review-timestamp');
+        if (nameInput) nameInput.value = f.reviewer_name;
+        if (ts) ts.textContent = f.reviewed_at || '';
+      }, 300);
     }
 
     // Switch to consultant view and populate dashboard
