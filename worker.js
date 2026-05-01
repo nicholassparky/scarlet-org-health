@@ -91,6 +91,7 @@ export default {
     --blue: #3B37B3;
     --shadow: 0 2px 16px rgba(14,13,31,0.08);
     --shadow-lg: 0 8px 40px rgba(14,13,31,0.18);
+    /* legacy aliases so existing code still works */
     --scarlet: #3B37B3;
     --scarlet-light: #8682FF;
     --scarlet-pale: #EFEFFD;
@@ -105,6 +106,7 @@ export default {
     min-height: 100vh;
   }
 
+  /* ── NAV ── */
   nav {
     background: var(--charcoal);
     padding: 0 40px;
@@ -138,6 +140,7 @@ export default {
   .nav-tab:hover { color: var(--cream); background: rgba(255,255,255,0.08); }
   .nav-tab.active { background: var(--brand); color: white; }
 
+  /* ── PASSWORD MODAL ── */
   .pw-overlay {
     display: none;
     position: fixed;
@@ -198,6 +201,7 @@ export default {
   .pw-cancel { font-size: 0.82rem; color: var(--light); cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; }
   .pw-cancel:hover { color: var(--mid); }
 
+  /* subtle lock in nav */
   .nav-lock {
     background: none;
     border: none;
@@ -211,9 +215,11 @@ export default {
   .nav-lock:hover { color: rgba(255,255,255,0.5); }
   .nav-lock.unlocked { color: var(--gold-light); }
 
+  /* ── VIEWS ── */
   .view { display: none; }
   .view.active { display: block; }
 
+  /* ── CLIENT VIEW ── */
   .client-hero {
     background: var(--charcoal);
     color: white;
@@ -281,6 +287,7 @@ export default {
   }
   .progress-pct { font-size: 0.85rem; font-weight: 600; color: var(--brand); white-space: nowrap; }
 
+  /* ── FORM SECTIONS ── */
   .form-container {
     max-width: 800px;
     margin: 0 auto;
@@ -325,6 +332,7 @@ export default {
   input:focus, select:focus, textarea:focus { border-color: var(--brand); }
   textarea { resize: vertical; min-height: 88px; }
 
+  /* ── DRIVER SECTIONS ── */
   .driver-section {
     background: white;
     border-radius: 16px;
@@ -366,6 +374,7 @@ export default {
   .driver-section.open .driver-body { display: block; }
   .driver-desc { font-size: 0.88rem; color: var(--mid); margin-bottom: 24px; line-height: 1.6; }
 
+  /* ── SYSTEM ITEMS ── */
   .system-item {
     border: 1.5px solid var(--border);
     border-radius: 10px;
@@ -396,6 +405,9 @@ export default {
   .notes-link { font-size: 0.8rem; color: var(--brand); cursor: pointer; border: none; background: none; font-family: 'DM Sans', sans-serif; white-space: nowrap; }
   .notes-area { margin-top: 10px; }
 
+  /* ── SURVEY SECTION ── */
+
+  /* ── UPLOAD AREA ── */
   .upload-section {
     background: white;
     border-radius: 16px;
@@ -406,6 +418,7 @@ export default {
   }
   .uploaded-file .remove { margin-left: auto; cursor: pointer; color: var(--light); background: none; border: none; font-size: 1rem; }
 
+  /* ── SUBMIT ── */
   .submit-section { text-align: center; padding: 40px 24px; }
   .btn-primary {
     background: var(--brand);
@@ -435,6 +448,7 @@ export default {
   }
   .btn-secondary:hover { border-color: var(--charcoal); }
 
+  /* ── SUCCESS ── */
   .success-screen {
     display: none;
     text-align: center;
@@ -445,6 +459,7 @@ export default {
   .success-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 16px; }
   .success-sub { color: var(--mid); font-size: 1rem; line-height: 1.65; max-width: 500px; margin: 0 auto; }
 
+  /* ── CONSULTANT VIEW ── */
   .consultant-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -517,6 +532,7 @@ export default {
   }
   .consultant-meta { font-size: 0.9rem; color: var(--mid); }
 
+  /* ── METRIC CARDS ── */
   .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
   .metric-card {
     background: white;
@@ -532,6 +548,7 @@ export default {
   .metric-card.amber .metric-value { color: #D97706; }
   .metric-card.green .metric-value { color: #059669; }
 
+  /* ── ANALYSIS PANEL ── */
   .analysis-panel {
     background: white;
     border-radius: 16px;
@@ -550,6 +567,7 @@ export default {
   .analysis-panel-title { font-weight: 600; font-size: 1.05rem; }
   .analysis-panel-body { padding: 28px; }
 
+  /* ── AI CHAT ── */
   .ai-thread {
     display: flex;
     flex-direction: column;
@@ -628,6 +646,7 @@ export default {
   .ai-send:hover { background: var(--brand-light); }
   .ai-send:disabled { opacity: 0.5; cursor: not-allowed; }
 
+  /* ── DRIVER SCORE BARS ── */
   .driver-score-row {
     display: flex;
     align-items: center;
@@ -645,6 +664,7 @@ export default {
   .score-fill.brand { background: var(--brand); }
   .score-val { width: 48px; text-align: right; font-size: 0.85rem; font-weight: 600; color: var(--mid); }
 
+  /* ── DOC LIST ── */
   .doc-list { display: flex; flex-direction: column; gap: 8px; }
   .doc-item {
     display: flex;
@@ -658,6 +678,7 @@ export default {
   .doc-item .doc-name { font-weight: 500; flex: 1; }
   .doc-item .doc-type { font-size: 0.75rem; color: var(--mid); background: white; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--border); }
 
+  /* ── SUGGEST CHIPS ── */
   .suggest-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
   .chip {
     padding: 6px 14px;
@@ -672,6 +693,7 @@ export default {
   }
   .chip:hover { border-color: var(--brand); color: var(--brand); background: var(--brand-pale); }
 
+  /* ── TABS within panels ── */
   .panel-tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--border); margin-bottom: 24px; }
   .panel-tab {
     padding: 8px 18px;
@@ -690,6 +712,7 @@ export default {
   .panel-tab-content { display: none; }
   .panel-tab-content.active { display: block; }
 
+  /* ── PRINT SUMMARY ── */
   .print-summary-bar {
     position: sticky;
     top: 64px;
@@ -784,12 +807,14 @@ export default {
     .summary-driver-block { break-inside: avoid; page-break-inside: avoid; }
   }
 
+  /* ── LOADING SPINNER ── */
   .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
   .gap-16 { margin-bottom: 16px; }
   .gap-24 { margin-bottom: 24px; }
 
+  /* ── VISUAL SCORE SCALE ── */
   .score-scale {
     display: flex;
     align-items: flex-start;
@@ -856,6 +881,7 @@ export default {
   .score-option.selected .score-label { color: var(--charcoal); font-weight: 600; }
   .score-option.selected .score-num { color: var(--mid); }
 
+  /* ── ITEM FIELDS ── */
   .item-desc {
     font-size: 0.88rem;
     color: var(--mid);
@@ -907,6 +933,7 @@ export default {
   }
   .item-link-input:focus { border-color: var(--brand); background: white; }
 
+  /* ── STAGE TAG HELP ── */
   .stage-tag-wrap { display: inline-flex; align-items: center; gap: 5px; }
   .help-icon {
     display: inline-flex;
@@ -957,6 +984,7 @@ export default {
   }
   .help-icon.open .stage-help-popup { display: block; }
 
+  /* ── SESSION SAVE ── */
   .session-bar {
     display: none;
     background: var(--charcoal);
@@ -1013,7 +1041,13 @@ export default {
   .session-save-indicator.saving { color: var(--gold-light); }
   .session-save-indicator.saved { color: #10B981; }
 
-  .system-item.required-item { border-color: var(--border); }
+  /* ── STAGE REQUIREMENTS ── */
+  .system-item.required-item {
+    border-color: var(--border);
+  }
+  .system-item.not-required {
+    /* fully interactive — no greying */
+  }
   .required-badge {
     display: inline-block;
     font-size: 0.68rem;
@@ -1056,6 +1090,7 @@ export default {
     box-shadow: 0 0 0 2px rgba(239,68,68,0.15);
   }
 
+  /* ── PAGED FORM ── */
   .form-pages-wrapper {
     position: relative;
     overflow: hidden;
@@ -1066,15 +1101,41 @@ export default {
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .form-page.active { display: block; }
-  .form-page.slide-in-right { animation-name: slideInRight; }
-  .form-page.slide-in-left { animation-name: slideInLeft; }
-  .form-page.slide-out-left { animation-name: slideOutLeft; position: absolute; top: 0; left: 0; right: 0; }
-  .form-page.slide-out-right { animation-name: slideOutRight; position: absolute; top: 0; left: 0; right: 0; }
-  @keyframes slideInRight { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: translateX(0); } }
-  @keyframes slideInLeft { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
-  @keyframes slideOutLeft { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(-60px); } }
-  @keyframes slideOutRight { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(60px); } }
+  .form-page.active {
+    display: block;
+  }
+  .form-page.slide-in-right {
+    animation-name: slideInRight;
+  }
+  .form-page.slide-in-left {
+    animation-name: slideInLeft;
+  }
+  .form-page.slide-out-left {
+    animation-name: slideOutLeft;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+  }
+  .form-page.slide-out-right {
+    animation-name: slideOutRight;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideOutLeft {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-60px); }
+  }
+  @keyframes slideOutRight {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(60px); }
+  }
   .page-nav {
     display: flex;
     align-items: center;
@@ -1083,7 +1144,11 @@ export default {
     margin-top: 8px;
     border-top: 1px solid var(--border);
   }
-  .page-nav-section { font-size: 0.8rem; color: var(--light); font-weight: 500; }
+  .page-nav-section {
+    font-size: 0.8rem;
+    color: var(--light);
+    font-weight: 500;
+  }
   .page-nav-section strong { color: var(--mid); }
   .btn-back {
     display: inline-flex;
@@ -1120,7 +1185,11 @@ export default {
     font-weight: 700;
     margin-bottom: 8px;
   }
-  .driver-page-desc { font-size: 0.95rem; color: var(--mid); line-height: 1.65; }
+  .driver-page-desc {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
   .driver-page-link {
     display: inline-flex;
     align-items: center;
@@ -1135,8 +1204,7 @@ export default {
     margin-top: 12px;
     transition: all 0.15s;
   }
-  .driver-page-link:hover { background: var(--brand); color: white; }
-
+  .driver-page-link:hover { background: var(--brand); color: white; }/* ── STAGE CARDS ── */
   .stage-card {
     border: 2px solid var(--border);
     border-radius: 10px;
@@ -1160,6 +1228,7 @@ export default {
   .stage-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 3px; }
   .stage-card-desc { font-size: 0.82rem; color: var(--mid); line-height: 1.55; }
 
+  /* responsive */
   @media (max-width: 900px) {
     .consultant-layout { grid-template-columns: 1fr; }
     .consultant-sidebar { display: none; }
@@ -1195,11 +1264,77 @@ export default {
   </div>
 </div>
 
-<!-- CLIENT VIEW -->
+<!-- ═══════════════════════════ CLIENT VIEW ═══════════════════════════ -->
 <div id="view-client" class="view active">
+
   <div id="client-form-wrapper">
     <div class="client-hero">
-      <div style="margin-bottom:12px"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="140" height="140" viewBox="0 0 240 240" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M49.722,134.683c5.916,0,8.626-2.908,8.626-6.313c0-8.428-14.245-4.594-14.245-10.939c0-2.313,1.884-4.197,6.114-4.197c2.049,0,4.363,0.628,6.346,1.917l0.826-1.95c-1.851-1.289-4.561-2.049-7.172-2.049c-5.883,0-8.527,2.941-8.527,6.345c0,8.56,14.245,4.66,14.245,11.005c0,2.281-1.884,4.099-6.213,4.099c-3.041,0-5.982-1.189-7.635-2.81l-0.958,1.884C42.847,133.46,46.251,134.683,49.722,134.683L49.722,134.683z M73.715,134.683c3.404,0,6.445-1.156,8.494-3.404l-1.553-1.553c-1.884,1.949-4.197,2.775-6.842,2.775c-5.585,0-9.782-4.098-9.782-9.584s4.197-9.584,9.782-9.584c2.645,0,4.958,0.826,6.842,2.743l1.553-1.554c-2.049-2.247-5.09-3.371-8.461-3.371c-6.973,0-12.129,4.99-12.129,11.766S66.775,134.683,73.715,134.683L73.715,134.683z M104.122,134.484h2.578L96.124,111.35h-2.413l-10.576,23.135h2.545l2.776-6.181h12.89L104.122,134.484L104.122,134.484z M89.348,126.321l5.552-12.427l5.552,12.427H89.348L89.348,126.321z M129.008,134.484l-5.651-7.932c3.371-1.091,5.288-3.636,5.288-7.271c0-4.958-3.569-7.932-9.453-7.932h-8.659v23.135h2.446v-7.337h6.213c0.661,0,1.256-0.033,1.851-0.1l5.287,7.437H129.008L129.008,134.484z M119.125,125.065h-6.147v-11.601h6.147c4.627,0,7.073,2.115,7.073,5.817C126.198,122.917,123.753,125.065,119.125,125.065L119.125,125.065z M134.428,134.484h15.401v-2.115h-12.956v-21.02h-2.445V134.484L134.428,134.484z M156.34,132.369v-8.593h11.964v-2.082H156.34v-8.23h13.418v-2.115h-15.864v23.135h16.36v-2.115H156.34L156.34,132.369z M180.499,134.484h2.446v-21.02h8.13v-2.115h-18.706v2.115h8.13V134.484z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M53.219,174.012c8.967,0,13.315-4.483,13.315-9.721c0-11.522-18.247-7.524-18.247-13.315c0-1.98,1.659-3.595,5.963-3.595c2.779,0,5.783,0.808,8.697,2.466l2.242-5.515c-2.914-1.838-6.949-2.779-10.895-2.779c-8.921,0-13.226,4.438-13.226,9.781c0,11.656,18.247,7.621,18.247,13.494c0,1.921-1.749,3.355-6.052,3.355c-3.766,0-7.711-1.345-10.356-3.265l-2.466,5.462C43.221,172.532,48.243,174.012,53.219,174.012z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M85.096,142.091H71.512v31.383h7.263v-8.652h6.322c8.384,0,13.629-4.349,13.629-11.343C98.725,146.439,93.48,142.091,85.096,142.091L85.096,142.091z M84.693,158.903h-5.918v-10.895h5.918c4.438,0,6.68,2.018,6.68,5.47C91.373,156.886,89.131,158.903,84.693,158.903z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M131.446,173.474l-15.728-35.791c-5.01,12.098-10.242,23.854-15.565,35.791h7.302c2.779-6.692,4.257-10.175,8.263-19.848c4.914,11.861,4.978,12.006,8.22,19.848H131.446z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M164.452,173.474l-7.039-10.087c4.08-1.749,6.456-5.201,6.456-9.908c0-7.039-5.245-11.388-13.629-11.388h-13.585v31.383h7.264v-8.742h6.321h0.358l6.053,8.742H164.452L164.452,173.474z M156.517,153.479c0,3.407-2.241,5.47-6.68,5.47h-5.918v-10.939h5.918C154.275,148.009,156.517,150.026,156.517,153.479z"/><polygon fill-rule="evenodd" clip-rule="evenodd" fill="white" points="191.084,173.474 199.558,173.474 185.793,156.079 198.795,142.091 190.726,142.091 176.827,156.751 176.827,142.091 169.608,142.091 169.608,173.474 176.827,173.474 176.827,165.539 181.041,161.145"/><g><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M115.241,66.009l1.697-0.021c0.736-0.009,1.371,0.457,1.351,1.033l-0.641,16.852c-0.021,0.575-0.592,1.057-1.325,1.065l-0.142,0.002c-0.733,0.009-1.32-0.455-1.351-1.032l-0.915-16.833C113.886,66.498,114.505,66.019,115.241,66.009z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M85.327,74.879l1.459-0.867c0.633-0.376,1.416-0.291,1.686,0.219l7.872,14.915c0.27,0.508,0.016,1.211-0.614,1.585l-0.123,0.073c-0.63,0.374-1.371,0.266-1.686-0.219l-9.208-14.121C84.397,75.979,84.693,75.254,85.327,74.879z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M63.854,97.517l0.831-1.48c0.36-0.643,1.081-0.959,1.569-0.654l14.274,8.981c0.488,0.306,0.619,1.041,0.26,1.68l-0.07,0.124c-0.358,0.639-1.054,0.916-1.569,0.653l-15.035-7.625C63.6,98.935,63.495,98.159,63.854,97.517z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M101.912,76.338l1.634-0.459c0.709-0.199,1.524,0.201,1.65,0.926l1.375,8.024c0.125,0.724-0.219,1.451-0.926,1.649l-0.137,0.039c-0.707,0.199-1.391-0.236-1.65-0.925l-2.873-7.604C100.727,77.298,101.203,76.538,101.912,76.338z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M78.948,90.489l1.185-1.215c0.514-0.527,1.42-0.588,1.892-0.023l5.203,6.262c0.471,0.564,0.536,1.366,0.023,1.892l-0.099,0.102c-0.513,0.526-1.323,0.492-1.892,0.023l-6.289-5.148C78.402,91.912,78.433,91.016,78.948,90.489z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M146.879,74.879l-1.459-0.867c-0.634-0.376-1.416-0.291-1.686,0.219l-7.872,14.915c-0.27,0.508-0.016,1.211,0.615,1.585l0.122,0.073c0.63,0.374,1.371,0.266,1.686-0.219l9.209-14.121C147.809,75.979,147.513,75.254,146.879,74.879z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M168.352,97.517l-0.831-1.48c-0.36-0.643-1.081-0.959-1.569-0.654l-14.274,8.981c-0.487,0.306-0.618,1.041-0.26,1.68l0.069,0.124c0.358,0.639,1.055,0.916,1.569,0.653l15.035-7.625C168.605,98.935,168.712,98.159,168.352,97.517z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M130.294,76.338l-1.634-0.459c-0.709-0.199-1.524,0.201-1.649,0.926l-1.376,8.024c-0.125,0.724,0.219,1.451,0.926,1.649l0.138,0.039c0.706,0.199,1.391-0.236,1.649-0.925l2.872-7.604C131.479,77.298,131.003,76.538,130.294,76.338z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M153.259,90.489l-1.186-1.215c-0.515-0.527-1.42-0.588-1.892-0.023l-5.203,6.262c-0.471,0.564-0.536,1.366-0.023,1.892l0.1,0.102c0.513,0.526,1.322,0.492,1.892,0.023l6.289-5.148C153.805,91.912,153.772,91.016,153.259,90.489z"/></g></g></svg></div>
+      <div style="margin-bottom:12px"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="140" height="140" viewBox="0 0 240 240" xml:space="preserve">
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M49.722,134.683c5.916,0,8.626-2.908,8.626-6.313
+		c0-8.428-14.245-4.594-14.245-10.939c0-2.313,1.884-4.197,6.114-4.197c2.049,0,4.363,0.628,6.346,1.917l0.826-1.95
+		c-1.851-1.289-4.561-2.049-7.172-2.049c-5.883,0-8.527,2.941-8.527,6.345c0,8.56,14.245,4.66,14.245,11.005
+		c0,2.281-1.884,4.099-6.213,4.099c-3.041,0-5.982-1.189-7.635-2.81l-0.958,1.884C42.847,133.46,46.251,134.683,49.722,134.683
+		L49.722,134.683z M73.715,134.683c3.404,0,6.445-1.156,8.494-3.404l-1.553-1.553c-1.884,1.949-4.197,2.775-6.842,2.775
+		c-5.585,0-9.782-4.098-9.782-9.584s4.197-9.584,9.782-9.584c2.645,0,4.958,0.826,6.842,2.743l1.553-1.554
+		c-2.049-2.247-5.09-3.371-8.461-3.371c-6.973,0-12.129,4.99-12.129,11.766S66.775,134.683,73.715,134.683L73.715,134.683z
+		 M104.122,134.484h2.578L96.124,111.35h-2.413l-10.576,23.135h2.545l2.776-6.181h12.89L104.122,134.484L104.122,134.484z
+		 M89.348,126.321l5.552-12.427l5.552,12.427H89.348L89.348,126.321z M129.008,134.484l-5.651-7.932
+		c3.371-1.091,5.288-3.636,5.288-7.271c0-4.958-3.569-7.932-9.453-7.932h-8.659v23.135h2.446v-7.337h6.213
+		c0.661,0,1.256-0.033,1.851-0.1l5.287,7.437H129.008L129.008,134.484z M119.125,125.065h-6.147v-11.601h6.147
+		c4.627,0,7.073,2.115,7.073,5.817C126.198,122.917,123.753,125.065,119.125,125.065L119.125,125.065z M134.428,134.484h15.401
+		v-2.115h-12.956v-21.02h-2.445V134.484L134.428,134.484z M156.34,132.369v-8.593h11.964v-2.082H156.34v-8.23h13.418v-2.115h-15.864
+		v23.135h16.36v-2.115H156.34L156.34,132.369z M180.499,134.484h2.446v-21.02h8.13v-2.115h-18.706v2.115h8.13V134.484z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M53.219,174.012c8.967,0,13.315-4.483,13.315-9.721
+		c0-11.522-18.247-7.524-18.247-13.315c0-1.98,1.659-3.595,5.963-3.595c2.779,0,5.783,0.808,8.697,2.466l2.242-5.515
+		c-2.914-1.838-6.949-2.779-10.895-2.779c-8.921,0-13.226,4.438-13.226,9.781c0,11.656,18.247,7.621,18.247,13.494
+		c0,1.921-1.749,3.355-6.052,3.355c-3.766,0-7.711-1.345-10.356-3.265l-2.466,5.462C43.221,172.532,48.243,174.012,53.219,174.012z"
+		/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M85.096,142.091H71.512v31.383h7.263v-8.652h6.322
+		c8.384,0,13.629-4.349,13.629-11.343C98.725,146.439,93.48,142.091,85.096,142.091L85.096,142.091z M84.693,158.903h-5.918v-10.895
+		h5.918c4.438,0,6.68,2.018,6.68,5.47C91.373,156.886,89.131,158.903,84.693,158.903z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M131.446,173.474l-15.728-35.791
+		c-5.01,12.098-10.242,23.854-15.565,35.791h7.302c2.779-6.692,4.257-10.175,8.263-19.848c4.914,11.861,4.978,12.006,8.22,19.848
+		H131.446z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="white" d="M164.452,173.474l-7.039-10.087
+		c4.08-1.749,6.456-5.201,6.456-9.908c0-7.039-5.245-11.388-13.629-11.388h-13.585v31.383h7.264v-8.742h6.321h0.358l6.053,8.742
+		H164.452L164.452,173.474z M156.517,153.479c0,3.407-2.241,5.47-6.68,5.47h-5.918v-10.939h5.918
+		C154.275,148.009,156.517,150.026,156.517,153.479z"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="white" points="191.084,173.474 199.558,173.474 185.793,156.079 
+		198.795,142.091 190.726,142.091 176.827,156.751 176.827,142.091 169.608,142.091 169.608,173.474 176.827,173.474 
+		176.827,165.539 181.041,161.145 	"/>
+	<g>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M115.241,66.009l1.697-0.021
+			c0.736-0.009,1.371,0.457,1.351,1.033l-0.641,16.852c-0.021,0.575-0.592,1.057-1.325,1.065l-0.142,0.002
+			c-0.733,0.009-1.32-0.455-1.351-1.032l-0.915-16.833C113.886,66.498,114.505,66.019,115.241,66.009z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M85.327,74.879l1.459-0.867c0.633-0.376,1.416-0.291,1.686,0.219
+			l7.872,14.915c0.27,0.508,0.016,1.211-0.614,1.585l-0.123,0.073c-0.63,0.374-1.371,0.266-1.686-0.219l-9.208-14.121
+			C84.397,75.979,84.693,75.254,85.327,74.879z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M63.854,97.517l0.831-1.48c0.36-0.643,1.081-0.959,1.569-0.654
+			l14.274,8.981c0.488,0.306,0.619,1.041,0.26,1.68l-0.07,0.124c-0.358,0.639-1.054,0.916-1.569,0.653l-15.035-7.625
+			C63.6,98.935,63.495,98.159,63.854,97.517z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M101.912,76.338l1.634-0.459c0.709-0.199,1.524,0.201,1.65,0.926
+			l1.375,8.024c0.125,0.724-0.219,1.451-0.926,1.649l-0.137,0.039c-0.707,0.199-1.391-0.236-1.65-0.925l-2.873-7.604
+			C100.727,77.298,101.203,76.538,101.912,76.338z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M78.948,90.489l1.185-1.215c0.514-0.527,1.42-0.588,1.892-0.023
+			l5.203,6.262c0.471,0.564,0.536,1.366,0.023,1.892l-0.099,0.102c-0.513,0.526-1.323,0.492-1.892,0.023l-6.289-5.148
+			C78.402,91.912,78.433,91.016,78.948,90.489z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M146.879,74.879l-1.459-0.867
+			c-0.634-0.376-1.416-0.291-1.686,0.219l-7.872,14.915c-0.27,0.508-0.016,1.211,0.615,1.585l0.122,0.073
+			c0.63,0.374,1.371,0.266,1.686-0.219l9.209-14.121C147.809,75.979,147.513,75.254,146.879,74.879z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M168.352,97.517l-0.831-1.48
+			c-0.36-0.643-1.081-0.959-1.569-0.654l-14.274,8.981c-0.487,0.306-0.618,1.041-0.26,1.68l0.069,0.124
+			c0.358,0.639,1.055,0.916,1.569,0.653l15.035-7.625C168.605,98.935,168.712,98.159,168.352,97.517z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M130.294,76.338l-1.634-0.459
+			c-0.709-0.199-1.524,0.201-1.649,0.926l-1.376,8.024c-0.125,0.724,0.219,1.451,0.926,1.649l0.138,0.039
+			c0.706,0.199,1.391-0.236,1.649-0.925l2.872-7.604C131.479,77.298,131.003,76.538,130.294,76.338z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B3A14A" d="M153.259,90.489l-1.186-1.215
+			c-0.515-0.527-1.42-0.588-1.892-0.023l-5.203,6.262c-0.471,0.564-0.536,1.366-0.023,1.892l0.1,0.102
+			c0.513,0.526,1.322,0.492,1.892,0.023l6.289-5.148C153.805,91.912,153.772,91.016,153.259,90.489z"/>
+	</g>
+</g>
+</svg></div>
       <h1 class="hero-title">Organizational Health<br>Assessment</h1>
       <p class="hero-sub">This assessment helps us understand the systems and processes that shape how your organization operates. Your responses will guide our work together.</p>
     </div>
@@ -1210,7 +1345,9 @@ export default {
       <span class="progress-pct" id="progress-pct">0%</span>
     </div>
     <div class="session-bar" id="session-bar" style="display:none">
-      <div class="session-bar-left"><span>🔗 Your save link — bookmark this to return later:</span></div>
+      <div class="session-bar-left">
+        <span>🔗 Your save link — bookmark this to return later:</span>
+      </div>
       <div class="session-link-box">
         <span class="session-link-text" id="session-link-text"></span>
         <button class="session-copy-btn" onclick="copySessionLink()">Copy link</button>
@@ -1223,10 +1360,15 @@ export default {
 
       <!-- PAGE 0: INSTRUCTIONS + ORG INFO -->
       <div class="form-page active" id="form-page-0">
+
+      <!-- INSTRUCTIONS -->
       <div class="org-info-card" style="border-left:4px solid var(--brand);background:var(--warm-white)">
         <div class="card-title" style="margin-bottom:20px">How to complete this assessment</div>
+
         <p style="font-size:0.9rem;color:var(--mid);line-height:1.65;margin-bottom:20px">This assessment helps your Scarlet Spark consulting team understand how your organization currently operates. There are no right or wrong answers — we're looking for an honest picture of where things stand today, not where you'd like them to be.</p>
+
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+
           <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid var(--border)">
             <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand);margin-bottom:10px">Scoring</div>
             <div style="font-size:0.85rem;color:var(--mid);line-height:1.7">For each item, select the score that best reflects your current reality:
@@ -1238,23 +1380,29 @@ export default {
               </div>
             </div>
           </div>
+
           <div style="display:flex;flex-direction:column;gap:12px">
+
             <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid var(--border)">
               <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand);margin-bottom:8px">Your responses</div>
-              <div style="font-size:0.85rem;color:var(--mid);line-height:1.65">Share a brief description of what you currently have in place — or why something isn't in place yet.</div>
+              <div style="font-size:0.85rem;color:var(--mid);line-height:1.65">Share a brief description of what you currently have in place — or why something isn't in place yet. A few sentences is enough. We're most interested in what actually exists (not what's planned), any challenges or tensions you've noticed, and context that might help us understand your score.</div>
             </div>
+
             <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid var(--border)">
               <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand);margin-bottom:8px">Documentation</div>
-              <div style="font-size:0.85rem;color:var(--mid);line-height:1.65">For each item, please share a link to the relevant document. Upload to Google Drive or Dropbox, set sharing to <strong style="color:var(--charcoal)">"Anyone with the link can view"</strong>, then paste the link.</div>
+              <div style="font-size:0.85rem;color:var(--mid);line-height:1.65">For each item, please share a link to the relevant document rather than just noting that one exists — we need to be able to read it to assess it properly. Upload to Google Drive or Dropbox, set sharing to <strong style="color:var(--charcoal)">"Anyone with the link can view"</strong>, then paste the link in the documentation field.</div>
             </div>
+
           </div>
+
         </div>
+
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px">
           <div style="background:var(--brand-pale);border-radius:10px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start">
             <span style="font-size:1.1rem">🔗</span>
             <div>
               <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand);margin-bottom:4px">Save &amp; return</div>
-              <div style="font-size:0.85rem;color:var(--mid);line-height:1.55">Your progress saves automatically. A save link will appear at the top — bookmark it to return later.</div>
+              <div style="font-size:0.85rem;color:var(--mid);line-height:1.55">Your progress saves automatically as you fill in the form. A save link will appear at the top of the page — copy and bookmark it so you can return and continue where you left off at any time.</div>
             </div>
           </div>
           <div style="background:var(--brand-pale);border-radius:10px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start">
@@ -1268,14 +1416,17 @@ export default {
             <span style="font-size:1.1rem">📬</span>
             <div>
               <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand);margin-bottom:4px">What happens next</div>
-              <div style="font-size:0.85rem;color:var(--mid);line-height:1.55">Once you submit, your consulting team will review your responses within 7 days.</div>
+              <div style="font-size:0.85rem;color:var(--mid);line-height:1.55">Once you submit, your consulting team will review your responses and get in touch with recommended next steps within 7 days.</div>
             </div>
           </div>
         </div>
+
       </div>
 
+      <!-- ORG INFO -->
       <div class="org-info-card">
         <div class="card-title">About Your Organization</div>
+        
         <div class="form-grid">
           <div class="form-group"><label>Organization Name</label><input type="text" id="org-name" placeholder="e.g. Effective Animal Advocacy"></div>
           <div class="form-group"><label>Primary Contact</label><input type="text" id="contact-name" placeholder="Your name"></div>
@@ -1286,39 +1437,54 @@ export default {
               <div class="stage-card" id="sc-launch" onclick="selectStageCard('launch')">
                 <div style="font-size:2rem;margin-bottom:8px">🌱</div>
                 <div class="stage-card-name">Launch</div>
-                <div class="stage-card-desc">Determining direction and ways of working — before or during the earliest startup phase. Typically a founding team of 1–3.</div>
+                <div class="stage-card-desc">Determining direction and ways of working — before or during the earliest startup phase. Typically a founding team of 1–3, though this varies.</div>
               </div>
               <div class="stage-card" id="sc-first-hire" onclick="selectStageCard('first-hire')">
                 <div style="font-size:2rem;margin-bottom:8px">🌿</div>
                 <div class="stage-card-name">First Hire</div>
-                <div class="stage-card-desc">Ready to expand beyond the founder or founding team for the first time. Often around 2–8 people.</div>
+                <div class="stage-card-desc">Ready to expand beyond the founder or founding team for the first time. Often around 2–8 people, but the key marker is the transition, not the headcount.</div>
               </div>
               <div class="stage-card" id="sc-growth" onclick="selectStageCard('growth')">
                 <div style="font-size:2rem;margin-bottom:8px">🌳</div>
                 <div class="stage-card-name">Growth</div>
-                <div class="stage-card-desc">Preparing for ongoing growth in team members and/or the communities you serve. Often 8 or more people.</div>
+                <div class="stage-card-desc">Preparing for ongoing growth in team members and/or the communities you serve. Often 8 or more people, though some organizations reach this stage earlier.</div>
               </div>
             </div>
             <input type="hidden" id="org-stage" value="">
+            <div id="stage-info-box" style="display:none;margin-top:10px;padding:14px 16px;border-radius:8px;background:var(--brand-pale);border-left:3px solid var(--brand);font-size:0.87rem;color:var(--mid);line-height:1.65"></div>
           </div>
         </div>
       </div>
 
+      <!-- NAV BUTTON TO FIRST SECTION -->
       <div class="page-nav" style="border-top:none;padding-top:0;margin-top:24px">
         <div></div>
-        <button class="btn-primary" onclick="goToPage(1, 'forward')" style="padding:12px 32px">Begin Assessment →</button>
+        <button class="btn-primary" onclick="goToPage(1, 'forward')" style="padding:12px 32px">
+          Begin Assessment →
+        </button>
       </div>
+
       </div><!-- end page-0 -->
 
+      <!-- DRIVER PAGES (generated by JS) -->
       <div id="driver-pages"></div>
 
       <!-- FINAL PAGE -->
       <div class="form-page" id="form-page-final">
+
+      <!-- FINAL NOTES -->
       <div class="upload-section">
         <div class="card-title" style="margin-bottom:8px">Anything else?</div>
-        <div class="card-desc">Use this space to share any additional context, reflections, or information that didn't fit elsewhere.</div>
+        <div class="card-desc">Use this space to share any additional context, reflections, or information that didn't fit elsewhere. If you have documents to share, paste a Google Drive or other link below.</div>
+
         <div class="item-field-label">Additional notes</div>
-        <textarea class="item-textarea" style="min-height:120px;margin-bottom:20px" placeholder="Share any final thoughts, context, or anything else you'd like your consulting team to know…" onchange="state.finalNotes=this.value"></textarea>
+        <textarea
+          class="item-textarea"
+          style="min-height:120px;margin-bottom:20px"
+          placeholder="Share any final thoughts, context, or anything else you'd like your consulting team to know…"
+          onchange="state.finalNotes=this.value"
+        ></textarea>
+
         <div class="item-field-label">Additional links</div>
         <div id="extra-links">
           <div class="item-doc-row" style="margin-bottom:8px">
@@ -1326,18 +1492,25 @@ export default {
           </div>
         </div>
         <button onclick="addExtraLink()" style="background:none;border:none;font-family:'DM Sans',sans-serif;font-size:0.83rem;font-weight:600;color:var(--brand);cursor:pointer;padding:0;margin-bottom:20px">+ Add another link</button>
+
+
       </div>
+
       <div class="page-nav">
         <button class="btn-back" onclick="goToPage(ORG_SYSTEMS.length, 'back')">← Back</button>
         <span class="page-nav-section">Final step</span>
       </div>
+
+      <!-- SUBMIT -->
       <div class="submit-section">
         <div class="submit-error" id="submit-error"></div>
         <button class="btn-primary" onclick="submitAssessment()">Submit Assessment →</button>
         <p style="margin-top:16px;font-size:0.82rem;color:var(--light)">Your responses are shared only with your Scarlet Spark consulting team.</p>
       </div>
+
       </div><!-- end form-page-final -->
       </div><!-- end form-pages-wrapper -->
+
     </div>
   </div>
 
@@ -1349,6 +1522,7 @@ export default {
     <button class="btn-primary" onclick="showPrintSummary()" style="margin-bottom:12px">Download a copy of your responses →</button>
   </div>
 
+  <!-- PRINT SUMMARY -->
   <div id="print-summary" style="display:none">
     <div class="print-summary-bar">
       <span style="font-weight:600;font-size:0.95rem">Your response summary</span>
@@ -1359,9 +1533,10 @@ export default {
     </div>
     <div id="print-summary-content" class="print-summary-content"></div>
   </div>
+
 </div>
 
-<!-- CONSULTANT VIEW -->
+<!-- ═══════════════════════════ CONSULTANT VIEW ═══════════════════════════ -->
 <div id="view-consultant" class="view">
   <div class="consultant-layout">
     <div class="consultant-sidebar">
@@ -1375,13 +1550,15 @@ export default {
         <div id="load-status" style="font-size:0.78rem;color:var(--light);margin-top:6px;text-align:center"></div>
       </div>
       <div class="sidebar-section-label">Navigation</div>
-      <div class="sidebar-item active" onclick="showConsultantPanel('overview', event)">📊 Overview</div>
-      <div class="sidebar-item" onclick="showConsultantPanel('ai-analysis', event)">🤖 AI Analysis</div>
-      <div class="sidebar-item" onclick="showConsultantPanel('systems', event)">⚙️ Org Systems</div>
-      <div class="sidebar-item" onclick="showConsultantPanel('documents', event)">📁 Documents</div>
+      <div class="sidebar-item active" onclick="showConsultantPanel('overview')">📊 Overview</div>
+      <div class="sidebar-item" onclick="showConsultantPanel('ai-analysis')">🤖 AI Analysis</div>
+      <div class="sidebar-item" onclick="showConsultantPanel('systems')">⚙️ Org Systems</div>
+      <div class="sidebar-item" onclick="showConsultantPanel('documents')">📁 Documents</div>
+
     </div>
 
     <div class="consultant-main">
+
       <!-- OVERVIEW PANEL -->
       <div id="panel-overview" class="consultant-panel">
         <div class="consultant-header">
@@ -1397,17 +1574,39 @@ export default {
           </div>
         </div>
         <div class="metric-grid">
-          <div class="metric-card" id="m-completion"><div class="metric-label">Completion</div><div class="metric-value">—</div><div class="metric-sub">of scored items</div></div>
-          <div class="metric-card" id="m-avg-score"><div class="metric-label">Avg Self-Score</div><div class="metric-value">—</div><div class="metric-sub">out of 3.0</div></div>
-          <div class="metric-card" id="m-gaps"><div class="metric-label">Priority Gaps</div><div class="metric-value">—</div><div class="metric-sub">items scored 0 or 1</div></div>
+          <div class="metric-card" id="m-completion">
+            <div class="metric-label">Completion</div>
+            <div class="metric-value">—</div>
+            <div class="metric-sub">of scored items</div>
+          </div>
+          <div class="metric-card" id="m-avg-score">
+            <div class="metric-label">Avg Self-Score</div>
+            <div class="metric-value">—</div>
+            <div class="metric-sub">out of 3.0</div>
+          </div>
+          <div class="metric-card" id="m-gaps">
+            <div class="metric-label">Priority Gaps</div>
+            <div class="metric-value">—</div>
+            <div class="metric-sub">items scored 0 or 1</div>
+          </div>
         </div>
+
         <div class="analysis-panel">
-          <div class="analysis-panel-header"><div class="analysis-panel-title">Driver Score Overview</div></div>
-          <div class="analysis-panel-body" id="driver-score-bars"><div style="color:var(--light);font-size:0.9rem;">No assessment data yet.</div></div>
+          <div class="analysis-panel-header">
+            <div class="analysis-panel-title">Driver Score Overview</div>
+          </div>
+          <div class="analysis-panel-body" id="driver-score-bars">
+            <div style="color:var(--light);font-size:0.9rem;">No assessment data yet.</div>
+          </div>
         </div>
+
         <div class="analysis-panel">
-          <div class="analysis-panel-header"><div class="analysis-panel-title">Org Stage</div></div>
-          <div class="analysis-panel-body" id="stage-context"><div style="color:var(--light);font-size:0.9rem;">No submission yet.</div></div>
+          <div class="analysis-panel-header">
+            <div class="analysis-panel-title">Org Stage</div>
+          </div>
+          <div class="analysis-panel-body" id="stage-context">
+            <div style="color:var(--light);font-size:0.9rem;">No submission yet.</div>
+          </div>
         </div>
       </div>
 
@@ -1418,8 +1617,11 @@ export default {
           <h1 class="consultant-title">Claude Analysis</h1>
           <div class="consultant-meta">Ask Claude to analyze the assessment data and surface key insights before your consulting engagement.</div>
         </div>
+
         <div class="analysis-panel">
-          <div class="analysis-panel-header"><div class="analysis-panel-title">Suggested Prompts</div></div>
+          <div class="analysis-panel-header">
+            <div class="analysis-panel-title">Suggested Prompts</div>
+          </div>
           <div class="analysis-panel-body">
             <div class="suggest-chips" id="suggest-chips">
               <span class="chip" onclick="useSuggest(this)">Summarize key strengths and gaps</span>
@@ -1462,16 +1664,18 @@ export default {
         <div class="analysis-panel">
           <div class="analysis-panel-header"><div class="analysis-panel-title">Uploaded Files</div></div>
           <div class="analysis-panel-body">
-            <div class="doc-list" id="docs-consultant-view"><div style="color:var(--light);font-size:0.9rem;">No documents uploaded yet.</div></div>
+            <div class="doc-list" id="docs-consultant-view">
+              <div style="color:var(--light);font-size:0.9rem;">No documents uploaded yet.</div>
+            </div>
           </div>
         </div>
       </div>
+      </div>
     </div>
-  </div>
 </div>
 
 <script>
-// ═══════════════ DATA ═══════════════
+// ═══════════════ DATA STRUCTURE ═══════════════
 const ORG_SYSTEMS = [
   { driver: "Goal Clarity", desc: "At any given time, does everyone know what we are trying to achieve, how, and why?", url: "https://scarletspark.thinkific.com/collections/strategy-goal-clarity", items: [
     { name: "Mission & vision", desc: "Do we have a clear and shared mission and vision that articulates what we want to achieve and why?", stages: ["Launch","First Hire","Growth"] },
@@ -1481,338 +1685,67 @@ const ORG_SYSTEMS = [
   ]},
   { driver: "Role Clarity", desc: "At any given time, does everyone understand what they are seeking to achieve and why, who to go to for what, and how decisions are made?", url: "https://scarletspark.thinkific.com/collections/role-clarity", items: [
     { name: "Role and/or project descriptions", desc: "Do we have clear expectations for each role and/or project?", stages: ["Launch","First Hire","Growth"] },
-    { name: "Decision-making authority & process", desc: "Do we have explicit decision-making rights and responsibilities?", stages: ["Launch","First Hire","Growth"] },
+    { name: "Decision-making authority & process", desc: "Do we have explicit decision-making rights and responsibilities — including what someone can decide alone vs. with others — and a clear approach to making decisions?", stages: ["Launch","First Hire","Growth"] },
     { name: "Role and/or project success metrics", desc: "Do we have clearly defined success metrics for each role or project?", stages: ["First Hire","Growth"] },
     { name: "Board clarity", desc: "Do we have a clear board purpose and explicit board member expectations?", stages: ["Growth"] },
     { name: "Roles & responsibilities directory", desc: "Do we have a system to determine who to go to for what?", stages: ["Growth"] },
   ]},
   { driver: "Safety & Fairness", desc: "At any given time, does everyone experience a sense of safety, respect, and fairness?", url: "https://scarletspark.thinkific.com/collections/safety-fairness", items: [
-    { name: "Policies to prevent harassment, discrimination & retaliation", desc: "Do we have documented policies that set expectations on unacceptable behaviors?", stages: ["Launch","First Hire","Growth"] },
-    { name: "2+ decision makers for high-stakes decisions", desc: "Do we have two or more decision makers for high-stakes decisions to minimize bias?", stages: ["First Hire","Growth"] },
+    { name: "Policies to prevent harassment, discrimination & retaliation", desc: "Do we have documented policies that set expectations on unacceptable behaviors and explain how they will be addressed?", stages: ["Launch","First Hire","Growth"] },
+    { name: "2+ decision makers for high-stakes decisions", desc: "Do we have two or more decision makers for high-stakes decisions (e.g., firing, promotions) to minimize bias and improve decision quality?", stages: ["First Hire","Growth"] },
     { name: "Escalation process", desc: "Do we have a clear and user-friendly escalation process for flagging safety and fairness concerns?", stages: ["Launch","First Hire","Growth"] },
-    { name: "Strategy to enable inclusion on the team", desc: "Do we have a strategy to make sure all team members can participate to the best of their ability?", stages: ["First Hire","Growth"] },
-    { name: "Compensation formula (if relevant)", desc: "Do we have an explicit, consistent, and fair compensation formula?", stages: ["First Hire","Growth"] },
+    { name: "Strategy to enable inclusion on the team", desc: "Do we have a strategy to make sure all team members can participate to the best of their ability (e.g., meeting norms, accessibility resources)?", stages: ["First Hire","Growth"] },
+    { name: "Compensation formula (if relevant)", desc: "Do we have an explicit, consistent, and fair compensation formula for determining pay and benefits?", stages: ["First Hire","Growth"] },
     { name: "Termination process", desc: "Do we have an explicit, consistent, and fair termination process?", stages: ["First Hire","Growth"] },
-    { name: "Independent board and/or a system to minimize conflict of interest", desc: "Do we have an independent board and/or a documented process to minimize conflicts of interest?", stages: ["Growth"] },
+    { name: "Independent board and/or a system to minimize conflict of interest", desc: "Do we have an independent board and/or a documented process to minimize conflicts of interest around decisions like compensation, promotion, and assessment?", stages: ["Growth"] },
   ]},
   { driver: "Feedback & Learning", desc: "Are we regularly learning, growing, and improving on an individual, team, and org-wide level?", url: "https://scarletspark.thinkific.com/collections/feedback-learning", items: [
     { name: "Goal-tracking process", desc: "Do we have a goal-tracking process to monitor whether individuals, teams, and the org as a whole are achieving their goals?", stages: ["Launch","First Hire","Growth"] },
-    { name: "Feedback norms & nudges", desc: "Do we have feedback norms and nudges that encourage regular feedback conversations?", stages: ["Launch","First Hire","Growth"] },
-    { name: "Retrospectives", desc: "Do we hold regular retrospectives to review how well we are collaborating?", stages: ["Launch","First Hire","Growth"] },
+    { name: "Feedback norms & nudges", desc: "Do we have feedback norms and nudges that encourage regular feedback conversations across the org?", stages: ["Launch","First Hire","Growth"] },
+    { name: "Retrospectives", desc: "Do we hold regular retrospectives to review how well we are collaborating and identify improvements?", stages: ["Launch","First Hire","Growth"] },
     { name: "Performance assessments", desc: "Do we have a performance assessment process to evaluate whether individuals are meeting expectations?", stages: ["First Hire","Growth"] },
-    { name: "Engagement survey & action process", desc: "Do we have an engagement survey and action process to regularly assess team member engagement?", stages: ["First Hire","Growth"] },
+    { name: "Engagement survey & action process", desc: "Do we have an engagement survey and action process to regularly assess team member engagement and respond to their feedback?", stages: ["First Hire","Growth"] },
     { name: "Individual development plans", desc: "Do we have individual development plans with a clear process and cadence for supporting team member growth?", stages: ["Growth"] },
-    { name: "Turnover tracking", desc: "Do we have a turnover tracking process that measures why team members leave?", stages: ["Growth"] },
-    { name: "Innovation & experimentation", desc: "Do we have ways to encourage innovation and experimentation?", stages: ["Growth"] },
-    { name: "Process to get team input on strategic decisions", desc: "Do we have a process for getting team input on strategic decisions?", stages: ["Growth"] },
+    { name: "Turnover tracking", desc: "Do we have a turnover tracking process that measures why team members leave and whether departures were regrettable?", stages: ["Growth"] },
+    { name: "Innovation & experimentation", desc: "Do we have ways to encourage innovation and experimentation so individuals and teams feel safe trying new things?", stages: ["Growth"] },
+    { name: "Process to get team input on strategic decisions", desc: "Do we have a process for getting team input on strategic decisions (e.g., surveys, office hours, invitations to join strategic planning)?", stages: ["Growth"] },
   ]},
   { driver: "Leadership", desc: "Are our leaders regularly growing the capacity of their team and our org?", url: "https://scarletspark.thinkific.com/collections/leadership-management", items: [
-    { name: "Leader & manager role clarity", desc: "Do we have clear role clarity for leaders and managers?", stages: ["Growth"] },
-    { name: "Access to leaders", desc: "Do we have a system that gives team members access to leaders?", stages: ["Growth"] },
-    { name: "Leader & manager assessment", desc: "Do we have a leader and manager assessment process?", stages: ["Growth"] },
-    { name: "Assessment of ED", desc: "Do we have an independent process to assess the ED's performance?", stages: ["Growth"] },
-    { name: "Leadership development", desc: "Do we have a leadership development process that helps leaders increase their effectiveness?", stages: ["Growth"] },
-    { name: "Leadership team structure (if relevant)", desc: "Do we have a clear leadership team structure with a process and cadence for operating well together?", stages: ["Growth"] },
+    { name: "Leader & manager role clarity", desc: "Do we have clear role clarity for leaders and managers (e.g., manager, director, ED)?", stages: ["Growth"] },
+    { name: "Access to leaders", desc: "Do we have a system that gives team members access to leaders (e.g., office hours)?", stages: ["Growth"] },
+    { name: "Leader & manager assessment", desc: "Do we have a leader and manager assessment process to evaluate whether leaders are meeting expectations?", stages: ["Growth"] },
+    { name: "Assessment of ED", desc: "Do we have an independent process to assess the ED's performance that minimizes conflict of interest?", stages: ["Growth"] },
+    { name: "Leadership development", desc: "Do we have a leadership development process that helps leaders increase their effectiveness (e.g., onboarding, training, mentorship)?", stages: ["Growth"] },
+    { name: "Leadership team structure (if relevant)", desc: "Do we have a clear leadership team structure with a process and cadence for operating well together as a guiding force for the org?", stages: ["Growth"] },
   ]},
   { driver: "Collaboration & Communication", desc: "Do we work well together across the org?", url: "https://scarletspark.thinkific.com/collections/collaboration", items: [
-    { name: "Org values", desc: "Do we have clearly articulated org values that guide how team members work together?", stages: ["First Hire","Growth"] },
+    { name: "Org values", desc: "Do we have clearly articulated org values that guide how team members work together and make decisions?", stages: ["First Hire","Growth"] },
     { name: "Org norms or ways of working", desc: "Do we have explicit org norms or ways of working that set expectations for team member behavior?", stages: ["Launch","First Hire","Growth"] },
     { name: "Cadence and system of information sharing", desc: "Do we have a clear cadence and system for sharing important information across the org?", stages: ["Growth"] },
-    { name: "Org design that enables cross-team collaboration", desc: "Do we have an org design that enables cross-team collaboration?", stages: ["Growth"] },
+    { name: "Org design that enables cross-team collaboration", desc: "Do we have an org design that enables cross-team collaboration and minimizes silos or competing priorities?", stages: ["Growth"] },
     { name: "System for 1-1 relationships", desc: "Do we have a system for building and maintaining 1-1 relationships across the org?", stages: ["Growth"] },
-    { name: "System for org-wide relationships", desc: "Do we have a system for building and maintaining org-wide relationships?", stages: ["Growth"] },
+    { name: "System for org-wide relationships", desc: "Do we have a system for building and maintaining org-wide relationships that foster a sense of belonging?", stages: ["Growth"] },
   ]},
   { driver: "Stability", desc: "Are we ready to weather unexpected changes within and outside our org?", url: "https://scarletspark.thinkific.com/collections/stability", items: [
-    { name: "Coverage plans", desc: "Do we have coverage plans that minimize risk if someone is out?", stages: ["First Hire","Growth"] },
-    { name: "Succession plans", desc: "Do we have succession plans that minimize risk if a key person leaves?", stages: ["First Hire","Growth"] },
-    { name: "Capacity", desc: "Do we have a way to monitor and manage team capacity?", stages: ["First Hire","Growth"] },
-    { name: "Single source of truth for key information", desc: "Do we have a single source of truth — a clear, user-friendly place where team members can find key policies?", stages: ["Launch","First Hire","Growth"] },
+    { name: "Coverage plans", desc: "Do we have coverage plans that minimize risk if someone is out for a short period of time?", stages: ["First Hire","Growth"] },
+    { name: "Succession plans", desc: "Do we have succession plans that minimize risk if a key person leaves their role or the org?", stages: ["First Hire","Growth"] },
+    { name: "Capacity", desc: "Do we have a way to monitor and manage team capacity to make sure people aren't over- or under-loaded?", stages: ["First Hire","Growth"] },
+    { name: "Single source of truth for key information", desc: "Do we have a single source of truth — a clear, user-friendly place where team members can find key policies and processes?", stages: ["Launch","First Hire","Growth"] },
     { name: "Strategy for expanding team diversity", desc: "Do we have a strategy for deliberately expanding the diversity of our team?", stages: ["First Hire","Growth"] },
   ]},
   { driver: "Scalability", desc: "Are we ready to repeatedly expand the size of our team and/or impact efficiently and reliably?", url: "https://scarletspark.thinkific.com/collections/scalability", items: [
-    { name: "Individualized support system", desc: "Do we have an individualized support system that makes sure team members don't slip through the cracks?", stages: ["First Hire","Growth"] },
+    { name: "Individualized support system", desc: "Do we have an individualized support system that makes sure team members don't slip through the cracks (e.g., a dedicated manager or peer coach)?", stages: ["First Hire","Growth"] },
     { name: "Weekly or bi-weekly 1-on-1s", desc: "Do we have a regular cadence and format for 1-on-1 check-ins between managers and their team members?", stages: ["First Hire","Growth"] },
-    { name: "Hiring process", desc: "Do we have a standardized, efficient, and fair hiring process?", stages: ["Growth"] },
+    { name: "Hiring process", desc: "Do we have a standardized, efficient, and fair hiring process for growing our team?", stages: ["Growth"] },
     { name: "Onboarding process", desc: "Do we have a standardized onboarding process that sets new team members up for success?", stages: ["Growth"] },
   ]},
 ];
 
-const STAGE_DEFS = {
-  'launch':     { name: 'Launch',     headcount: '1–3 people',  desc: 'Your organization is determining its direction and ways of working. The priority here is establishing foundational systems that give your team clarity and safety from day one.' },
-  'first-hire': { name: 'First Hire', headcount: '2–8 people',  desc: 'Your organization is ready to expand beyond its founder or founding team. This stage is about putting systems in place that make it possible to bring others in effectively.' },
-  'growth':     { name: 'Growth',     headcount: '8+ people',   desc: 'Your organization is preparing for ongoing growth. The focus shifts to building more robust, scalable systems that can hold up as complexity increases.' },
-};
 
-// ═══════════════ FIELD MAPS (shared) ═══════════════
-const SCORE_FIELD_MAP = {
-  'Goal Clarity|Mission & vision':'score_mission_vision','Goal Clarity|Strategy & theory of change':'score_strategy_theory',
-  'Goal Clarity|Impact measurement':'score_impact_measurement','Goal Clarity|Strategic planning & goal-setting process':'score_strategic_planning',
-  'Role Clarity|Role and/or project descriptions':'score_role_descriptions','Role Clarity|Decision-making authority & process':'score_decision_making',
-  'Role Clarity|Role and/or project success metrics':'score_success_metrics','Role Clarity|Board clarity':'score_board_clarity',
-  'Role Clarity|Roles & responsibilities directory':'score_responsibilities_directory',
-  'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation':'score_harassment_policies',
-  'Safety & Fairness|2+ decision makers for high-stakes decisions':'score_high_stakes_decisions',
-  'Safety & Fairness|Escalation process':'score_escalation','Safety & Fairness|Strategy to enable inclusion on the team':'score_inclusion',
-  'Safety & Fairness|Compensation formula (if relevant)':'score_compensation','Safety & Fairness|Termination process':'score_termination',
-  'Safety & Fairness|Independent board and/or a system to minimize conflict of interest':'score_conflict_of_interest',
-  'Feedback & Learning|Goal-tracking process':'score_goal_tracking','Feedback & Learning|Feedback norms & nudges':'score_feedback_norms',
-  'Feedback & Learning|Retrospectives':'score_retrospectives','Feedback & Learning|Performance assessments':'score_performance_assessments',
-  'Feedback & Learning|Engagement survey & action process':'score_engagement_survey','Feedback & Learning|Individual development plans':'score_development_plans',
-  'Feedback & Learning|Turnover tracking':'score_turnover_tracking','Feedback & Learning|Innovation & experimentation':'score_innovation',
-  'Feedback & Learning|Process to get team input on strategic decisions':'score_team_input',
-  'Leadership|Leader & manager role clarity':'score_leader_role_clarity','Leadership|Access to leaders':'score_access_to_leaders',
-  'Leadership|Leader & manager assessment':'score_leader_assessment','Leadership|Assessment of ED':'score_ed_assessment',
-  'Leadership|Leadership development':'score_leadership_development','Leadership|Leadership team structure (if relevant)':'score_leadership_structure',
-  'Collaboration & Communication|Org values':'score_org_values','Collaboration & Communication|Org norms or ways of working':'score_org_norms',
-  'Collaboration & Communication|Cadence and system of information sharing':'score_info_sharing',
-  'Collaboration & Communication|Org design that enables cross-team collaboration':'score_org_design',
-  'Collaboration & Communication|System for 1-1 relationships':'score_oneonone_relationships',
-  'Collaboration & Communication|System for org-wide relationships':'score_orgwide_relationships',
-  'Stability|Coverage plans':'score_coverage_plans','Stability|Succession plans':'score_succession_plans',
-  'Stability|Capacity':'score_capacity','Stability|Single source of truth for key information':'score_single_source',
-  'Stability|Strategy for expanding team diversity':'score_team_diversity',
-  'Scalability|Individualized support system':'score_individualized_support','Scalability|Weekly or bi-weekly 1-on-1s':'score_oneononemeetings',
-  'Scalability|Hiring process':'score_hiring_process','Scalability|Onboarding process':'score_onboarding',
-};
-const NOTES_FIELD_MAP = Object.fromEntries(Object.entries(SCORE_FIELD_MAP).map(([k,v])=>[k,v.replace('score_','notes_')]));
-const LINKS_FIELD_MAP = Object.fromEntries(Object.entries(SCORE_FIELD_MAP).map(([k,v])=>[k,v.replace('score_','link_')]));
-const CS_FIELD_MAP    = Object.fromEntries(Object.entries(SCORE_FIELD_MAP).map(([k,v])=>[k,v.replace('score_','cs_')]));
-const CN_FIELD_MAP    = Object.fromEntries(Object.entries(SCORE_FIELD_MAP).map(([k,v])=>[k,v.replace('score_','cn_')]));
-
-// Reverse maps (airtable field -> state key)
-const REV_SCORE = Object.fromEntries(Object.entries(SCORE_FIELD_MAP).map(([k,v])=>[v,k]));
-const REV_NOTES = Object.fromEntries(Object.entries(NOTES_FIELD_MAP).map(([k,v])=>[v,k]));
-const REV_LINKS = Object.fromEntries(Object.entries(LINKS_FIELD_MAP).map(([k,v])=>[v,k]));
-const REV_CS    = Object.fromEntries(Object.entries(CS_FIELD_MAP).map(([k,v])=>[v,k]));
-const REV_CN    = Object.fromEntries(Object.entries(CN_FIELD_MAP).map(([k,v])=>[v,k]));
-
-// ═══════════════ AIRTABLE CONFIG ═══════════════
-const AIRTABLE_TOKEN = 'patZWhcK41OZGenaf.87a5e5e98427dca19c116157a0df4f1b77f8874edd7f40669bb615c581a52780';
-const AIRTABLE_BASE  = 'appVVkmoE0yPNz6l5';
-const AIRTABLE_TABLE = 'tblcKOT8xRFr0JXlA';
-
-// ═══════════════ STATE ═══════════════
-const state = { scores:{}, links:{}, notes:{}, finalNotes:'', extraLinks:[], submitted:false, orgInfo:{}, chatHistory:[] };
-const consultantState = { scores:{}, notes:{}, recordId:null, reviewerName:'', reviewDate:'' };
-
-let currentPage = 0;
-let sessionId = null;
-let saveTimeout = null;
-let sessionRecordId = null;
-
-// ═══════════════ HELPERS ═══════════════
-
-// ═══════════════ SAMPLE ANSWER PLACEHOLDERS ═══════════════
-const ITEM_PLACEHOLDERS = {
-  "Goal Clarity|Mission & vision": "e.g. We have a one-page document that includes mission, vision, and values developed with the full team 3 years ago. We reference this document whenever we are onboarding new team members. See document linked below. There is more we could do to embed our values in our processes and decision-making.",
-  "Goal Clarity|Strategy & theory of change": "e.g. We have a theory of change that maps our two core programs (direct policy advocacy and coalition building) to our long-term vision. It explains our assumptions about how legislative change happens and why we prioritise the interventions we do. We developed it a couple of years ago but haven't reviewed it since. See document linked below.",
-  "Goal Clarity|Impact measurement": "e.g. We have metrics for our four program areas. All the metrics live in a shared document and are updated monthly by team leads. We review the metrics quarterly at our leadership meeting. But some team members express confusion about how their work supports our key metrics. See document linked below.",
-  "Goal Clarity|Strategic planning & goal-setting process": "e.g. Every year during Q4 we run a week-long planning process involving the whole team. We do our best to also include the board, however there is often confusion about what role they should play in this process. We end up with a one-page strategic priorities document for the coming year, broken into quarterly milestones. In January, each team lead translates it into team-level goals, which we review quarterly to assess progress and adjust if needed.",
-  "Role Clarity|Role and/or project descriptions": "e.g. Every role has a role description reviewed annually by the relevant line manager. Role descriptions include purpose, core activities, and outcomes. Some role descriptions also include authorities, some don't. For new hires, reviewing the role description is part of the onboarding process. See sample role descriptions linked below.",
-  "Role Clarity|Decision-making authority & process": "e.g. We generally use the consent model to make decisions. We also have a one-page decision-making framework that sets out what each level of the organisation can decide independently, what requires consultation, and what requires sign-off from the ED or board. For example, heads of departments can make budget changes up to $10,000. The framework was developed only a few months ago and not everyone understands or uses it yet. See decision-making framework linked below.",
-  "Role Clarity|Role and/or project success metrics": "e.g. Each role has 3–5 success metrics agreed to at the start of the year and reviewed quarterly. Project metrics are set at the start of the project in the project brief and tracked at monthly team meetings. See linked document.",
-  "Role Clarity|Board clarity": "e.g. We didn't have anything other than what was included in our standard bylaws until about 6 months ago. When we updated the role descriptions for the team, we also developed board member role descriptions that set out the purpose of the role, core activities, outcomes and authorities. We tried to clearly distinguish between the board's governance and oversight role and the ED's operational role but there is still some blurriness. See board role description linked below.",
-  "Role Clarity|Roles & responsibilities directory": "e.g. We have a one-page internal directory listing each team, what they are responsible for, and who to contact for common queries. It is pinned in our staff Slack channel and included in the onboarding pack, however a lot of people seem to forget about it. We also have an organizational chart showing reporting lines. See internal directory linked below.",
-  "Safety & Fairness|Policies to prevent harassment, discrimination & retaliation": "e.g. Our staff handbook includes a code of conduct, an anti-harassment and bullying policy, and an escalation procedure. The code sets out specific behaviours we will not tolerate, with examples relevant to our context. The escalation procedure sets out the steps from informal conversation through to formal hearing and dismissal, with timelines at each stage. All staff read and sign the handbook on joining. See handbook linked below.",
-  "Safety & Fairness|2+ decision makers for high-stakes decisions": "e.g. We have a written policy that any decision to dismiss, promote, or significantly change a staff member's role must involve at least two people: the relevant line manager and the ED. If we need a tie-breaker, we bring in a third staff member from outside the relevant team. For hiring, we generally involve three people (including at least one peer) in the process and use a scoring sheet to minimize bias. See section 7 in the handbook.",
-  "Safety & Fairness|Escalation process": "e.g. We have a grievance procedure written in plain language covering both formal and informal routes in our staff handbook. It includes an explanation on how to raise issues directly with line managers and how to escalate them to the ED or the Board Chair via a form. The procedure is also explained during onboarding. See section 8 in the handbook.",
-  "Safety & Fairness|Strategy to enable inclusion on the team": "e.g. We have our communication norms spelled out in our handbook. For meetings, we ask everyone to send out agendas at least 48 hours in advance, we rotate facilitators, and give people the option to offer input in writing before/after the meeting. We ask all new starters in their first week whether they have any access needs or working style preferences, and we act on these. See communication norms in section 4 of the handbook.",
-  "Safety & Fairness|Compensation formula (if relevant)": "e.g. We have a pay framework with three bands tied to expertise, scope and complexity. Each band corresponds to a fixed amount and we don't allow negotiations. We offer cost of living adjustments every year (if budget allows) and offer the same benefits for all full-time staff. The pay and benefits framework is included in the handbook so everyone has access to it. See section 6 in the handbook.",
-  "Safety & Fairness|Termination process": "e.g. Our termination process sets out each stage from informal conversation through to formal dismissal, with clear timelines and a right of appeal at every formal stage. It distinguishes between performance issues and misconduct and sets out different steps for each. We review it annually with an HR adviser. See section 10 in the handbook.",
-  "Safety & Fairness|Independent board and/or a system to minimize conflict of interest": "e.g. Our board is fully independent. We have a conflicts of interest policy that all board members sign on joining and annually thereafter. The ED's salary is set by a committee of three board members without the ED present. The board assesses the ED's performance once a year using a process led by the Board Chair. See conflict of interest policy linked below.",
-  "Feedback & Learning|Goal-tracking process": "e.g. We use a shared document to track progress against our organizational goals. Each month we update our metrics. Quarterly we have a retrospective meeting where we reflect on our progress and extract any learnings. The ED shares a summary of our progress quarterly with the board.",
-  "Feedback & Learning|Feedback norms & nudges": "e.g. Our communication norms document outlines our approach to feedback: it should be timely, specific, and include an impact statement. Everyone takes a feedback skills workshop as part of onboarding and our 1-on-1 meeting template includes a feedback nudge. We also do yearly engagement surveys, which is an opportunity to assess our feedback culture.",
-  "Feedback & Learning|Retrospectives": "e.g. Every team does a brief retrospective at the end of each quarter: what went well, what did not go well, and one thing we will do differently next quarter. We have a rotating note-taker to ensure key learnings and next steps are captured. We also run a retrospective after any major campaign or policy moment within two weeks of its conclusion.",
-  "Feedback & Learning|Performance assessments": "e.g. We do a structured annual performance review for all staff using a standard template. It covers progress against agreed goals as well as our values and behaviours. The process is outlined in our staff handbook. See section 5 and template linked below.",
-  "Feedback & Learning|Engagement survey & action process": "e.g. We run an engagement survey every six months. A summary of the results is shared with all staff within two weeks of closing. The leadership team identifies 2–3 commitments in response to each survey and reports back on progress quarterly. See survey from last year linked below.",
-  "Feedback & Learning|Individual development plans": "e.g. Every staff member has a development plan agreed at their annual review and revisited regularly during 1-on-1s. Plans cover skills to develop, experience to gain, and any formal training being pursued. We have an annual training budget per person that staff can use flexibly. See template linked below.",
-  "Feedback & Learning|Turnover tracking": "e.g. We conduct exit interviews with all departing staff using a consistent format covering reasons for leaving, what we could have done differently, and whether they would recommend us as a place to work. We track voluntary and involuntary turnover separately and share a summary with the board annually. See exit interview template linked below.",
-  "Feedback & Learning|Innovation & experimentation": "e.g. Innovation is one of our core values. During our quarterly retrospective meetings, we dedicate time to an ideas session where staff can propose new approaches without needing a full plan. We celebrate experiments that did not work as much as ones that did, and track the number of experiments run and what we learned.",
-  "Feedback & Learning|Process to get team input on strategic decisions": "e.g. We have two standing channels for staff input: an annual staff survey that feeds directly into our planning process, and monthly ED office hours any staff member can book. For significant one-off decisions we run a dedicated consultation process with a clear timeline and feedback loop.",
-  "Leadership|Leader & manager role clarity": "e.g. We have written role descriptions for each level of leadership — team lead, senior manager, and ED — that set out the scope of the role, what decisions sit at that level, what the person is accountable for, and how success is measured. They are shared with all staff so everyone understands what to expect from leaders at each level. See document linked below.",
-  "Leadership|Access to leaders": "e.g. The ED runs monthly open office hours — a dedicated slot any staff member can book directly, without going through their manager. We also create regular opportunities for staff and board members to connect informally, including inviting a rotating staff member to each board meeting. We ask about access to leadership in every engagement survey.",
-  "Leadership|Leader & manager assessment": "e.g. We use a 360 feedback process for all managers annually — direct reports, peers, and the manager's own manager each provide structured input using a consistent set of questions. Results are shared with the manager during their annual review and used to shape their development plan. We also include questions about management quality in our engagement survey.",
-  "Leadership|Assessment of ED": "e.g. The board conducts an annual ED performance review using objectives agreed at the start of the year. The review is led by the Chair and involves input from the full board and feedback from all staff. Outcomes feed into the ED's development plan.",
-  "Leadership|Leadership development": "e.g. All new managers receive a structured onboarding to their management role, including sessions on giving feedback, running one-to-ones, and handling difficult conversations. The senior leadership team does a collective learning session quarterly on various topics, often with an external facilitator.",
-  "Leadership|Leadership team structure (if relevant)": "e.g. The leadership team consists of one representative from each of our five departments. We meet monthly to review org-level challenges and priorities. At annual strategic planning, we take time to reflect on how we have been collaborating as a leadership team and make adjustments to our collaboration norms as needed.",
-  "Collaboration & Communication|Org values": "e.g. We have five values. For each one we describe what it looks like in practice and what it doesn't look like, so the values are concrete and usable rather than just aspirational. The values are used in hiring, performance reviews, and how we give feedback to each other. See the full values document linked in the mission and vision section.",
-  "Collaboration & Communication|Org norms or ways of working": "e.g. We cover ways of working in the communication norms section of our handbook, where we have spelled out which channel to use for what, expected response times, how we run meetings, how we make and record decisions, and how we handle disagreement. It was written collaboratively after a team retrospective identified communication as a friction point. All new starters receive it in their onboarding pack.",
-  "Collaboration & Communication|Cadence and system of information sharing": "e.g. We send a quick weekly update every Monday covering key decisions made, priorities for the week, and anything staff need to know. Monthly all-staff meetings cover organisational updates and cross-team sharing. We have a clear channel structure — urgent matters in Slack, strategic updates via email, documents and policies in our shared Google Drive.",
-  "Collaboration & Communication|Org design that enables cross-team collaboration": "e.g. Our policy, communications, and partnerships functions are structured as a single advocacy team with a shared quarterly plan, rather than separate departments with separate objectives. When we plan major advocacy moments we always include people from across the org in the design phase to prevent siloed working.",
-  "Collaboration & Communication|System for 1-1 relationships": "e.g. We run a cross-team buddy program that pairs staff from different teams for three-month relationships. Pairs have a suggested conversation guide but are free to use their time as they choose. New starters are automatically paired with a buddy from outside their immediate team for their first three months.",
-  "Collaboration & Communication|System for org-wide relationships": "e.g. As a fully remote organisation, we are intentional about creating connection across the team. We have a monthly all-staff meeting with a structured social segment, regular informal virtual touchpoints, and an annual in-person retreat focused on culture, relationships, and shared learning. We track sense of belonging in our engagement survey.",
-  "Stability|Coverage plans": "e.g. We have a shared spreadsheet that outlines a coverage plan for every role, naming a primary and secondary cover person, listing the 3–5 critical tasks that must continue during an absence, and noting where to find relevant files and contacts. Coverage plans are reviewed annually by team leads. See coverage plan document linked below.",
-  "Stability|Succession plans": "e.g. We have succession notes for the ED and all senior roles covering: what the role does that is not documented elsewhere, who internally could step up in an emergency, what they would need to develop, and what an external hiring process would look like. The board reviews ED succession annually. We have a deliberate policy of cross-training across pairs of roles.",
-  "Stability|Capacity": "e.g. Team leads do a brief capacity check-in with each direct report at the start of every month — a simple red/amber/green on current workload and a note of anything coming up that might create pressure. These are aggregated and shared at our monthly leadership meeting. When a team is consistently amber or red we look at what can be moved, delayed, or resourced differently.",
-  "Stability|Single source of truth for key information": "e.g. We have a shared Google Drive folder where everything lives. Most relevant documents are either included in their entirety in the staff handbook or linked there. Documents have a named owner, a last-reviewed date, and a next-review date. New starters are shown the shared drive during their first week.",
-  "Stability|Strategy for expanding team diversity": "e.g. We have a deliberate strategy for expanding the diversity of our team, developed in line with employment law in our jurisdiction. This includes advertising all roles on platforms that reach underrepresented groups, using structured interviews and scoring rubrics to reduce bias, and ensuring diverse shortlists where possible. We collect and review diversity data annually.",
-  "Scalability|Individualized support system": "e.g. Every staff member has a named line manager responsible for their day-to-day support, performance, and development. All new starters are paired with a peer buddy from outside their team for their first three months. The ED has skip-level conversations with all non-management staff twice a year.",
-  "Scalability|Weekly or bi-weekly 1-on-1s": "e.g. All managers hold weekly or biweekly one-to-ones with each direct report. We have a standard template covering: how the person is doing, progress on current priorities, any blockers, feedback, and a standing development question. One-to-ones are the staff member's meeting — they set the agenda. See linked 1-1 agenda template.",
-  "Scalability|Hiring process": "e.g. We have a written hiring process guide covering every stage from role sign-off through to offer. It includes a role description template, standard application questions, a two-stage interview structure, a scoring rubric, a work sample task, and reference check guidance. All interview panels have at least two people and final hiring decisions require sign-off from three people.",
-  "Scalability|Onboarding process": "e.g. We have a structured onboarding document for all new starters that sets out clear goals for the first 30, 60, and 90 days. During the first month, new starters have weekly check-ins with their manager. New starters also have a named buddy for their first 90 days. We update the onboarding document based on new starter feedback after every hire. See document linked below.",
-};
-
-function encodeKey(k){ return btoa(unescape(encodeURIComponent(k))).replace(/=/g,'').replace(/\\+/g,'p').replace(/\\//g,'s'); }
-
-function generateSessionId(){ return 'sess_'+Math.random().toString(36).substr(2,9)+Date.now().toString(36); }
-
-function getSessionUrl(){ return window.location.origin+window.location.pathname+'?session='+sessionId; }
-
-function copySessionLink(){
-  navigator.clipboard.writeText(getSessionUrl()).then(()=>{
-    const btn=document.querySelector('.session-copy-btn');
-    btn.textContent='Copied!';
-    setTimeout(()=>{btn.textContent='Copy link';},2000);
-  });
-}
-
-function showSessionBar(){
-  const bar=document.getElementById('session-bar');
-  bar.style.display='flex';
-  bar.classList.add('show');
-  document.getElementById('session-link-text').textContent=getSessionUrl();
-}
-
-function setSaveIndicator(status){
-  const el=document.getElementById('save-indicator');
-  if(!el)return;
-  el.className='session-save-indicator '+status;
-  if(status==='saving') el.textContent='Saving…';
-  else if(status==='saved') el.textContent='✓ Saved';
-  else el.textContent='Auto-saving…';
-}
-
-function scheduleSave(){
-  if(!sessionId)return;
-  clearTimeout(saveTimeout);
-  setSaveIndicator('saving');
-  saveTimeout=setTimeout(saveSessionToAirtable,1500);
-}
-
-function formatStage(s){ return STAGE_DEFS[s]?STAGE_DEFS[s].name:'Not specified'; }
-
-function getStageContext(s){
-  if(!s||!STAGE_DEFS[s])return 'Stage not specified by client.';
-  const def=STAGE_DEFS[s];
-  return '<span style="font-size:0.78rem;font-weight:600;background:var(--brand);color:white;padding:2px 10px;border-radius:99px;margin-right:8px">'+def.headcount+'</span>'+def.desc;
-}
-
-// ═══════════════ BUILD FIELDS FOR AIRTABLE ═══════════════
-function buildAirtableFields(){
-  const fields={
-    org_name: document.getElementById('org-name')?.value||state.orgInfo.name||'',
-    contact_name: document.getElementById('contact-name')?.value||state.orgInfo.contact||'',
-    contact_role: document.getElementById('contact-role')?.value||state.orgInfo.role||'',
-    contact_email: document.getElementById('contact-email')?.value||state.orgInfo.email||'',
-    org_stage: document.getElementById('org-stage')?.value||state.orgInfo.stage||'',
-    submitted_at: new Date().toISOString().split('T')[0],
-    final_notes: state.finalNotes||'',
-    extra_links: (state.extraLinks||[]).join(', '),
-  };
-  for(const[key,field]of Object.entries(SCORE_FIELD_MAP)) fields[field]=state.scores[key]!==undefined?String(state.scores[key]):'';
-  for(const[key,field]of Object.entries(NOTES_FIELD_MAP)) fields[field]=state.notes[key]||'';
-  for(const[key,field]of Object.entries(LINKS_FIELD_MAP)) fields[field]=state.links[key]||'';
-  return fields;
-}
-
-// ═══════════════ SESSION SAVE/LOAD ═══════════════
-async function saveSessionToAirtable(){
-  if(!sessionId)return;
-  setSaveIndicator('saving');
-  const fields=buildAirtableFields();
-  fields.session_id=sessionId;
-  fields.status='draft';
-  try{
-    if(sessionRecordId){
-      await fetch('https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE+'/'+sessionRecordId,{
-        method:'PATCH',
-        headers:{'Authorization':'Bearer '+AIRTABLE_TOKEN,'Content-Type':'application/json'},
-        body:JSON.stringify({fields}),
-      });
-    } else {
-      const res=await fetch('https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE,{
-        method:'POST',
-        headers:{'Authorization':'Bearer '+AIRTABLE_TOKEN,'Content-Type':'application/json'},
-        body:JSON.stringify({fields}),
-      });
-      const data=await res.json();
-      sessionRecordId=data.id;
-    }
-    setSaveIndicator('saved');
-  }catch(e){
-    console.error('Auto-save failed:',e);
-    setSaveIndicator('');
-  }
-}
-
-async function loadSessionFromUrl(){
-  const params=new URLSearchParams(window.location.search);
-  const sid=params.get('session');
-  if(!sid)return;
-  try{
-    const res=await fetch(
-      'https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE+'?filterByFormula='+encodeURIComponent('{session_id}="'+sid+'"'),
-      {headers:{'Authorization':'Bearer '+AIRTABLE_TOKEN}}
-    );
-    const data=await res.json();
-    if(!data.records||data.records.length===0)return;
-    const record=data.records[0];
-    const f=record.fields;
-    if(f.status==='submitted')return;
-    sessionId=sid;
-    sessionRecordId=record.id;
-    if(f.org_name) document.getElementById('org-name').value=f.org_name;
-    if(f.contact_name) document.getElementById('contact-name').value=f.contact_name;
-    if(f.contact_role) document.getElementById('contact-role').value=f.contact_role;
-    if(f.contact_email) document.getElementById('contact-email').value=f.contact_email;
-    if(f.org_stage) selectStageCard(f.org_stage);
-    for(const[aField,stateKey]of Object.entries(REV_SCORE)){
-      if(f[aField]!==undefined&&f[aField]!==''){
-        const val=parseInt(f[aField]);
-        state.scores[stateKey]=val;
-        const enc=encodeKey(stateKey);
-        setTimeout(()=>{
-          [0,1,2,3].forEach(v=>{
-            const opt=document.getElementById('sb-'+enc+'-'+v);
-            if(opt)opt.classList.toggle('selected',v===val);
-          });
-        },100);
-      }
-    }
-    setTimeout(()=>{
-      for(const[aField,stateKey]of Object.entries(REV_NOTES)){
-        if(f[aField]){
-          state.notes[stateKey]=f[aField];
-          const enc=encodeKey(stateKey);
-          const ta=document.querySelector('#notes-area-'+enc);
-          if(ta)ta.value=f[aField];
-        }
-      }
-      for(const[aField,stateKey]of Object.entries(REV_LINKS)){
-        if(f[aField]){
-          state.links[stateKey]=f[aField];
-          const enc=encodeKey(stateKey);
-          const container=document.getElementById('links-'+enc);
-          if(container){const input=container.querySelector('input');if(input)input.value=f[aField].split(' | ')[0];}
-        }
-      }
-      if(f.final_notes){
-        state.finalNotes=f.final_notes;
-        const ta=document.querySelector('[onchange="state.finalNotes=this.value"]');
-        if(ta)ta.value=f.final_notes;
-      }
-      updateProgress();
-    },200);
-    showSessionBar();
-    const banner=document.createElement('div');
-    banner.style.cssText='background:#D1FAE5;border:1.5px solid #10B981;border-radius:10px;padding:14px 20px;margin-bottom:20px;font-size:0.88rem;color:#059669;font-weight:500;';
-    banner.innerHTML='✓ Welcome back — your previous progress has been restored.';
-    const fc=document.querySelector('.form-container');
-    if(fc)fc.insertBefore(banner,fc.firstChild);
-  }catch(e){console.error('Session load failed:',e);}
-}
 
 // ═══════════════ PAGED FORM ═══════════════
+let currentPage = 0; // 0 = intro, 1-8 = drivers, 9 = final
+
 function buildDriverPages() {
   const container = document.getElementById('driver-pages');
   ORG_SYSTEMS.forEach((driver, di) => {
@@ -1821,7 +1754,7 @@ function buildDriverPages() {
     pageEl.className = 'form-page';
     pageEl.id = \`form-page-\${pageNum}\`;
 
-    const itemsHtml = driver.items.map((item) => buildSystemItem(driver.driver, item)).join('');
+    const itemsHtml = driver.items.map((item, idx) => buildSystemItem(driver.driver, item, true)).join('');
 
     pageEl.innerHTML = \`
       <div class="driver-page-header">
@@ -1843,64 +1776,645 @@ function buildDriverPages() {
       </div>\`;
 
     container.appendChild(pageEl);
+
+    // Apply stage requirements after DOM is built
+    if (document.getElementById('org-stage')?.value) {
+      applyStageRequirements(document.getElementById('org-stage').value);
+    }
   });
 }
 
+function completePage(pageNum) {
+  // Validate required items on this page
+  const stage = document.getElementById('org-stage').value;
+  const stageMap = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
+  const selectedStage = stageMap[stage];
 
-function completePage(pageNum){
-  const stage=document.getElementById('org-stage').value;
-  const stageMap={'launch':'Launch','first-hire':'First Hire','growth':'Growth'};
-  const selectedStage=stageMap[stage];
-  if(selectedStage){
-    const driver=ORG_SYSTEMS[pageNum-1];
-    const missing=driver.items.filter(item=>{
-      if(!item.stages.includes(selectedStage))return false;
-      const key=driver.driver+'|'+item.name;
-      return state.scores[key]===undefined;
+  if (selectedStage) {
+    const driver = ORG_SYSTEMS[pageNum - 1];
+    const missing = driver.items.filter(item => {
+      if (!item.stages.includes(selectedStage)) return false;
+      const key = \`\${driver.driver}|\${item.name}\`;
+      return state.scores[key] === undefined;
     });
-    if(missing.length>0){
-      missing.forEach(item=>{
-        const key=driver.driver+'|'+item.name;
-        const enc=encodeKey(key);
-        const el=document.getElementById('sb-'+enc+'-0')?.closest('.system-item');
-        if(el)el.classList.add('missing-score');
+
+    if (missing.length > 0) {
+      missing.forEach(item => {
+        const key = \`\${driver.driver}|\${item.name}\`;
+        const enc = encodeKey(key);
+        const el = document.getElementById(\`sb-\${enc}-0\`)?.closest('.system-item');
+        if (el) el.classList.add('missing-score');
       });
-      const firstMissing=document.querySelector('#form-page-'+pageNum+' .missing-score');
-      if(firstMissing)firstMissing.scrollIntoView({behavior:'smooth',block:'center'});
+      // Scroll to first missing
+      const firstMissing = document.querySelector(\`#form-page-\${pageNum} .missing-score\`);
+      if (firstMissing) firstMissing.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
   }
-  goToPage(pageNum+1,'forward');
+
+  goToPage(pageNum + 1, 'forward');
 }
 
-function goToPage(targetPage,direction){
-  const targetId=targetPage===ORG_SYSTEMS.length+1?'form-page-final':'form-page-'+targetPage;
-  const currentId=currentPage===ORG_SYSTEMS.length+1?'form-page-final':'form-page-'+currentPage;
-  const currentEl=document.getElementById(currentId);
-  const targetEl=document.getElementById(targetId);
-  if(!currentEl||!targetEl)return;
-  const outClass=direction==='forward'?'slide-out-left':'slide-out-right';
-  const inClass=direction==='forward'?'slide-in-right':'slide-in-left';
+function goToPage(targetPage, direction) {
+  const totalPages = ORG_SYSTEMS.length + 2; // 0=intro, 1-8=drivers, final
+  const targetId = targetPage === ORG_SYSTEMS.length + 1 ? 'form-page-final' : \`form-page-\${targetPage}\`;
+  const currentId = currentPage === ORG_SYSTEMS.length + 1 ? 'form-page-final' : \`form-page-\${currentPage}\`;
+
+  const currentEl = document.getElementById(currentId);
+  const targetEl = document.getElementById(targetId);
+  if (!currentEl || !targetEl) return;
+
+  const outClass = direction === 'forward' ? 'slide-out-left' : 'slide-out-right';
+  const inClass = direction === 'forward' ? 'slide-in-right' : 'slide-in-left';
+
+  // Animate out current
   currentEl.classList.add(outClass);
-  currentEl.addEventListener('animationend',()=>{currentEl.classList.remove('active',outClass);},{once:true});
-  setTimeout(()=>{
-    targetEl.classList.add('active',inClass);
-    targetEl.addEventListener('animationend',()=>{targetEl.classList.remove(inClass);},{once:true});
-    window.scrollTo({top:0,behavior:'smooth'});
-  },50);
-  currentPage=targetPage;
+  currentEl.addEventListener('animationend', () => {
+    currentEl.classList.remove('active', outClass);
+  }, { once: true });
+
+  // Animate in target
+  setTimeout(() => {
+    targetEl.classList.add('active', inClass);
+    targetEl.addEventListener('animationend', () => {
+      targetEl.classList.remove(inClass);
+    }, { once: true });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 50);
+
+  currentPage = targetPage;
   updateProgress();
 }
 
-function buildSystemItem(driver, item) {
+// ═══════════════ STAGE DEFINITIONS ═══════════════
+const STAGE_DEFS = {
+  'launch': {
+    name: 'Launch',
+    headcount: '1–3 people',
+    desc: 'Your organization is determining its direction and ways of working — either before it formally launches or in its earliest startup stage. The priority here is establishing the foundational systems and processes that give your team clarity and safety from day one.'
+  },
+  'first-hire': {
+    name: 'First Hire',
+    headcount: '2–8 people',
+    desc: 'Your organization is ready to expand beyond its founder or founding team, or has recently done so. This stage is about putting the systems and processes in place that make it possible to bring others in effectively — with clear roles, fair structures, and the groundwork for a healthy culture.'
+  },
+  'growth': {
+    name: 'Growth',
+    headcount: '8+ people',
+    desc: 'Your organization is preparing for ongoing growth in team members and/or the communities you serve. The focus shifts to building more robust, scalable systems that can hold up as complexity increases — across leadership, collaboration, feedback, and stability.'
+  }
+};
+
+
+// ═══════════════ SESSION MANAGEMENT ═══════════════
+let sessionId = null;
+let saveTimeout = null;
+let sessionRecordId = null;
+
+function generateSessionId() {
+  return 'sess_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+}
+
+function getSessionUrl() {
+  return \`\${window.location.origin}\${window.location.pathname}?session=\${sessionId}\`;
+}
+
+function copySessionLink() {
+  navigator.clipboard.writeText(getSessionUrl()).then(() => {
+    const btn = document.querySelector('.session-copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy link'; }, 2000);
+  });
+}
+
+function showSessionBar() {
+  const bar = document.getElementById('session-bar');
+  bar.style.display = 'flex';
+  bar.classList.add('show');
+  document.getElementById('session-link-text').textContent = getSessionUrl();
+}
+
+function setSaveIndicator(status) {
+  const el = document.getElementById('save-indicator');
+  if (!el) return;
+  el.className = 'session-save-indicator ' + status;
+  if (status === 'saving') el.textContent = 'Saving…';
+  else if (status === 'saved') el.textContent = '✓ Saved';
+  else el.textContent = 'Auto-saving…';
+}
+
+function scheduleSave() {
+  if (!sessionId) return;
+  clearTimeout(saveTimeout);
+  setSaveIndicator('saving');
+  saveTimeout = setTimeout(saveSessionToAirtable, 1500);
+}
+
+async function saveSessionToAirtable() {
+  if (!sessionId) return;
+  setSaveIndicator('saving');
+
+  const fields = buildAirtableFields();
+  fields.session_id = sessionId;
+  fields.status = 'draft';
+
+  try {
+    if (sessionRecordId) {
+      // Update existing draft
+      await fetch(\`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}/\${sessionRecordId}\`, {
+        method: 'PATCH',
+        headers: { 'Authorization': \`Bearer \${AIRTABLE_TOKEN}\`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields }),
+      });
+    } else {
+      // Create new draft record
+      const res = await fetch(\`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}\`, {
+        method: 'POST',
+        headers: { 'Authorization': \`Bearer \${AIRTABLE_TOKEN}\`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields }),
+      });
+      const data = await res.json();
+      sessionRecordId = data.id;
+    }
+    setSaveIndicator('saved');
+  } catch(e) {
+    console.error('Auto-save failed:', e);
+    setSaveIndicator('');
+  }
+}
+
+async function loadSessionFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const sid = params.get('session');
+  if (!sid) return;
+
+  // Look up the session in Airtable
+  try {
+    const res = await fetch(
+      \`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}?filterByFormula=\${encodeURIComponent(\`{session_id}="\${sid}"\`)}\`,
+      { headers: { 'Authorization': \`Bearer \${AIRTABLE_TOKEN}\` } }
+    );
+    const data = await res.json();
+    if (!data.records || data.records.length === 0) return;
+
+    const record = data.records[0];
+    const f = record.fields;
+    if (f.status === 'submitted') return; // don't reload submitted forms
+
+    sessionId = sid;
+    sessionRecordId = record.id;
+
+    // Restore org info
+    if (f.org_name) document.getElementById('org-name').value = f.org_name;
+    if (f.contact_name) document.getElementById('contact-name').value = f.contact_name;
+    if (f.contact_role) document.getElementById('contact-role').value = f.contact_role;
+    if (f.contact_email) document.getElementById('contact-email').value = f.contact_email;
+
+    // Restore stage
+    if (f.org_stage) {
+      selectStageCard(f.org_stage);
+    }
+
+    // Restore scores
+    const SCORE_FIELDS_LOAD = {
+      score_mission_vision:'Goal Clarity|Mission & vision', score_strategy_theory:'Goal Clarity|Strategy & theory of change',
+      score_impact_measurement:'Goal Clarity|Impact measurement', score_strategic_planning:'Goal Clarity|Strategic planning & goal-setting process',
+      score_role_descriptions:'Role Clarity|Role and/or project descriptions', score_decision_making:'Role Clarity|Decision-making authority & process',
+      score_success_metrics:'Role Clarity|Role and/or project success metrics', score_board_clarity:'Role Clarity|Board clarity',
+      score_responsibilities_directory:'Role Clarity|Roles & responsibilities directory',
+      score_harassment_policies:'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation',
+      score_high_stakes_decisions:'Safety & Fairness|2+ decision makers for high-stakes decisions',
+      score_escalation:'Safety & Fairness|Escalation process', score_inclusion:'Safety & Fairness|Strategy to enable inclusion on the team',
+      score_compensation:'Safety & Fairness|Compensation formula (if relevant)', score_termination:'Safety & Fairness|Termination process',
+      score_conflict_of_interest:'Safety & Fairness|Independent board and/or a system to minimize conflict of interest',
+      score_goal_tracking:'Feedback & Learning|Goal-tracking process', score_feedback_norms:'Feedback & Learning|Feedback norms & nudges',
+      score_retrospectives:'Feedback & Learning|Retrospectives', score_performance_assessments:'Feedback & Learning|Performance assessments',
+      score_engagement_survey:'Feedback & Learning|Engagement survey & action process', score_development_plans:'Feedback & Learning|Individual development plans',
+      score_turnover_tracking:'Feedback & Learning|Turnover tracking', score_innovation:'Feedback & Learning|Innovation & experimentation',
+      score_team_input:'Feedback & Learning|Process to get team input on strategic decisions',
+      score_leader_role_clarity:'Leadership|Leader & manager role clarity', score_access_to_leaders:'Leadership|Access to leaders',
+      score_leader_assessment:'Leadership|Leader & manager assessment', score_ed_assessment:'Leadership|Assessment of ED',
+      score_leadership_development:'Leadership|Leadership development', score_leadership_structure:'Leadership|Leadership team structure (if relevant)',
+      score_org_values:'Collaboration & Communication|Org values', score_org_norms:'Collaboration & Communication|Org norms or ways of working',
+      score_info_sharing:'Collaboration & Communication|Cadence and system of information sharing',
+      score_org_design:'Collaboration & Communication|Org design that enables cross-team collaboration',
+      score_oneonone_relationships:'Collaboration & Communication|System for 1-1 relationships',
+      score_orgwide_relationships:'Collaboration & Communication|System for org-wide relationships',
+      score_coverage_plans:'Stability|Coverage plans', score_succession_plans:'Stability|Succession plans',
+      score_capacity:'Stability|Capacity', score_single_source:'Stability|Single source of truth for key information',
+      score_team_diversity:'Stability|Strategy for expanding team diversity',
+      score_individualized_support:'Scalability|Individualized support system', score_oneononemeetings:'Scalability|Weekly or bi-weekly 1-on-1s',
+      score_hiring_process:'Scalability|Hiring process', score_onboarding:'Scalability|Onboarding process',
+    };
+
+    for (const [aField, stateKey] of Object.entries(SCORE_FIELDS_LOAD)) {
+      if (f[aField] !== undefined && f[aField] !== '') {
+        const val = parseInt(f[aField]);
+        state.scores[stateKey] = val;
+        const enc = encodeKey(stateKey);
+        // Update scale UI
+        setTimeout(() => {
+          [0,1,2,3].forEach(v => {
+            const opt = document.getElementById(\`sb-\${enc}-\${v}\`);
+            if (opt) opt.classList.toggle('selected', v === val);
+          });
+        }, 100);
+      }
+    }
+
+    // Restore notes and links
+    const NOTES_LOAD = {
+      notes_mission_vision:'Goal Clarity|Mission & vision', notes_strategy_theory:'Goal Clarity|Strategy & theory of change',
+      notes_impact_measurement:'Goal Clarity|Impact measurement', notes_strategic_planning:'Goal Clarity|Strategic planning & goal-setting process',
+      notes_role_descriptions:'Role Clarity|Role and/or project descriptions', notes_decision_making:'Role Clarity|Decision-making authority & process',
+      notes_success_metrics:'Role Clarity|Role and/or project success metrics', notes_board_clarity:'Role Clarity|Board clarity',
+      notes_responsibilities_directory:'Role Clarity|Roles & responsibilities directory',
+      notes_harassment_policies:'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation',
+      notes_high_stakes_decisions:'Safety & Fairness|2+ decision makers for high-stakes decisions',
+      notes_escalation:'Safety & Fairness|Escalation process', notes_inclusion:'Safety & Fairness|Strategy to enable inclusion on the team',
+      notes_compensation:'Safety & Fairness|Compensation formula (if relevant)', notes_termination:'Safety & Fairness|Termination process',
+      notes_conflict_of_interest:'Safety & Fairness|Independent board and/or a system to minimize conflict of interest',
+      notes_goal_tracking:'Feedback & Learning|Goal-tracking process', notes_feedback_norms:'Feedback & Learning|Feedback norms & nudges',
+      notes_retrospectives:'Feedback & Learning|Retrospectives', notes_performance_assessments:'Feedback & Learning|Performance assessments',
+      notes_engagement_survey:'Feedback & Learning|Engagement survey & action process', notes_development_plans:'Feedback & Learning|Individual development plans',
+      notes_turnover_tracking:'Feedback & Learning|Turnover tracking', notes_innovation:'Feedback & Learning|Innovation & experimentation',
+      notes_team_input:'Feedback & Learning|Process to get team input on strategic decisions',
+      notes_leader_role_clarity:'Leadership|Leader & manager role clarity', notes_access_to_leaders:'Leadership|Access to leaders',
+      notes_leader_assessment:'Leadership|Leader & manager assessment', notes_ed_assessment:'Leadership|Assessment of ED',
+      notes_leadership_development:'Leadership|Leadership development', notes_leadership_structure:'Leadership|Leadership team structure (if relevant)',
+      notes_org_values:'Collaboration & Communication|Org values', notes_org_norms:'Collaboration & Communication|Org norms or ways of working',
+      notes_info_sharing:'Collaboration & Communication|Cadence and system of information sharing',
+      notes_org_design:'Collaboration & Communication|Org design that enables cross-team collaboration',
+      notes_oneonone_relationships:'Collaboration & Communication|System for 1-1 relationships',
+      notes_orgwide_relationships:'Collaboration & Communication|System for org-wide relationships',
+      notes_coverage_plans:'Stability|Coverage plans', notes_succession_plans:'Stability|Succession plans',
+      notes_capacity:'Stability|Capacity', notes_single_source:'Stability|Single source of truth for key information',
+      notes_team_diversity:'Stability|Strategy for expanding team diversity',
+      notes_individualized_support:'Scalability|Individualized support system', notes_oneononemeetings:'Scalability|Weekly or bi-weekly 1-on-1s',
+      notes_hiring_process:'Scalability|Hiring process', notes_onboarding:'Scalability|Onboarding process',
+    };
+
+    const LINKS_LOAD = {};
+    for (const k of Object.keys(NOTES_LOAD)) LINKS_LOAD[k.replace('notes_','link_')] = NOTES_LOAD[k];
+
+    setTimeout(() => {
+      for (const [aField, stateKey] of Object.entries(NOTES_LOAD)) {
+        if (f[aField]) {
+          state.notes[stateKey] = f[aField];
+          // Restore textarea value
+          const enc = encodeKey(stateKey);
+          const ta = document.querySelector(\`#notes-area-\${enc}, [onchange*="\${stateKey}"]\`);
+          if (ta && ta.tagName === 'TEXTAREA') ta.value = f[aField];
+        }
+      }
+      for (const [aField, stateKey] of Object.entries(LINKS_LOAD)) {
+        if (f[aField]) {
+          state.links[stateKey] = f[aField];
+          const enc = encodeKey(stateKey);
+          const linkContainer = document.getElementById('links-' + enc);
+          if (linkContainer) {
+            const input = linkContainer.querySelector('input');
+            if (input) input.value = f[aField].split(' | ')[0];
+          }
+        }
+      }
+      if (f.final_notes) {
+        state.finalNotes = f.final_notes;
+        const ta = document.querySelector('[onchange="state.finalNotes=this.value"]');
+        if (ta) ta.value = f.final_notes;
+      }
+      updateProgress();
+    }, 200);
+
+    showSessionBar();
+    document.getElementById('session-link-text').textContent = getSessionUrl();
+
+    // Show a welcome back banner
+    const banner = document.createElement('div');
+    banner.style.cssText = 'background:#D1FAE5;border:1.5px solid #10B981;border-radius:10px;padding:14px 20px;margin-bottom:20px;font-size:0.88rem;color:#059669;font-weight:500;';
+    banner.innerHTML = '✓ Welcome back — your previous progress has been restored.';
+    const formContainer = document.querySelector('.form-container');
+    if (formContainer) formContainer.insertBefore(banner, formContainer.firstChild);
+
+  } catch(e) {
+    console.error('Session load failed:', e);
+  }
+}
+
+// Build Airtable fields object (shared by save and submit)
+function buildAirtableFields() {
+  const FIELD_MAP = {
+    'Goal Clarity|Mission & vision':'score_mission_vision', 'Goal Clarity|Strategy & theory of change':'score_strategy_theory',
+    'Goal Clarity|Impact measurement':'score_impact_measurement', 'Goal Clarity|Strategic planning & goal-setting process':'score_strategic_planning',
+    'Role Clarity|Role and/or project descriptions':'score_role_descriptions', 'Role Clarity|Decision-making authority & process':'score_decision_making',
+    'Role Clarity|Role and/or project success metrics':'score_success_metrics', 'Role Clarity|Board clarity':'score_board_clarity',
+    'Role Clarity|Roles & responsibilities directory':'score_responsibilities_directory',
+    'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation':'score_harassment_policies',
+    'Safety & Fairness|2+ decision makers for high-stakes decisions':'score_high_stakes_decisions',
+    'Safety & Fairness|Escalation process':'score_escalation', 'Safety & Fairness|Strategy to enable inclusion on the team':'score_inclusion',
+    'Safety & Fairness|Compensation formula (if relevant)':'score_compensation', 'Safety & Fairness|Termination process':'score_termination',
+    'Safety & Fairness|Independent board and/or a system to minimize conflict of interest':'score_conflict_of_interest',
+    'Feedback & Learning|Goal-tracking process':'score_goal_tracking', 'Feedback & Learning|Feedback norms & nudges':'score_feedback_norms',
+    'Feedback & Learning|Retrospectives':'score_retrospectives', 'Feedback & Learning|Performance assessments':'score_performance_assessments',
+    'Feedback & Learning|Engagement survey & action process':'score_engagement_survey', 'Feedback & Learning|Individual development plans':'score_development_plans',
+    'Feedback & Learning|Turnover tracking':'score_turnover_tracking', 'Feedback & Learning|Innovation & experimentation':'score_innovation',
+    'Feedback & Learning|Process to get team input on strategic decisions':'score_team_input',
+    'Leadership|Leader & manager role clarity':'score_leader_role_clarity', 'Leadership|Access to leaders':'score_access_to_leaders',
+    'Leadership|Leader & manager assessment':'score_leader_assessment', 'Leadership|Assessment of ED':'score_ed_assessment',
+    'Leadership|Leadership development':'score_leadership_development', 'Leadership|Leadership team structure (if relevant)':'score_leadership_structure',
+    'Collaboration & Communication|Org values':'score_org_values', 'Collaboration & Communication|Org norms or ways of working':'score_org_norms',
+    'Collaboration & Communication|Cadence and system of information sharing':'score_info_sharing',
+    'Collaboration & Communication|Org design that enables cross-team collaboration':'score_org_design',
+    'Collaboration & Communication|System for 1-1 relationships':'score_oneonone_relationships',
+    'Collaboration & Communication|System for org-wide relationships':'score_orgwide_relationships',
+    'Stability|Coverage plans':'score_coverage_plans', 'Stability|Succession plans':'score_succession_plans',
+    'Stability|Capacity':'score_capacity', 'Stability|Single source of truth for key information':'score_single_source',
+    'Stability|Strategy for expanding team diversity':'score_team_diversity',
+    'Scalability|Individualized support system':'score_individualized_support', 'Scalability|Weekly or bi-weekly 1-on-1s':'score_oneononemeetings',
+    'Scalability|Hiring process':'score_hiring_process', 'Scalability|Onboarding process':'score_onboarding',
+  };
+  const NOTES_MAP = {};
+  const LINKS_MAP = {};
+  for (const [k,v] of Object.entries(FIELD_MAP)) { NOTES_MAP[k] = v.replace('score_','notes_'); LINKS_MAP[k] = v.replace('score_','link_'); }
+
+  const fields = {
+    org_name: state.orgInfo.name || document.getElementById('org-name')?.value || '',
+    contact_name: state.orgInfo.contact || document.getElementById('contact-name')?.value || '',
+    contact_role: state.orgInfo.role || document.getElementById('contact-role')?.value || '',
+    contact_email: state.orgInfo.email || document.getElementById('contact-email')?.value || '',
+    org_stage: state.orgInfo.stage || document.getElementById('org-stage')?.value || '',
+    submitted_at: new Date().toISOString().split('T')[0],
+    final_notes: state.finalNotes || '',
+    extra_links: (state.extraLinks || []).join(', '),
+  };
+
+  for (const [key, field] of Object.entries(FIELD_MAP)) {
+    const val = state.scores[key];
+    fields[field] = val !== undefined ? String(val) : '';
+  }
+  for (const [key, field] of Object.entries(NOTES_MAP)) fields[field] = state.notes[key] || '';
+  for (const [key, field] of Object.entries(LINKS_MAP)) fields[field] = state.links[key] || '';
+
+  return fields;
+}
+
+// ═══════════════ AIRTABLE CONFIG ═══════════════
+const AIRTABLE_TOKEN = 'patZWhcK41OZGenaf.87a5e5e98427dca19c116157a0df4f1b77f8874edd7f40669bb615c581a52780';
+const AIRTABLE_BASE  = 'appVVkmoE0yPNz6l5';
+const AIRTABLE_TABLE = 'tblcKOT8xRFr0JXlA';
+
+async function sendToAirtable() {
+  const FIELD_MAP = {
+    'Goal Clarity|Mission & vision':                          'score_mission_vision',
+    'Goal Clarity|Strategy & theory of change':               'score_strategy_theory',
+    'Goal Clarity|Impact measurement':                        'score_impact_measurement',
+    'Goal Clarity|Strategic planning & goal-setting process': 'score_strategic_planning',
+    'Role Clarity|Role and/or project descriptions':          'score_role_descriptions',
+    'Role Clarity|Decision-making authority & process':       'score_decision_making',
+    'Role Clarity|Role and/or project success metrics':       'score_success_metrics',
+    'Role Clarity|Board clarity':                             'score_board_clarity',
+    'Role Clarity|Roles & responsibilities directory':        'score_responsibilities_directory',
+    'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation': 'score_harassment_policies',
+    'Safety & Fairness|2+ decision makers for high-stakes decisions':                 'score_high_stakes_decisions',
+    'Safety & Fairness|Escalation process':                   'score_escalation',
+    'Safety & Fairness|Strategy to enable inclusion on the team': 'score_inclusion',
+    'Safety & Fairness|Compensation formula (if relevant)':   'score_compensation',
+    'Safety & Fairness|Termination process':                  'score_termination',
+    'Safety & Fairness|Independent board and/or a system to minimize conflict of interest': 'score_conflict_of_interest',
+    'Feedback & Learning|Goal-tracking process':              'score_goal_tracking',
+    'Feedback & Learning|Feedback norms & nudges':            'score_feedback_norms',
+    'Feedback & Learning|Retrospectives':                     'score_retrospectives',
+    'Feedback & Learning|Performance assessments':            'score_performance_assessments',
+    'Feedback & Learning|Engagement survey & action process': 'score_engagement_survey',
+    'Feedback & Learning|Individual development plans':       'score_development_plans',
+    'Feedback & Learning|Turnover tracking':                  'score_turnover_tracking',
+    'Feedback & Learning|Innovation & experimentation':       'score_innovation',
+    'Feedback & Learning|Process to get team input on strategic decisions': 'score_team_input',
+    'Leadership|Leader & manager role clarity':               'score_leader_role_clarity',
+    'Leadership|Access to leaders':                           'score_access_to_leaders',
+    'Leadership|Leader & manager assessment':                 'score_leader_assessment',
+    'Leadership|Assessment of ED':                            'score_ed_assessment',
+    'Leadership|Leadership development':                      'score_leadership_development',
+    'Leadership|Leadership team structure (if relevant)':     'score_leadership_structure',
+    'Collaboration & Communication|Org values':               'score_org_values',
+    'Collaboration & Communication|Org norms or ways of working': 'score_org_norms',
+    'Collaboration & Communication|Cadence and system of information sharing': 'score_info_sharing',
+    'Collaboration & Communication|Org design that enables cross-team collaboration': 'score_org_design',
+    'Collaboration & Communication|System for 1-1 relationships': 'score_oneonone_relationships',
+    'Collaboration & Communication|System for org-wide relationships': 'score_orgwide_relationships',
+    'Stability|Coverage plans':                               'score_coverage_plans',
+    'Stability|Succession plans':                             'score_succession_plans',
+    'Stability|Capacity':                                     'score_capacity',
+    'Stability|Single source of truth for key information':   'score_single_source',
+    'Stability|Strategy for expanding team diversity':        'score_team_diversity',
+    'Scalability|Individualized support system':              'score_individualized_support',
+    'Scalability|Weekly or bi-weekly 1-on-1s':                'score_oneononemeetings',
+    'Scalability|Hiring process':                             'score_hiring_process',
+    'Scalability|Onboarding process':                         'score_onboarding',
+  };
+
+  const NOTES_MAP = {
+    'Goal Clarity|Mission & vision':                          'notes_mission_vision',
+    'Goal Clarity|Strategy & theory of change':               'notes_strategy_theory',
+    'Goal Clarity|Impact measurement':                        'notes_impact_measurement',
+    'Goal Clarity|Strategic planning & goal-setting process': 'notes_strategic_planning',
+    'Role Clarity|Role and/or project descriptions':          'notes_role_descriptions',
+    'Role Clarity|Decision-making authority & process':       'notes_decision_making',
+    'Role Clarity|Role and/or project success metrics':       'notes_success_metrics',
+    'Role Clarity|Board clarity':                             'notes_board_clarity',
+    'Role Clarity|Roles & responsibilities directory':        'notes_responsibilities_directory',
+    'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation': 'notes_harassment_policies',
+    'Safety & Fairness|2+ decision makers for high-stakes decisions':                 'notes_high_stakes_decisions',
+    'Safety & Fairness|Escalation process':                   'notes_escalation',
+    'Safety & Fairness|Strategy to enable inclusion on the team': 'notes_inclusion',
+    'Safety & Fairness|Compensation formula (if relevant)':   'notes_compensation',
+    'Safety & Fairness|Termination process':                  'notes_termination',
+    'Safety & Fairness|Independent board and/or a system to minimize conflict of interest': 'notes_conflict_of_interest',
+    'Feedback & Learning|Goal-tracking process':              'notes_goal_tracking',
+    'Feedback & Learning|Feedback norms & nudges':            'notes_feedback_norms',
+    'Feedback & Learning|Retrospectives':                     'notes_retrospectives',
+    'Feedback & Learning|Performance assessments':            'notes_performance_assessments',
+    'Feedback & Learning|Engagement survey & action process': 'notes_engagement_survey',
+    'Feedback & Learning|Individual development plans':       'notes_development_plans',
+    'Feedback & Learning|Turnover tracking':                  'notes_turnover_tracking',
+    'Feedback & Learning|Innovation & experimentation':       'notes_innovation',
+    'Feedback & Learning|Process to get team input on strategic decisions': 'notes_team_input',
+    'Leadership|Leader & manager role clarity':               'notes_leader_role_clarity',
+    'Leadership|Access to leaders':                           'notes_access_to_leaders',
+    'Leadership|Leader & manager assessment':                 'notes_leader_assessment',
+    'Leadership|Assessment of ED':                            'notes_ed_assessment',
+    'Leadership|Leadership development':                      'notes_leadership_development',
+    'Leadership|Leadership team structure (if relevant)':     'notes_leadership_structure',
+    'Collaboration & Communication|Org values':               'notes_org_values',
+    'Collaboration & Communication|Org norms or ways of working': 'notes_org_norms',
+    'Collaboration & Communication|Cadence and system of information sharing': 'notes_info_sharing',
+    'Collaboration & Communication|Org design that enables cross-team collaboration': 'notes_org_design',
+    'Collaboration & Communication|System for 1-1 relationships': 'notes_oneonone_relationships',
+    'Collaboration & Communication|System for org-wide relationships': 'notes_orgwide_relationships',
+    'Stability|Coverage plans':                               'notes_coverage_plans',
+    'Stability|Succession plans':                             'notes_succession_plans',
+    'Stability|Capacity':                                     'notes_capacity',
+    'Stability|Single source of truth for key information':   'notes_single_source',
+    'Stability|Strategy for expanding team diversity':        'notes_team_diversity',
+    'Scalability|Individualized support system':              'notes_individualized_support',
+    'Scalability|Weekly or bi-weekly 1-on-1s':                'notes_oneononemeetings',
+    'Scalability|Hiring process':                             'notes_hiring_process',
+    'Scalability|Onboarding process':                         'notes_onboarding',
+  };
+
+  const LINKS_MAP = {
+    'Goal Clarity|Mission & vision':                          'link_mission_vision',
+    'Goal Clarity|Strategy & theory of change':               'link_strategy_theory',
+    'Goal Clarity|Impact measurement':                        'link_impact_measurement',
+    'Goal Clarity|Strategic planning & goal-setting process': 'link_strategic_planning',
+    'Role Clarity|Role and/or project descriptions':          'link_role_descriptions',
+    'Role Clarity|Decision-making authority & process':       'link_decision_making',
+    'Role Clarity|Role and/or project success metrics':       'link_success_metrics',
+    'Role Clarity|Board clarity':                             'link_board_clarity',
+    'Role Clarity|Roles & responsibilities directory':        'link_responsibilities_directory',
+    'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation': 'link_harassment_policies',
+    'Safety & Fairness|2+ decision makers for high-stakes decisions':                 'link_high_stakes_decisions',
+    'Safety & Fairness|Escalation process':                   'link_escalation',
+    'Safety & Fairness|Strategy to enable inclusion on the team': 'link_inclusion',
+    'Safety & Fairness|Compensation formula (if relevant)':   'link_compensation',
+    'Safety & Fairness|Termination process':                  'link_termination',
+    'Safety & Fairness|Independent board and/or a system to minimize conflict of interest': 'link_conflict_of_interest',
+    'Feedback & Learning|Goal-tracking process':              'link_goal_tracking',
+    'Feedback & Learning|Feedback norms & nudges':            'link_feedback_norms',
+    'Feedback & Learning|Retrospectives':                     'link_retrospectives',
+    'Feedback & Learning|Performance assessments':            'link_performance_assessments',
+    'Feedback & Learning|Engagement survey & action process': 'link_engagement_survey',
+    'Feedback & Learning|Individual development plans':       'link_development_plans',
+    'Feedback & Learning|Turnover tracking':                  'link_turnover_tracking',
+    'Feedback & Learning|Innovation & experimentation':       'link_innovation',
+    'Feedback & Learning|Process to get team input on strategic decisions': 'link_team_input',
+    'Leadership|Leader & manager role clarity':               'link_leader_role_clarity',
+    'Leadership|Access to leaders':                           'link_access_to_leaders',
+    'Leadership|Leader & manager assessment':                 'link_leader_assessment',
+    'Leadership|Assessment of ED':                            'link_ed_assessment',
+    'Leadership|Leadership development':                      'link_leadership_development',
+    'Leadership|Leadership team structure (if relevant)':     'link_leadership_structure',
+    'Collaboration & Communication|Org values':               'link_org_values',
+    'Collaboration & Communication|Org norms or ways of working': 'link_org_norms',
+    'Collaboration & Communication|Cadence and system of information sharing': 'link_info_sharing',
+    'Collaboration & Communication|Org design that enables cross-team collaboration': 'link_org_design',
+    'Collaboration & Communication|System for 1-1 relationships': 'link_oneonone_relationships',
+    'Collaboration & Communication|System for org-wide relationships': 'link_orgwide_relationships',
+    'Stability|Coverage plans':                               'link_coverage_plans',
+    'Stability|Succession plans':                             'link_succession_plans',
+    'Stability|Capacity':                                     'link_capacity',
+    'Stability|Single source of truth for key information':   'link_single_source',
+    'Stability|Strategy for expanding team diversity':        'link_team_diversity',
+    'Scalability|Individualized support system':              'link_individualized_support',
+    'Scalability|Weekly or bi-weekly 1-on-1s':                'link_oneononemeetings',
+    'Scalability|Hiring process':                             'link_hiring_process',
+    'Scalability|Onboarding process':                         'link_onboarding',
+  };
+
+  const fields = buildAirtableFields();
+  fields.status = 'submitted';
+  if (sessionId) fields.session_id = sessionId;
+
+  // Consultant scores & notes (save whatever is in consultantState)
+  const CS_MAP = {
+    'Goal Clarity|Mission & vision': 'cs_mission_vision', 'Goal Clarity|Strategy & theory of change': 'cs_strategy_theory',
+    'Goal Clarity|Impact measurement': 'cs_impact_measurement', 'Goal Clarity|Strategic planning & goal-setting process': 'cs_strategic_planning',
+    'Role Clarity|Role and/or project descriptions': 'cs_role_descriptions', 'Role Clarity|Decision-making authority & process': 'cs_decision_making',
+    'Role Clarity|Role and/or project success metrics': 'cs_success_metrics', 'Role Clarity|Board clarity': 'cs_board_clarity',
+    'Role Clarity|Roles & responsibilities directory': 'cs_responsibilities_directory',
+    'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation': 'cs_harassment_policies',
+    'Safety & Fairness|2+ decision makers for high-stakes decisions': 'cs_high_stakes_decisions',
+    'Safety & Fairness|Escalation process': 'cs_escalation', 'Safety & Fairness|Strategy to enable inclusion on the team': 'cs_inclusion',
+    'Safety & Fairness|Compensation formula (if relevant)': 'cs_compensation', 'Safety & Fairness|Termination process': 'cs_termination',
+    'Safety & Fairness|Independent board and/or a system to minimize conflict of interest': 'cs_conflict_of_interest',
+    'Feedback & Learning|Goal-tracking process': 'cs_goal_tracking', 'Feedback & Learning|Feedback norms & nudges': 'cs_feedback_norms',
+    'Feedback & Learning|Retrospectives': 'cs_retrospectives', 'Feedback & Learning|Performance assessments': 'cs_performance_assessments',
+    'Feedback & Learning|Engagement survey & action process': 'cs_engagement_survey', 'Feedback & Learning|Individual development plans': 'cs_development_plans',
+    'Feedback & Learning|Turnover tracking': 'cs_turnover_tracking', 'Feedback & Learning|Innovation & experimentation': 'cs_innovation',
+    'Feedback & Learning|Process to get team input on strategic decisions': 'cs_team_input',
+    'Leadership|Leader & manager role clarity': 'cs_leader_role_clarity', 'Leadership|Access to leaders': 'cs_access_to_leaders',
+    'Leadership|Leader & manager assessment': 'cs_leader_assessment', 'Leadership|Assessment of ED': 'cs_ed_assessment',
+    'Leadership|Leadership development': 'cs_leadership_development', 'Leadership|Leadership team structure (if relevant)': 'cs_leadership_structure',
+    'Collaboration & Communication|Org values': 'cs_org_values', 'Collaboration & Communication|Org norms or ways of working': 'cs_org_norms',
+    'Collaboration & Communication|Cadence and system of information sharing': 'cs_info_sharing',
+    'Collaboration & Communication|Org design that enables cross-team collaboration': 'cs_org_design',
+    'Collaboration & Communication|System for 1-1 relationships': 'cs_oneonone_relationships',
+    'Collaboration & Communication|System for org-wide relationships': 'cs_orgwide_relationships',
+    'Stability|Coverage plans': 'cs_coverage_plans', 'Stability|Succession plans': 'cs_succession_plans',
+    'Stability|Capacity': 'cs_capacity', 'Stability|Single source of truth for key information': 'cs_single_source',
+    'Stability|Strategy for expanding team diversity': 'cs_team_diversity',
+    'Scalability|Individualized support system': 'cs_individualized_support', 'Scalability|Weekly or bi-weekly 1-on-1s': 'cs_oneononemeetings',
+    'Scalability|Hiring process': 'cs_hiring_process', 'Scalability|Onboarding process': 'cs_onboarding',
+  };
+  const CN_MAP = {};
+  for (const [k,v] of Object.entries(CS_MAP)) CN_MAP[k] = v.replace('cs_','cn_');
+
+  for (const [key, field] of Object.entries(CS_MAP)) {
+    const val = consultantState.scores[key];
+    fields[field] = val !== undefined ? String(val) : '';
+  }
+  for (const [key, field] of Object.entries(CN_MAP)) {
+    fields[field] = consultantState.notes[key] || '';
+  }
+
+  let res;
+  if (sessionRecordId) {
+    // Update the existing draft record
+    res = await fetch(\`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}/\${sessionRecordId}\`, {
+      method: 'PATCH',
+      headers: { 'Authorization': \`Bearer \${AIRTABLE_TOKEN}\`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields }),
+    });
+  } else {
+    res = await fetch(\`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}\`, {
+      method: 'POST',
+      headers: { 'Authorization': \`Bearer \${AIRTABLE_TOKEN}\`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields }),
+    });
+  }
+
+  if (!res.ok) {
+    const err = await res.json();
+    console.error('Airtable error:', err);
+    throw new Error('Airtable submission failed');
+  }
+  return await res.json();
+}
+
+// ═══════════════ STATE ═══════════════
+const state = {
+  scores: {},
+  links: {},
+  notes: {},
+  finalNotes: '',
+  extraLinks: [],
+  submitted: false,
+  orgInfo: {},
+  chatHistory: [],
+};
+
+// Consultant scoring state (separate from client responses)
+const consultantState = {
+  scores: {},
+  notes: {},
+  recordId: null,
+  reviewerName: '',
+  reviewDate: '',
+};
+
+// ═══════════════ BUILD CLIENT FORM ═══════════════
+
+function encodeKey(k) { return btoa(unescape(encodeURIComponent(k))).replace(/=/g,'').replace(/\\+/g,'p').replace(/\\//g,'s'); }
+
+function buildSystemItem(driver, item, isFirst) {
   const key = \`\${driver}|\${item.name}\`;
   const enc = encodeKey(key);
   const stageEmoji = { 'Launch': '🌱', 'First Hire': '🌿', 'Growth': '🌳' };
   const stages = item.stages.map(s => \`\${stageEmoji[s] || ''} \${s}\`).join('  ');
-  const placeholder = ITEM_PLACEHOLDERS[key] || 'Describe where things currently stand for this system\u2026';
+  const helpIcon = \`<span class="help-icon" onclick="toggleStageHelp(this)" title="What do these stages mean?">?<span class="stage-help-popup">These tags show which organizational stage this system is most important to prioritize.</span></span>\`;
   return \`
     <div class="system-item">
-      <div class="system-name">\${item.name} <span class="system-stage">\${stages}</span><span class="help-icon" onclick="toggleStageHelp(this)" title="What do these stages mean?">?<span class="stage-help-popup">These tags show which organizational stage this system is most important to prioritize.</span></span></div>
+      <div class="system-name">\${item.name} <span class="system-stage">\${stages}</span>\${helpIcon}</div>
       \${item.desc ? \`<div class="item-desc">\${item.desc}</div>\` : ''}
       <div class="item-field-label">Self-Score</div>
       <div class="score-scale" id="scale-\${enc}">
@@ -1929,664 +2443,1197 @@ function buildSystemItem(driver, item) {
       <div class="item-field-label" style="margin-top:14px">Your response</div>
       <textarea
         class="item-textarea"
-        id="notes-area-\${enc}"
-        placeholder="\${placeholder}"
+        placeholder="Describe where things currently stand for this system…"
         onchange="state.notes['\${key}']=this.value; if(!sessionId){sessionId=generateSessionId();showSessionBar();} scheduleSave();"
       ></textarea>
 
       <div class="item-field-label" style="margin-top:12px">Documentation</div>
       <div id="links-\${enc}">
         <div class="item-doc-row" style="margin-bottom:6px">
-          <input type="text" class="item-link-input" placeholder="Paste a link (e.g. Google Drive, Notion, website\u2026)" onchange="updateItemLinks('\${enc}','\${key}')">
+          <input type="text" class="item-link-input" placeholder="Paste a link (e.g. Google Drive, Notion, website…)" onchange="updateItemLinks('\${enc}','\${key}')">
         </div>
       </div>
       <button onclick="addItemLink('\${enc}','\${key}')" style="background:none;border:none;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;color:var(--brand);cursor:pointer;padding:0;margin-top:2px">+ Add another link</button>
     </div>\`;
 }
-
-
-function toggleStageHelp(el){
-  document.querySelectorAll('.help-icon.open').forEach(e=>{if(e!==el)e.classList.remove('open');});
+function toggleStageHelp(el) {
+  // Close any other open ones first
+  document.querySelectorAll('.help-icon.open').forEach(e => { if (e !== el) e.classList.remove('open'); });
   el.classList.toggle('open');
-  if(el.classList.contains('open')){
-    setTimeout(()=>{
-      document.addEventListener('click',function handler(e){
-        if(!el.contains(e.target)){el.classList.remove('open');document.removeEventListener('click',handler);}
+  // Close on outside click
+  if (el.classList.contains('open')) {
+    setTimeout(() => {
+      document.addEventListener('click', function handler(e) {
+        if (!el.contains(e.target)) {
+          el.classList.remove('open');
+          document.removeEventListener('click', handler);
+        }
       });
-    },10);
+    }, 10);
   }
 }
 
-function applyStageRequirements(stage){
-  if(!stage)return;
-  const stageMap={'launch':'Launch','first-hire':'First Hire','growth':'Growth'};
-  const selectedStage=stageMap[stage];
-  if(!selectedStage)return;
-  ORG_SYSTEMS.forEach(driver=>{
-    driver.items.forEach(item=>{
-      const key=driver.driver+'|'+item.name;
-      const enc=encodeKey(key);
-      const el=document.getElementById('sb-'+enc+'-0')?.closest('.system-item');
-      if(!el)return;
-      const isRequired=item.stages.includes(selectedStage);
-      el.classList.toggle('required-item',isRequired);
-      el.classList.toggle('not-required',!isRequired);
-      const nameEl=el.querySelector('.system-name');
-      const existing=nameEl.querySelector('.required-badge,.not-required-badge');
-      if(existing)existing.remove();
-      const badge=document.createElement('span');
-      if(isRequired){badge.className='required-badge';badge.textContent='Required';}
-      else{badge.className='not-required-badge';badge.textContent='Optional at your stage';}
+function buildClientForm() {
+  buildDriverPages();
+}
+
+
+
+
+function applyStageRequirements(stage) {
+  if (!stage) return;
+  const stageMap = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
+  const selectedStage = stageMap[stage];
+  if (!selectedStage) return;
+
+  ORG_SYSTEMS.forEach(driver => {
+    driver.items.forEach(item => {
+      const key = \`\${driver.driver}|\${item.name}\`;
+      const enc = encodeKey(key);
+      const el = document.getElementById(\`sb-\${enc}-0\`)?.closest('.system-item');
+      if (!el) return;
+      const isRequired = item.stages.includes(selectedStage);
+      el.classList.toggle('required-item', isRequired);
+      el.classList.toggle('not-required', !isRequired);
+
+      // Remove any existing badge
+      const nameEl = el.querySelector('.system-name');
+      const existing = nameEl.querySelector('.required-badge, .not-required-badge');
+      if (existing) existing.remove();
+
+      // Add appropriate badge
+      const badge = document.createElement('span');
+      if (isRequired) {
+        badge.className = 'required-badge';
+        badge.textContent = 'Required';
+      } else {
+        badge.className = 'not-required-badge';
+        badge.textContent = 'Optional at your stage';
+      }
       nameEl.appendChild(badge);
     });
   });
 }
 
-function selectScore(encKey,key,val){
-  state.scores[key]=val;
-  [0,1,2,3].forEach(v=>{
-    const opt=document.getElementById('sb-'+encKey+'-'+v);
-    if(opt)opt.classList.toggle('selected',v===val);
+
+
+function selectScore(encKey, key, val) {
+  state.scores[key] = val;
+  [0,1,2,3].forEach(v => {
+    const opt = document.getElementById(\`sb-\${encKey}-\${v}\`);
+    if (opt) opt.classList.toggle('selected', v === val);
   });
-  const item=document.getElementById('sb-'+encKey+'-0')?.closest('.system-item');
-  if(item)item.classList.remove('missing-score');
+  // Clear missing-score highlight if present
+  const item = document.getElementById(\`sb-\${encKey}-0\`)?.closest('.system-item');
+  if (item) item.classList.remove('missing-score');
   updateProgress();
-  if(!sessionId){sessionId=generateSessionId();showSessionBar();}
+  // Start session on first interaction
+  if (!sessionId) {
+    sessionId = generateSessionId();
+    showSessionBar();
+  }
   scheduleSave();
 }
 
-function updateProgress(){
-  const total=ORG_SYSTEMS.reduce((a,d)=>a+d.items.length,0);
-  const scored=Object.keys(state.scores).length;
-  const pct=Math.round((scored/total)*100);
-  document.getElementById('progress-fill').style.width=pct+'%';
-  document.getElementById('progress-pct').textContent=pct+'%';
-  const labelEl=document.querySelector('.progress-label');
-  if(labelEl&&currentPage>0&&currentPage<=ORG_SYSTEMS.length) labelEl.textContent='Section '+currentPage+' of '+ORG_SYSTEMS.length;
-  else if(labelEl&&currentPage===0) labelEl.textContent='Your progress';
-  else if(labelEl) labelEl.textContent='Almost done';
+
+
+function updateProgress() {
+  const total = ORG_SYSTEMS.reduce((a,d) => a + d.items.length, 0);
+  const scored = Object.keys(state.scores).length;
+  const pct = Math.round((scored / total) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-pct').textContent = pct + '%';
+  // Update progress label with current section
+  const labelEl = document.querySelector('.progress-label');
+  if (labelEl && currentPage > 0 && currentPage <= ORG_SYSTEMS.length) {
+    labelEl.textContent = \`Section \${currentPage} of \${ORG_SYSTEMS.length}\`;
+  } else if (labelEl && currentPage === 0) {
+    labelEl.textContent = 'Your progress';
+  } else if (labelEl) {
+    labelEl.textContent = 'Almost done';
+  }
 }
 
-function addItemLink(enc,key){
-  const container=document.getElementById('links-'+enc);
-  const row=document.createElement('div');
-  row.className='item-doc-row';
-  row.style.marginBottom='6px';
-  const input=document.createElement('input');
-  input.type='text';input.className='item-link-input';
-  input.placeholder='Paste a link…';
-  input.addEventListener('change',()=>updateItemLinks(enc,key));
-  const btn=document.createElement('button');
-  btn.innerHTML='✕';
-  btn.style.cssText='background:none;border:none;cursor:pointer;color:var(--light);font-size:1rem;padding:0 4px;flex-shrink:0';
-  btn.addEventListener('click',()=>{row.remove();updateItemLinks(enc,key);});
-  row.appendChild(input);row.appendChild(btn);
+// ═══════════════ FILE UPLOAD ═══════════════
+
+function addItemLink(enc, key) {
+  const container = document.getElementById('links-' + enc);
+  const row = document.createElement('div');
+  row.className = 'item-doc-row';
+  row.style.marginBottom = '6px';
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'item-link-input';
+  input.placeholder = 'Paste a link (e.g. Google Drive, Notion, website…)';
+  input.addEventListener('change', function() { updateItemLinks(enc, key); });
+  const btn = document.createElement('button');
+  btn.innerHTML = '✕';
+  btn.style.cssText = 'background:none;border:none;cursor:pointer;color:var(--light);font-size:1rem;padding:0 4px;flex-shrink:0';
+  btn.addEventListener('click', function() { row.remove(); updateItemLinks(enc, key); });
+  row.appendChild(input);
+  row.appendChild(btn);
   container.appendChild(row);
 }
 
-function updateItemLinks(enc,key){
-  const container=document.getElementById('links-'+enc);
-  if(!container)return;
-  const vals=Array.from(container.querySelectorAll('input')).map(i=>i.value.trim()).filter(Boolean);
-  state.links[key]=vals.join(' | ');
+function updateItemLinks(enc, key) {
+  const container = document.getElementById('links-' + enc);
+  if (!container) return;
+  const vals = Array.from(container.querySelectorAll('input')).map(i => i.value.trim()).filter(Boolean);
+  state.links[key] = vals.join(' | ');
 }
 
-function addExtraLink(){
-  const container=document.getElementById('extra-links');
-  const row=document.createElement('div');
-  row.className='item-doc-row';row.style.marginBottom='8px';
-  const input=document.createElement('input');
-  input.type='text';input.className='item-link-input';
-  input.placeholder='Paste a link…';
-  input.addEventListener('change',()=>updateExtraLink(input));
-  const btn=document.createElement('button');
-  btn.innerHTML='✕';
-  btn.style.cssText='background:none;border:none;cursor:pointer;color:var(--light);font-size:1.1rem;padding:0 4px';
-  btn.addEventListener('click',()=>row.remove());
-  row.appendChild(input);row.appendChild(btn);
+function addExtraLink() {
+  const container = document.getElementById('extra-links');
+  const row = document.createElement('div');
+  row.className = 'item-doc-row';
+  row.style.marginBottom = '8px';
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'item-link-input';
+  input.placeholder = 'Paste a link (e.g. Google Drive, Notion, website…)';
+  input.addEventListener('change', function() { updateExtraLink(input); });
+  const btn = document.createElement('button');
+  btn.innerHTML = '✕';
+  btn.style.cssText = 'background:none;border:none;cursor:pointer;color:var(--light);font-size:1.1rem;padding:0 4px';
+  btn.addEventListener('click', function() { row.remove(); });
+  row.appendChild(input);
+  row.appendChild(btn);
   container.appendChild(row);
 }
 
-function updateExtraLink(input){
-  state.extraLinks=Array.from(document.querySelectorAll('#extra-links input')).map(i=>i.value).filter(Boolean);
+
+function updateExtraLink(input) {
+  // Collect all extra links from the container
+  state.extraLinks = Array.from(document.querySelectorAll('#extra-links input')).map(i => i.value).filter(Boolean);
 }
 
-function selectStageCard(val){
-  document.getElementById('org-stage').value=val;
-  document.querySelectorAll('.stage-card').forEach(c=>c.classList.remove('selected'));
-  document.getElementById('sc-'+val).classList.add('selected');
-  applyStageRequirements(val);
-  updateProgress();
-}
+
+
 
 // ═══════════════ SUBMIT ═══════════════
-async function submitAssessment(){
-  const stage=document.getElementById('org-stage').value;
-  const stageMap={'launch':'Launch','first-hire':'First Hire','growth':'Growth'};
-  const selectedStage=stageMap[stage];
-  const errorEl=document.getElementById('submit-error');
-  if(!stage){
-    errorEl.textContent='Please select your organizational stage before submitting.';
+async function submitAssessment() {
+  // Validate required items
+  const stage = document.getElementById('org-stage').value;
+  const stageMap = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
+  const selectedStage = stageMap[stage];
+  const errorEl = document.getElementById('submit-error');
+
+  if (!stage) {
+    errorEl.textContent = 'Please select your organizational stage before submitting.';
     errorEl.classList.add('show');
-    errorEl.scrollIntoView({behavior:'smooth',block:'center'});
+    errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
-  const missing=[];
-  ORG_SYSTEMS.forEach(driver=>{
-    driver.items.forEach(item=>{
-      if(item.stages.includes(selectedStage)){
-        const key=driver.driver+'|'+item.name;
-        if(state.scores[key]===undefined){
+
+  // Check all required items are scored
+  const missing = [];
+  ORG_SYSTEMS.forEach(driver => {
+    driver.items.forEach(item => {
+      if (item.stages.includes(selectedStage)) {
+        const key = \`\${driver.driver}|\${item.name}\`;
+        if (state.scores[key] === undefined) {
           missing.push(item.name);
-          const enc=encodeKey(key);
-          const el=document.getElementById('sb-'+enc+'-0')?.closest('.system-item');
-          if(el)el.classList.add('missing-score');
+          // Highlight the missing item
+          const enc = encodeKey(key);
+          const el = document.getElementById(\`sb-\${enc}-0\`)?.closest('.system-item');
+          if (el) el.classList.add('missing-score');
         }
       }
     });
   });
-  if(missing.length>0){
-    errorEl.innerHTML='<strong>Please score all required items before submitting.</strong><br>'+missing.length+' item'+(missing.length!==1?'s':'')+' still need'+(missing.length===1?'s':'')+' a score.';
+
+  if (missing.length > 0) {
+    errorEl.innerHTML = \`<strong>Please score all required items before submitting.</strong><br>\${missing.length} item\${missing.length !== 1 ? 's' : ''} still need\${missing.length === 1 ? 's' : ''} a score. Please go back through the sections to complete them.\`;
     errorEl.classList.add('show');
-    errorEl.scrollIntoView({behavior:'smooth',block:'center'});
+    errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
+
   errorEl.classList.remove('show');
-  const btn=document.querySelector('.btn-primary');
-  btn.disabled=true;
-  btn.innerHTML='<span class="spinner" style="border-color:rgba(255,255,255,0.3);border-top-color:white"></span> Submitting…';
-  state.orgInfo={
-    name: document.getElementById('org-name').value||'Unknown Organization',
+
+  const btn = document.querySelector('.btn-primary');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner" style="border-color:rgba(255,255,255,0.3);border-top-color:white"></span> Submitting…';
+
+  state.orgInfo = {
+    name: document.getElementById('org-name').value || 'Unknown Organization',
     contact: document.getElementById('contact-name').value,
     role: document.getElementById('contact-role').value,
     email: document.getElementById('contact-email').value,
     stage: document.getElementById('org-stage').value,
   };
-  state.submitted=true;
-  try{
-    const fields=buildAirtableFields();
-    fields.status='submitted';
-    if(sessionId)fields.session_id=sessionId;
-    let res;
-    if(sessionRecordId){
-      res=await fetch('https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE+'/'+sessionRecordId,{
-        method:'PATCH',
-        headers:{'Authorization':'Bearer '+AIRTABLE_TOKEN,'Content-Type':'application/json'},
-        body:JSON.stringify({fields}),
-      });
-    } else {
-      res=await fetch('https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE,{
-        method:'POST',
-        headers:{'Authorization':'Bearer '+AIRTABLE_TOKEN,'Content-Type':'application/json'},
-        body:JSON.stringify({fields}),
-      });
-    }
-    if(!res.ok){const err=await res.json();console.error('Airtable error:',err);}
-  }catch(err){console.error('Submit error:',err);}
-  document.getElementById('client-form-wrapper').style.display='none';
+  state.submitted = true;
+
+  try {
+    await sendToAirtable();
+  } catch (err) {
+    console.error('Airtable error:', err);
+    // Still show success to client — don't block them on a backend error
+  }
+
+  document.getElementById('client-form-wrapper').style.display = 'none';
   document.getElementById('success-screen').classList.add('show');
   populateConsultantDashboard();
 }
 
 // ═══════════════ CONSULTANT DASHBOARD ═══════════════
+function populateConsultantDashboard() {
+  if (!state.submitted) return;
 
-// updateConsultantMeta: updates the reviewer name, timestamp display, and consultantState
-function updateConsultantMeta(){
-  const name=document.getElementById('consultant-name')?.value?.trim()||'';
-  const now=new Date();
-  const dateStr=now.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-  const timeStr=now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
-  const ts=document.getElementById('review-timestamp');
-  if(ts) ts.textContent=name?(dateStr+' at '+timeStr):'';
-  consultantState.reviewerName=name;
-  consultantState.reviewDate=name?(dateStr+' at '+timeStr):'';
-}
+  // Header
+  updateConsultantMeta();
+  document.getElementById('c-org-name').textContent = state.orgInfo.name || 'Assessment Submitted';
+  const contactParts = [state.orgInfo.contact, state.orgInfo.role, state.orgInfo.email].filter(Boolean);
+  document.getElementById('c-org-meta').textContent =
+    \`\${contactParts.join('  ·  ')}  ·  Stage: \${formatStage(state.orgInfo.stage)}  ·  Submitted: \${state.orgInfo.submittedAt || 'recently'}\`;
+  // Set timestamp on review meta
+  const ts = document.getElementById('review-timestamp');
+  if (ts && consultantState.reviewDate) ts.textContent = consultantState.reviewDate;
 
-function populateConsultantDashboard(){
-  if(!state.submitted)return;
-  document.getElementById('c-org-name').textContent=state.orgInfo.name||'Assessment Submitted';
-  const contactParts=[state.orgInfo.contact,state.orgInfo.role,state.orgInfo.email].filter(Boolean);
-  document.getElementById('c-org-meta').textContent=contactParts.join('  ·  ')+'  ·  Stage: '+formatStage(state.orgInfo.stage);
+  // Metrics — scoped to required items for the org's stage
+  const stageMap = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
+  const selectedStage = stageMap[state.orgInfo.stage] || null;
 
-  // Restore reviewer name/date if already set
-  const nameEl=document.getElementById('consultant-name');
-  if(nameEl&&consultantState.reviewerName) nameEl.value=consultantState.reviewerName;
-  const ts=document.getElementById('review-timestamp');
-  if(ts&&consultantState.reviewDate) ts.textContent=consultantState.reviewDate;
+  const requiredItems = [];
+  ORG_SYSTEMS.forEach(d => {
+    d.items.forEach(i => {
+      if (!selectedStage || i.stages.includes(selectedStage)) {
+        requiredItems.push({ driver: d.driver, item: i });
+      }
+    });
+  });
+  const total = requiredItems.length;
+  const scored = requiredItems.filter(({driver, item}) => {
+    return state.scores[\`\${driver}|\${item.name}\`] !== undefined;
+  }).length;
+  const allScores = requiredItems.map(({driver, item}) => {
+    return state.scores[\`\${driver}|\${item.name}\`];
+  }).filter(s => s !== undefined);
+  const avg = allScores.length ? (allScores.reduce((a,b)=>a+b,0)/allScores.length).toFixed(1) : '—';
+  const gaps = allScores.filter(s => s <= 1).length;
 
-  const stageMap={'launch':'Launch','first-hire':'First Hire','growth':'Growth'};
-  const selectedStage=stageMap[state.orgInfo.stage]||null;
-  const requiredItems=[];
-  ORG_SYSTEMS.forEach(d=>{d.items.forEach(i=>{if(!selectedStage||i.stages.includes(selectedStage))requiredItems.push({driver:d.driver,item:i});});});
-  const total=requiredItems.length;
-  const scored=requiredItems.filter(({driver,item})=>state.scores[driver+'|'+item.name]!==undefined).length;
-  const allScores=requiredItems.map(({driver,item})=>state.scores[driver+'|'+item.name]).filter(s=>s!==undefined);
-  const avg=allScores.length?(allScores.reduce((a,b)=>a+b,0)/allScores.length).toFixed(1):'—';
-  const gaps=allScores.filter(s=>s<=1).length;
+  const mComp = document.getElementById('m-completion');
+  mComp.querySelector('.metric-value').textContent = \`\${scored}/\${total}\`;
+  mComp.querySelector('.metric-sub').textContent = selectedStage ? \`required items for \${selectedStage}\` : 'of scored items';
+  mComp.className = \`metric-card \${scored === total ? 'green' : scored > total/2 ? 'amber' : 'red'}\`;
 
-  const mComp=document.getElementById('m-completion');
-  mComp.querySelector('.metric-value').textContent=scored+'/'+total;
-  mComp.querySelector('.metric-sub').textContent=selectedStage?'required items for '+selectedStage:'of scored items';
-  mComp.className='metric-card '+(scored===total?'green':scored>total/2?'amber':'red');
+  const mAvg = document.getElementById('m-avg-score');
+  mAvg.querySelector('.metric-value').textContent = avg;
+  mAvg.querySelector('.metric-sub').textContent = selectedStage ? \`avg score · \${selectedStage} items\` : 'out of 3.0';
+  mAvg.className = \`metric-card \${parseFloat(avg) >= 2 ? 'green' : parseFloat(avg) >= 1 ? 'amber' : 'red'}\`;
 
-  const mAvg=document.getElementById('m-avg-score');
-  mAvg.querySelector('.metric-value').textContent=avg;
-  mAvg.querySelector('.metric-sub').textContent=selectedStage?'avg score · '+selectedStage+' items':'out of 3.0';
-  mAvg.className='metric-card '+(parseFloat(avg)>=2?'green':parseFloat(avg)>=1?'amber':'red');
+  const mGaps = document.getElementById('m-gaps');
+  mGaps.querySelector('.metric-value').textContent = gaps;
+  mGaps.querySelector('.metric-sub').textContent = selectedStage ? \`required items scored 0 or 1\` : 'items scored 0 or 1';
+  mGaps.className = \`metric-card \${gaps === 0 ? 'green' : gaps <= 3 ? 'amber' : 'red'}\`;
 
-  const mGaps=document.getElementById('m-gaps');
-  mGaps.querySelector('.metric-value').textContent=gaps;
-  mGaps.querySelector('.metric-sub').textContent=selectedStage?'required items scored 0 or 1':'items scored 0 or 1';
-  mGaps.className='metric-card '+(gaps===0?'green':gaps<=3?'amber':'red');
-
-  const barsEl=document.getElementById('driver-score-bars');
-  barsEl.innerHTML='';
-  ORG_SYSTEMS.forEach(driver=>{
-    const dScores=driver.items.map(i=>state.scores[driver.driver+'|'+i.name]).filter(s=>s!==undefined);
-    const dAvg=dScores.length?dScores.reduce((a,b)=>a+b,0)/dScores.length:null;
-    const pct=dAvg!==null?(dAvg/3)*100:0;
-    const cls=dAvg===null?'red':dAvg>=2?'green':dAvg>=1?'amber':'red';
-    barsEl.innerHTML+='<div class="driver-score-row"><div class="driver-score-name">'+driver.driver+'</div><div class="score-track"><div class="score-fill '+cls+'" style="width:'+pct+'%"></div></div><div class="score-val">'+(dAvg!==null?dAvg.toFixed(1):'—')+'</div></div>';
+  // Driver score bars
+  const barsEl = document.getElementById('driver-score-bars');
+  barsEl.innerHTML = '';
+  ORG_SYSTEMS.forEach(driver => {
+    const dScores = driver.items.map(i => state.scores[\`\${driver.driver}|\${i.name}\`]).filter(s => s !== undefined);
+    const dAvg = dScores.length ? dScores.reduce((a,b)=>a+b,0)/dScores.length : null;
+    const pct = dAvg !== null ? (dAvg/3)*100 : 0;
+    const cls = dAvg === null ? 'red' : dAvg >= 2 ? 'green' : dAvg >= 1 ? 'amber' : 'red';
+    barsEl.innerHTML += \`
+      <div class="driver-score-row">
+        <div class="driver-score-name">\${driver.driver}</div>
+        <div class="score-track"><div class="score-fill \${cls}" style="width:\${pct}%"></div></div>
+        <div class="score-val">\${dAvg !== null ? dAvg.toFixed(1) : '—'}</div>
+      </div>\`;
   });
 
-  document.getElementById('stage-context').innerHTML='<div style="display:flex;align-items:flex-start;gap:20px"><div style="flex:1"><div style="font-weight:600;margin-bottom:8px">Current Stage: <span style="color:var(--brand)">'+formatStage(state.orgInfo.stage)+'</span></div><div style="color:var(--mid);font-size:0.9rem;line-height:1.65">'+getStageContext(state.orgInfo.stage)+'</div></div></div>';
+  // Stage context
+  document.getElementById('stage-context').innerHTML = \`
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <div style="flex:1">
+        <div style="font-weight:600;margin-bottom:8px">Current Stage: <span style="color:var(--brand)">\${formatStage(state.orgInfo.stage)}</span></div>
+        <div style="color:var(--mid);font-size:0.9rem;line-height:1.65">\${getStageContext(state.orgInfo.stage)}</div>
 
+      </div>
+    </div>\`;
+
+  // Systems view
   populateSystemsView();
   populateDocumentView();
 }
 
-function populateSystemsView(){
-  const el=document.getElementById('systems-consultant-view');
-  el.innerHTML='';
-  const stageMapSys={'launch':'Launch','first-hire':'First Hire','growth':'Growth'};
-  const selectedStage=stageMapSys[state.orgInfo.stage]||null;
-  ORG_SYSTEMS.forEach(driver=>{
-    const dScores=driver.items.map(i=>state.scores[driver.driver+'|'+i.name]).filter(s=>s!==undefined);
-    const dAvg=dScores.length?(dScores.reduce((a,b)=>a+b,0)/dScores.length).toFixed(1):'—';
-    const gaps=driver.items.filter(i=>{const s=state.scores[driver.driver+'|'+i.name];return s!==undefined&&s<=1;});
-    const gapsHtml=gaps.length>0?'<div style="margin-bottom:16px;background:#FEF2F2;border-radius:8px;padding:14px 16px;border-left:3px solid #EF4444"><div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#DC2626;margin-bottom:10px">⚠ Priority Gaps</div>'+gaps.map(i=>{const s=state.scores[driver.driver+'|'+i.name];return '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(239,68,68,0.15);font-size:0.87rem"><span style="color:var(--charcoal)">'+i.name+'</span><span style="font-weight:700;color:'+(s===0?'#DC2626':'#D97706')+';white-space:nowrap;margin-left:16px">'+(s===0?'0 — Not in place':'1 — Needs improvement')+'</span></div>';}).join('')+'</div>':'';
-    const itemsHtml=driver.items.map(item=>{
-      const key=driver.driver+'|'+item.name;
-      const score=state.scores[key];
-      const link=state.links[key]||'';
-      const notes=state.notes[key]||'';
-      const scoreLabel=score===undefined?'<span style="color:var(--light)">Not scored</span>':score===0?'<span style="color:#DC2626;font-weight:600">0 — Not in place</span>':score===1?'<span style="color:#D97706;font-weight:600">1 — Needs improvement</span>':score===2?'<span style="color:#059669;font-weight:600">2 — Good enough for now</span>':'<span style="color:var(--brand);font-weight:600">3 — Great</span>';
-      const cEnc=encodeKey('c|'+key);
-      const cScore=consultantState.scores[key];
-      const cNote=consultantState.notes[key]||'';
-      return '<div style="padding:14px 0;border-bottom:1px solid var(--border)">'+
-        '<div style="display:flex;align-items:center;gap:12px;margin-bottom:'+(link||notes?'8px':'0')+'">'+
-          '<div style="flex:1;font-size:0.92rem;font-weight:500">'+item.name+(selectedStage?(item.stages.includes(selectedStage)?'<span style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--brand);background:var(--brand-pale);padding:2px 7px;border-radius:99px;margin-left:6px">Required</span>':'<span style="font-size:0.68rem;font-weight:500;color:var(--light);background:var(--cream);border:1px solid var(--border);padding:2px 7px;border-radius:99px;margin-left:6px">Optional</span>'):'')+'</div>'+
-          '<div style="font-size:0.78rem;color:var(--light);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">Client</div>'+
-          '<div style="font-size:0.85rem;min-width:140px">'+scoreLabel+'</div>'+
-          '<div style="font-size:0.78rem;color:var(--brand);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">ScarSpark</div>'+
-          '<div style="display:flex;gap:4px;align-items:center">'+[0,1,2,3].map(v=>'<button onclick="setConsultantScore(\''+key+'\',\''+cEnc+'\','+v+')" id="csb-'+cEnc+'-'+v+'" style="width:26px;height:26px;border-radius:6px;border:1.5px solid '+(cScore===v?'var(--brand)':'var(--border)')+'";background:'+(cScore===v?'var(--brand)':'white')+';color:'+(cScore===v?'white':'var(--mid)')+';font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.15s">'+v+'</button>').join('')+'</div>'+
-        '</div>'+
-        (link?link.split(' | ').filter(Boolean).map(u=>'<div style="font-size:0.8rem;margin-bottom:3px">🔗 <a href="'+u.trim()+'" target="_blank" style="color:var(--brand)">'+u.trim()+'</a></div>').join(''):'')+
-        (notes?'<div style="font-size:0.83rem;color:var(--mid);margin-top:6px;padding:8px 12px;background:var(--cream);border-radius:6px;line-height:1.5">📝 '+notes+'</div>':'')+
-        '<div style="margin-top:8px"><input type="text" value="'+cNote+'" placeholder="ScarSpark notes…" onchange="setConsultantNote(\''+key+'\',this.value)" style="width:100%;border:1.5px solid var(--border);border-radius:6px;padding:7px 10px;font-family:\'DM Sans\',sans-serif;font-size:0.83rem;outline:none;background:var(--cream)" onfocus="this.style.borderColor=\'var(--brand)\'" onblur="this.style.borderColor=\'var(--border)\'"></div>'+
-      '</div>';
+function formatStage(s) {
+  return STAGE_DEFS[s] ? STAGE_DEFS[s].name : 'Not specified';
+}
+
+function getStageContext(s) {
+  if (!s || !STAGE_DEFS[s]) return 'Stage not specified by client.';
+  const def = STAGE_DEFS[s];
+  return \`<span style="font-size:0.78rem;font-weight:600;background:var(--brand);color:white;padding:2px 10px;border-radius:99px;margin-right:8px">\${def.headcount}</span>\${def.desc}\`;
+}
+
+function populateSystemsView() {
+  const el = document.getElementById('systems-consultant-view');
+  el.innerHTML = '';
+
+  const stageMapSys = { 'launch': 'Launch', 'first-hire': 'First Hire', 'growth': 'Growth' };
+  const selectedStage = stageMapSys[state.orgInfo.stage] || null;
+
+  ORG_SYSTEMS.forEach(driver => {
+    const dScores = driver.items.map(i => state.scores[\`\${driver.driver}|\${i.name}\`]).filter(s=>s!==undefined);
+    const dAvg = dScores.length ? (dScores.reduce((a,b)=>a+b,0)/dScores.length).toFixed(1) : '—';
+
+    // Priority gaps — items scored 0 or 1
+    const gaps = driver.items.filter(i => {
+      const s = state.scores[\`\${driver.driver}|\${i.name}\`];
+      return s !== undefined && s <= 1;
+    });
+
+    const gapsHtml = gaps.length > 0 ? \`
+      <div style="margin-bottom:16px;background:#FEF2F2;border-radius:8px;padding:14px 16px;border-left:3px solid #EF4444">
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#DC2626;margin-bottom:10px">⚠ Priority Gaps</div>
+        \${gaps.map(i => {
+          const s = state.scores[\`\${driver.driver}|\${i.name}\`];
+          return \`<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(239,68,68,0.15);font-size:0.87rem">
+            <span style="color:var(--charcoal)">\${i.name}</span>
+            <span style="font-weight:700;color:\${s===0?'#DC2626':'#D97706'};white-space:nowrap;margin-left:16px">\${s===0?'0 — Not in place':'1 — Needs improvement'}</span>
+          </div>\`;
+        }).join('')}
+      </div>\` : '';
+
+    const itemsHtml = driver.items.map(item => {
+      const key = \`\${driver.driver}|\${item.name}\`;
+      const score = state.scores[key];
+      const link = state.links[key] || '';
+      const notes = state.notes[key] || '';
+      const scoreLabel = score === undefined ? '<span style="color:var(--light)">Not scored</span>' :
+        score === 0 ? '<span style="color:#DC2626;font-weight:600">0 — Not in place</span>' :
+        score === 1 ? '<span style="color:#D97706;font-weight:600">1 — Needs improvement</span>' :
+        score === 2 ? '<span style="color:#059669;font-weight:600">2 — Good enough for now</span>' :
+        '<span style="color:var(--brand);font-weight:600">3 — Great</span>';
+      const cEnc = encodeKey('c|'+key);
+      const cScore = consultantState.scores[key];
+      const cNote  = consultantState.notes[key] || '';
+      return \`<div style="padding:14px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:\${(link||notes)?'8px':'0'}">
+          <div style="flex:1;font-size:0.92rem;font-weight:500">\${item.name}\${selectedStage ? (item.stages.includes(selectedStage) ? '<span style=\\'font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--brand);background:var(--brand-pale);padding:2px 7px;border-radius:99px;margin-left:6px\\'>Required</span>' : '<span style=\\'font-size:0.68rem;font-weight:500;color:var(--light);background:var(--cream);border:1px solid var(--border);padding:2px 7px;border-radius:99px;margin-left:6px\\'>Optional</span>') : ''}</div>
+          <div style="font-size:0.78rem;color:var(--light);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">Client</div>
+          <div style="font-size:0.85rem;min-width:140px">\${scoreLabel}</div>
+          <div style="font-size:0.78rem;color:var(--brand);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">ScarSpark</div>
+          <div style="display:flex;gap:4px;align-items:center">
+            \${[0,1,2,3].map(v => \`<button onclick="setConsultantScore('\${key}','\${cEnc}',\${v})" id="csb-\${cEnc}-\${v}" style="width:26px;height:26px;border-radius:6px;border:1.5px solid \${cScore===v?'var(--brand)':'var(--border)'};background:\${cScore===v?'var(--brand)':'white'};color:\${cScore===v?'white':'var(--mid)'};font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.15s">\${v}</button>\`).join('')}
+          </div>
+        </div>
+        \${link ? link.split(' | ').filter(Boolean).map(u => \`<div style="font-size:0.8rem;margin-bottom:3px">🔗 <a href="\${u.trim()}" target="_blank" style="color:var(--brand)">\${u.trim()}</a></div>\`).join('') : ''}
+        \${notes ? \`<div style="font-size:0.83rem;color:var(--mid);margin-top:6px;padding:8px 12px;background:var(--cream);border-radius:6px;line-height:1.5">📝 \${notes}</div>\` : ''}
+        <div style="margin-top:8px">
+          <input type="text" value="\${cNote}" placeholder="ScarSpark notes…" onchange="setConsultantNote('\${key}',this.value)" style="width:100%;border:1.5px solid var(--border);border-radius:6px;padding:7px 10px;font-family:'DM Sans',sans-serif;font-size:0.83rem;outline:none;background:var(--cream)" onfocus="this.style.borderColor='var(--brand)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+      </div>\`;
     }).join('');
-    el.innerHTML+='<div class="analysis-panel" style="margin-bottom:24px"><div class="analysis-panel-header"><div class="analysis-panel-title">'+driver.driver+'</div><div style="display:flex;align-items:center;gap:12px"><div style="font-size:0.82rem;font-weight:600;color:var(--mid)">Client avg: '+dAvg+'</div>'+(gaps.length>0?'<span style="font-size:0.72rem;font-weight:700;background:#FEE2E2;color:#DC2626;padding:3px 10px;border-radius:99px">'+gaps.length+' gap'+(gaps.length>1?'s':'')+'</span>':dScores.length>0?'<span style="font-size:0.72rem;font-weight:700;background:#D1FAE5;color:#059669;padding:3px 10px;border-radius:99px">No gaps</span>':'')+'</div></div><div class="analysis-panel-body">'+gapsHtml+itemsHtml+'</div></div>';
+
+    el.innerHTML += \`
+      <div class="analysis-panel" style="margin-bottom:24px">
+        <div class="analysis-panel-header">
+          <div class="analysis-panel-title">\${driver.driver}</div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="font-size:0.82rem;font-weight:600;color:var(--mid)">Client avg: \${dAvg}</div>
+            \${gaps.length > 0
+              ? \`<span style="font-size:0.72rem;font-weight:700;background:#FEE2E2;color:#DC2626;padding:3px 10px;border-radius:99px">\${gaps.length} gap\${gaps.length>1?'s':''}</span>\`
+              : dScores.length > 0 ? \`<span style="font-size:0.72rem;font-weight:700;background:#D1FAE5;color:#059669;padding:3px 10px;border-radius:99px">No gaps</span>\` : ''}
+          </div>
+        </div>
+        <div class="analysis-panel-body">
+          \${gapsHtml}
+          \${itemsHtml}
+        </div>
+      </div>\`;
   });
 }
 
-function populateDocumentView(){
-  const el=document.getElementById('docs-consultant-view');
-  const allLinks=[];
-  ORG_SYSTEMS.forEach(driver=>{
-    driver.items.forEach(item=>{
-      const key=driver.driver+'|'+item.name;
-      const linkVal=state.links[key];
-      if(linkVal) linkVal.split(' | ').filter(Boolean).forEach(url=>allLinks.push({url:url.trim(),item:item.name,driver:driver.driver}));
+
+function populateDocumentView() {
+  const el = document.getElementById('docs-consultant-view');
+
+  // Collect all links from every item
+  const allLinks = [];
+
+  ORG_SYSTEMS.forEach(driver => {
+    driver.items.forEach(item => {
+      const key = \`\${driver.driver}|\${item.name}\`;
+      const linkVal = state.links[key];
+      if (linkVal) {
+        // Links may be pipe-separated if multiple were added
+        linkVal.split(' | ').filter(Boolean).forEach(url => {
+          allLinks.push({ url: url.trim(), item: item.name, driver: driver.driver });
+        });
+      }
     });
   });
-  if(state.extraLinks&&state.extraLinks.length>0) state.extraLinks.filter(Boolean).forEach(url=>allLinks.push({url,item:'Additional links',driver:'General'}));
-  if(allLinks.length===0){el.innerHTML='<div style="color:var(--light);font-size:0.9rem;">No links submitted.</div>';return;}
-  const byDriver={};
-  allLinks.forEach(({url,item,driver})=>{if(!byDriver[driver])byDriver[driver]=[];byDriver[driver].push({url,item});});
-  el.innerHTML=Object.entries(byDriver).map(([driver,links])=>'<div style="margin-bottom:20px"><div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)">'+driver+'</div>'+links.map(({url,item})=>'<div class="doc-item" style="margin-bottom:8px"><span>🔗</span><div style="flex:1;min-width:0"><div style="font-size:0.8rem;font-weight:600;color:var(--mid);margin-bottom:2px">'+item+'</div><a href="'+url+'" target="_blank" rel="noopener" style="font-size:0.83rem;color:var(--brand);word-break:break-all">'+url+'</a></div></div>').join('')+'</div>').join('');
-}
 
-function showConsultantPanel(id,event){
-  document.querySelectorAll('.consultant-panel').forEach(p=>p.style.display='none');
-  document.querySelectorAll('.sidebar-item').forEach(s=>s.classList.remove('active'));
-  const panel=document.getElementById('panel-'+id);
-  if(panel)panel.style.display='block';
-  if(event&&event.currentTarget)event.currentTarget.classList.add('active');
-}
-
-function setConsultantScore(key,enc,val){
-  consultantState.scores[key]=val;
-  [0,1,2,3].forEach(v=>{
-    const btn=document.getElementById('csb-'+enc+'-'+v);
-    if(btn){
-      btn.style.background=v===val?'var(--brand)':'white';
-      btn.style.color=v===val?'white':'var(--mid)';
-      btn.style.borderColor=v===val?'var(--brand)':'var(--border)';
-    }
-  });
-}
-
-function setConsultantNote(key,val){ consultantState.notes[key]=val; }
-
-async function saveConsultantScores(){
-  if(!consultantState.recordId)return;
-  const btn=document.getElementById('save-consultant-btn');
-  if(btn){btn.disabled=true;btn.textContent='Saving…';}
-  const fields={};
-  if(consultantState.reviewerName) fields.consultant_reviewer=consultantState.reviewerName;
-  if(consultantState.reviewDate)   fields.consultant_review_date=consultantState.reviewDate;
-  for(const[key,field]of Object.entries(CS_FIELD_MAP)){
-    const val=consultantState.scores[key];
-    if(val!==undefined)fields[field]=String(val);
-  }
-  for(const[key,field]of Object.entries(CN_FIELD_MAP)){
-    if(consultantState.notes[key])fields[field]=consultantState.notes[key];
-  }
-  try{
-    await fetch('https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE+'/'+consultantState.recordId,{
-      method:'PATCH',
-      headers:{'Authorization':'Bearer '+AIRTABLE_TOKEN,'Content-Type':'application/json'},
-      body:JSON.stringify({fields}),
+  // Add extra links from final section
+  if (state.extraLinks && state.extraLinks.length > 0) {
+    state.extraLinks.filter(Boolean).forEach(url => {
+      allLinks.push({ url, item: 'Additional links', driver: 'General' });
     });
-    if(btn){btn.disabled=false;btn.textContent='✓ Saved';setTimeout(()=>{btn.textContent='Save scores';},2000);}
-  }catch(e){
-    if(btn){btn.disabled=false;btn.textContent='Save failed — retry';}
-    console.error(e);
   }
+
+  if (allLinks.length === 0) {
+    el.innerHTML = '<div style="color:var(--light);font-size:0.9rem;">No links submitted.</div>';
+    return;
+  }
+
+  // Group by driver
+  const byDriver = {};
+  allLinks.forEach(({ url, item, driver }) => {
+    if (!byDriver[driver]) byDriver[driver] = [];
+    byDriver[driver].push({ url, item });
+  });
+
+  el.innerHTML = Object.entries(byDriver).map(([driver, links]) => \`
+    <div style="margin-bottom:20px">
+      <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)">\${driver}</div>
+      \${links.map(({ url, item }) => \`
+        <div class="doc-item" style="margin-bottom:8px">
+          <span>🔗</span>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:0.8rem;font-weight:600;color:var(--mid);margin-bottom:2px">\${item}</div>
+            <a href="\${url}" target="_blank" rel="noopener" style="font-size:0.83rem;color:var(--brand);word-break:break-all">\${url}</a>
+          </div>
+        </div>\`).join('')}
+    </div>\`).join('');
+}
+
+
+// ═══════════════ CONSULTANT NAV ═══════════════
+function showConsultantPanel(id) {
+  document.querySelectorAll('.consultant-panel').forEach(p => p.style.display = 'none');
+  document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
+  const panel = document.getElementById(\`panel-\${id}\`);
+  if (panel) panel.style.display = 'block';
+  event.currentTarget.classList.add('active');
 }
 
 // ═══════════════ AI CHAT ═══════════════
-function buildAssessmentContext(){
-  if(!state.submitted)return'No assessment has been submitted yet.';
-  const lines=[
-    'Organization: '+state.orgInfo.name,
-    consultantState.reviewerName?'Reviewed by: '+consultantState.reviewerName:'',
-    consultantState.reviewDate?'Review date: '+consultantState.reviewDate:'',
-    'Contact: '+(state.orgInfo.contact||'')+(state.orgInfo.role?', '+state.orgInfo.role:''),
-    'Stage: '+formatStage(state.orgInfo.stage)+' ('+(STAGE_DEFS[state.orgInfo.stage]?.headcount||'')+')',
+function buildAssessmentContext() {
+  if (!state.submitted) return "No assessment has been submitted yet.";
+  const lines = [
+    \`Organization: \${state.orgInfo.name}\`,
+    consultantState.reviewerName ? \`Reviewed by: \${consultantState.reviewerName}\` : '',
+    consultantState.reviewDate ? \`Review date: \${consultantState.reviewDate}\` : '',
+    \`Contact: \${state.orgInfo.contact || ''}\${state.orgInfo.role ? ', ' + state.orgInfo.role : ''}\`,
+    \`Stage: \${formatStage(state.orgInfo.stage)} (\${STAGE_DEFS[state.orgInfo.stage]?.headcount || ''})\`,
     '',
     'ORG SYSTEMS SELF-SCORES (0=Not in place, 1=Basic, 2=Good, 3=Strong):',
   ];
-  ORG_SYSTEMS.forEach(driver=>{
-    lines.push('\n'+driver.driver+':');
-    driver.items.forEach(item=>{
-      const key=driver.driver+'|'+item.name;
-      const score=state.scores[key];
-      const notes=state.notes[key];
-      const link=state.links[key];
-      lines.push('  - '+item.name+': '+(score!==undefined?score:'Not scored')+(notes?' [Note: '+notes+']':'')+(link?' [Doc: '+link+']':''));
+  ORG_SYSTEMS.forEach(driver => {
+    lines.push(\`\\n\${driver.driver}:\`);
+    driver.items.forEach(item => {
+      const key = \`\${driver.driver}|\${item.name}\`;
+      const score = state.scores[key];
+      const notes = state.notes[key];
+      const link = state.links[key];
+      lines.push(\`  - \${item.name}: \${score !== undefined ? score : 'Not scored'}\${notes ? \` [Note: \${notes}]\` : ''}\${link ? \` [Doc: \${link}]\` : ''}\`);
     });
   });
-  if(state.extraLinks&&state.extraLinks.length>0) lines.push('\nADDITIONAL LINKS: '+state.extraLinks.join(', '));
-  if(state.finalNotes) lines.push('\nFINAL NOTES FROM CLIENT: '+state.finalNotes);
-  const csKeys=Object.keys(consultantState.scores);
-  if(csKeys.length>0){
-    lines.push('\nSCARLET SPARK CONSULTANT SCORES:');
-    ORG_SYSTEMS.forEach(driver=>{
-      driver.items.forEach(item=>{
-        const k=driver.driver+'|'+item.name;
-        const cs=consultantState.scores[k];
-        const cn=consultantState.notes[k];
-        if(cs!==undefined||cn) lines.push('  - '+item.name+': SS='+(cs!==undefined?cs:'not scored')+(cn?' [ScarSpark note: '+cn+']':''));
+
+  if (state.extraLinks && state.extraLinks.length > 0) {
+    lines.push(\`\\nADDITIONAL LINKS: \${state.extraLinks.join(', ')}\`);
+  }
+  if (state.finalNotes) {
+    lines.push(\`\\nFINAL NOTES FROM CLIENT: \${state.finalNotes}\`);
+  }
+  // Consultant scores
+  const csKeys = Object.keys(consultantState.scores);
+  if (csKeys.length > 0) {
+    lines.push('\\nSCARLET SPARK CONSULTANT SCORES (0=Not in place, 1=Needs improvement, 2=Good enough, 3=Great):');
+    ORG_SYSTEMS.forEach(driver => {
+      driver.items.forEach(item => {
+        const k = \`\${driver.driver}|\${item.name}\`;
+        const cs = consultantState.scores[k];
+        const cn = consultantState.notes[k];
+        if (cs !== undefined || cn) {
+          lines.push(\`  - \${item.name}: SS=\${cs !== undefined ? cs : 'not scored'}\${cn ? \` [ScarSpark note: \${cn}]\` : ''}\`);
+        }
       });
     });
   }
-  return lines.join('\n');
+  return lines.join('\\n');
 }
 
-function useSuggest(el){ document.getElementById('ai-input').value=el.textContent.trim(); document.getElementById('ai-input').focus(); }
 
-function formatAIText(text){
+// ═══════════════ AI CHAT ═══════════════
+function useSuggest(el) {
+  document.getElementById('ai-input').value = el.textContent.trim();
+  document.getElementById('ai-input').focus();
+}
+
+function formatAIText(text) {
   return text
-    .replace(/^### (.+)$/gm,'<div style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--brand);margin:12px 0 4px">$1</div>')
-    .replace(/^## (.+)$/gm,'<div style="font-size:1rem;font-weight:700;margin:14px 0 5px;color:var(--charcoal)">$1</div>')
-    .replace(/^# (.+)$/gm,'<div style="font-size:1.05rem;font-weight:700;margin:14px 0 6px;color:var(--charcoal)">$1</div>')
-    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g,'<em>$1</em>')
-    .replace(/^- (.+)$/gm,'<li style="margin-bottom:3px">$1</li>')
-    .replace(/(<li[^>]*>.*?<\/li>\n?)+/gs,m=>'<ul style="margin:6px 0 6px 16px;padding:0">'+m+'</ul>')
-    .replace(/\n\n/g,'<br><br>')
-    .replace(/\n/g,'<br>');
+    .replace(/^### (.+)$/gm, '<div style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--brand);margin:12px 0 4px">$1</div>')
+    .replace(/^## (.+)$/gm, '<div style="font-size:1rem;font-weight:700;margin:14px 0 5px;color:var(--charcoal)">$1</div>')
+    .replace(/^# (.+)$/gm, '<div style="font-size:1.05rem;font-weight:700;margin:14px 0 6px;color:var(--charcoal)">$1</div>')
+    .replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>')
+    .replace(/\\*(.+?)\\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '<li style="margin-bottom:3px">$1</li>')
+    .replace(/(<li[^>]*>.*?<\\/li>\\n?)+/gs, m => '<ul style="margin:6px 0 6px 16px;padding:0">' + m + '</ul>')
+    .replace(/^\\d+\\. (.+)$/gm, '<li style="margin-bottom:3px">$1</li>')
+    .replace(/\\n\\n/g, '<br><br>')
+    .replace(/\\n/g, '<br>');
 }
 
-function appendMessage(role,text){
-  const thread=document.getElementById('ai-thread');
-  const div=document.createElement('div');
-  div.className='ai-message';
-  div.style.flexDirection=role==='user'?'row-reverse':'row';
-  const avatar=role==='claude'?'<div class="ai-avatar claude">C</div>':'<div class="ai-avatar user">You</div>';
-  const bubble='<div class="ai-bubble'+(role==='user'?' user-bubble':'')+'">'+formatAIText(text)+'</div>';
-  div.innerHTML=role==='user'?bubble+avatar:avatar+bubble;
+function appendMessage(role, text) {
+  const thread = document.getElementById('ai-thread');
+  const div = document.createElement('div');
+  div.className = 'ai-message';
+  div.style.flexDirection = role === 'user' ? 'row-reverse' : 'row';
+  const avatar = role === 'claude'
+    ? \`<div class="ai-avatar claude">C</div>\`
+    : \`<div class="ai-avatar user">You</div>\`;
+  const bubble = \`<div class="ai-bubble\${role === 'user' ? ' user-bubble' : ''}">\${formatAIText(text)}</div>\`;
+  div.innerHTML = role === 'user' ? bubble + avatar : avatar + bubble;
   thread.appendChild(div);
-  thread.scrollTop=thread.scrollHeight;
+  thread.scrollTop = thread.scrollHeight;
 }
 
-async function sendAIMessage(){
-  const input=document.getElementById('ai-input');
-  const msg=input.value.trim();
-  if(!msg)return;
-  const btn=document.getElementById('ai-send-btn');
-  if(btn.disabled)return;
-  input.value='';
-  appendMessage('user',msg);
-  state.chatHistory.push({role:'user',content:msg});
-  btn.disabled=true;
-  btn.innerHTML='<span class="spinner"></span>';
-  const systemPrompt='You are an expert organizational health consultant specializing in nonprofits in the animal protection movement. You are helping the Scarlet Spark consulting team analyze an org health self-assessment.\n\nYour role is to:\n1. Analyze the assessment data and surface key insights, patterns, and risks\n2. Help consultants identify priority areas to focus on\n3. Compare the organization\'s self-assessment to what\'s expected for their stage\n4. Flag any red flags, particularly in Safety & Fairness, Leadership, or Goal Clarity\n5. Compare client self-scores with ScarSpark consultant scores where available and highlight discrepancies\n6. Be honest, constructive, and practically focused\n\nKeep responses concise, well-structured, and actionable. Use bullet points for lists. Avoid using ## headers. Do not use excessive line breaks.\n\nASSESSMENT DATA:\n'+buildAssessmentContext();
-  try{
-    const messages=state.chatHistory.map(m=>({role:m.role,content:m.content}));
-    const res=await fetch('/claude',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:systemPrompt,messages}),
+async function sendAIMessage() {
+  const input = document.getElementById('ai-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  const btn = document.getElementById('ai-send-btn');
+  if (btn.disabled) return; // prevent double-click
+  
+  input.value = '';
+  appendMessage('user', msg);
+  state.chatHistory.push({ role: 'user', content: msg });
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>';
+
+  const systemPrompt = \`You are an expert organizational health consultant specializing in nonprofits in the animal protection movement. You are helping the Scarlet Spark consulting team analyze an org health self-assessment.
+
+Your role is to:
+1. Analyze the assessment data and surface key insights, patterns, and risks
+2. Help consultants identify priority areas to focus on
+3. Compare the organization's self-assessment to what's expected for their stage
+4. Flag any red flags, particularly in Safety & Fairness, Leadership, or Goal Clarity
+5. Compare client self-scores with ScarSpark consultant scores where available and highlight discrepancies
+6. Be honest, constructive, and practically focused
+
+Keep responses concise, well-structured, and actionable. Use bullet points for lists. Avoid using ## headers — use plain section labels instead. Do not use excessive line breaks.
+
+ASSESSMENT DATA:
+\${buildAssessmentContext()}\`;
+
+  try {
+    const messages = state.chatHistory.map(m => ({ role: m.role, content: m.content }));
+    
+    const res = await fetch('/claude', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages,
+      })
     });
-    const text=await res.text();
-    if(!res.ok){appendMessage('claude','⚠️ Error '+res.status+': '+text.slice(0,300));return;}
+
+    const text = await res.text();
+    console.log('Worker response status:', res.status);
+    console.log('Worker response body:', text.slice(0, 500));
+
+    if (!res.ok) {
+      appendMessage('claude', \`⚠️ Error \${res.status}: \${text.slice(0, 300)}\`);
+      return;
+    }
+
     let data;
-    try{data=JSON.parse(text);}catch(e){appendMessage('claude','⚠️ Could not parse response: '+text.slice(0,200));return;}
-    const reply=data.content?.map(c=>c.text||'').join('')||'No response content.';
-    appendMessage('claude',reply);
-    state.chatHistory.push({role:'assistant',content:reply});
-  }catch(err){
-    console.error('sendAIMessage error:',err);
-    appendMessage('claude','⚠️ Connection error: '+err.message);
-  }finally{
-    btn.disabled=false;
-    btn.innerHTML='Send';
+    try {
+      data = JSON.parse(text);
+    } catch(e) {
+      appendMessage('claude', \`⚠️ Could not parse response: \${text.slice(0, 200)}\`);
+      return;
+    }
+
+    const reply = data.content?.map(c => c.text || '').join('') || 'No response content.';
+    appendMessage('claude', reply);
+    state.chatHistory.push({ role: 'assistant', content: reply });
+
+  } catch (err) {
+    console.error('sendAIMessage error:', err);
+    appendMessage('claude', \`⚠️ Connection error: \${err.message}\`);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Send';
   }
 }
 
 // ═══════════════ PASSWORD GATE ═══════════════
-const CONSULTANT_PASSWORD='scarlet2024';
-let consultantUnlocked=false;
+const CONSULTANT_PASSWORD = 'scarlet2024';
+let consultantUnlocked = false;
 
-function openPasswordModal(){
-  if(consultantUnlocked){document.getElementById('tab-consultant').click();return;}
+function openPasswordModal() {
+  if (consultantUnlocked) {
+    document.getElementById('tab-consultant').click();
+    return;
+  }
   document.getElementById('pw-overlay').classList.add('show');
-  document.getElementById('pw-input').value='';
-  document.getElementById('pw-error').textContent='';
-  setTimeout(()=>document.getElementById('pw-input').focus(),100);
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-error').textContent = '';
+  setTimeout(() => document.getElementById('pw-input').focus(), 100);
 }
 
-function closePasswordModal(){ document.getElementById('pw-overlay').classList.remove('show'); }
+function closePasswordModal() {
+  document.getElementById('pw-overlay').classList.remove('show');
+}
 
-function checkPassword(){
-  const val=document.getElementById('pw-input').value;
-  if(val===CONSULTANT_PASSWORD){
-    consultantUnlocked=true;
+function checkPassword() {
+  const val = document.getElementById('pw-input').value;
+  if (val === CONSULTANT_PASSWORD) {
+    consultantUnlocked = true;
     closePasswordModal();
-    document.getElementById('nav-tabs').style.display='';
-    document.getElementById('tab-consultant').style.display='';
+    document.getElementById('nav-tabs').style.display = '';
+    document.getElementById('tab-consultant').style.display = '';
     document.getElementById('nav-lock').classList.add('unlocked');
-    document.getElementById('nav-lock').title='Consultant dashboard unlocked';
-    document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
+    document.getElementById('nav-lock').title = 'Consultant dashboard unlocked';
+    document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
     document.getElementById('view-consultant').classList.add('active');
     document.getElementById('tab-consultant').classList.add('active');
-    if(state.submitted)populateConsultantDashboard();
+
+    if (state.submitted) populateConsultantDashboard();
   } else {
-    const inp=document.getElementById('pw-input');
+    const inp = document.getElementById('pw-input');
     inp.classList.add('error');
-    document.getElementById('pw-error').textContent='Incorrect password. Please try again.';
-    inp.value='';
-    setTimeout(()=>{inp.classList.remove('error');inp.focus();},400);
+    document.getElementById('pw-error').textContent = 'Incorrect password. Please try again.';
+    inp.value = '';
+    setTimeout(() => { inp.classList.remove('error'); inp.focus(); }, 400);
   }
 }
 
-function switchView(v,e){
-  if(v==='consultant'&&!consultantUnlocked){openPasswordModal();return;}
-  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
-  document.getElementById('view-'+v).classList.add('active');
-  if(e&&e.currentTarget)e.currentTarget.classList.add('active');
-  if(v==='consultant'&&state.submitted)populateConsultantDashboard();
-}
-
-// ═══════════════ LOAD FROM AIRTABLE ═══════════════
-async function loadSubmissionsList(){
-  const btn=document.getElementById('load-btn');
-  const list=document.getElementById('submissions-list');
-  const status=document.getElementById('load-status');
-  btn.innerHTML='<span class="spinner"></span> Fetching…';
-  btn.disabled=true;
-  status.textContent='';
-  list.style.display='none';
-  try{
-    const res=await fetch(
-      'https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE+'?fields%5B%5D=org_name&fields%5B%5D=contact_name&fields%5B%5D=org_stage&fields%5B%5D=submitted_at&fields%5B%5D=status&sort%5B0%5D%5Bfield%5D=submitted_at&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula='+encodeURIComponent('OR({status}="submitted",{status}="")'),
-      {headers:{Authorization:'Bearer '+AIRTABLE_TOKEN}}
-    );
-    const data=await res.json();
-    if(!data.records||data.records.length===0){
-      status.textContent='No submissions found.';
-      btn.innerHTML='⬇ Load from Airtable';btn.disabled=false;return;
-    }
-    list.innerHTML=data.records.map(r=>'<div onclick="loadSubmission(\''+r.id+'\')" style="padding:10px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.15s;font-size:0.83rem;color:rgba(255,255,255,0.85)" onmouseover="this.style.background=\'rgba(255,255,255,0.1)\'" onmouseout="this.style.background=\'transparent\'"><div style="font-weight:600">'+(r.fields.org_name||'Unnamed')+'</div><div style="color:rgba(255,255,255,0.45);font-size:0.75rem;margin-top:2px">'+(r.fields.org_stage||'')+' · '+(r.fields.submitted_at||'')+'</div></div>').join('');
-    list.style.display='block';
-    btn.innerHTML='⬇ Load from Airtable';btn.disabled=false;
-    status.textContent=data.records.length+' submission'+(data.records.length!==1?'s':'')+' found';
-  }catch(err){
-    status.textContent='Error connecting to Airtable.';
-    btn.innerHTML='⬇ Load from Airtable';btn.disabled=false;
-    console.error(err);
+// ═══════════════ VIEW SWITCHING ═══════════════
+function switchView(v, e) {
+  if (v === 'consultant' && !consultantUnlocked) {
+    openPasswordModal();
+    return;
   }
+  document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById(\`view-\${v}\`).classList.add('active');
+  if (e && e.currentTarget) e.currentTarget.classList.add('active');
+  if (v === 'consultant' && state.submitted) populateConsultantDashboard();
 }
 
-async function loadSubmission(recordId){
-  const status=document.getElementById('load-status');
-  const list=document.getElementById('submissions-list');
-  status.textContent='Loading…';
-  list.style.display='none';
-  try{
-    const res=await fetch('https://api.airtable.com/v0/'+AIRTABLE_BASE+'/'+AIRTABLE_TABLE+'/'+recordId,{headers:{Authorization:'Bearer '+AIRTABLE_TOKEN}});
-    const data=await res.json();
-    if(!res.ok) throw new Error('Airtable API error '+res.status+': '+(data.error?.message||JSON.stringify(data)));
-    if(!data.fields) throw new Error('No fields in response: '+JSON.stringify(data).slice(0,200));
-    const f=data.fields;
+function selectStageCard(val) {
+  document.getElementById('org-stage').value = val;
+  document.querySelectorAll('.stage-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('sc-' + val).classList.add('selected');
+  applyStageRequirements(val);
+  updateProgress();
+}
 
-    state.orgInfo={name:f.org_name||'',contact:f.contact_name||'',role:f.contact_role||'',email:f.contact_email||'',stage:f.org_stage||''};
-    state.submitted=true;
-    state.finalNotes=f.final_notes||'';
-    state.extraLinks=f.extra_links?f.extra_links.split(', ').filter(Boolean):[];
-    state.scores={};state.notes={};state.links={};
 
-    consultantState.recordId=recordId;
-    consultantState.scores={};consultantState.notes={};
-    // Restore reviewer info from Airtable
-    consultantState.reviewerName=f.consultant_reviewer||'';
-    consultantState.reviewDate=f.consultant_review_date||'';
 
-    // Load client scores/notes/links using reverse maps
-    for(const[aField,stateKey]of Object.entries(REV_SCORE)){
-      if(f[aField]!==undefined&&f[aField]!=='')state.scores[stateKey]=parseInt(f[aField]);
+
+
+function setConsultantScore(key, enc, val) {
+  consultantState.scores[key] = val;
+  [0,1,2,3].forEach(v => {
+    const btn = document.getElementById(\`csb-\${enc}-\${v}\`);
+    if (btn) {
+      btn.style.background = v === val ? 'var(--brand)' : 'white';
+      btn.style.color = v === val ? 'white' : 'var(--mid)';
+      btn.style.borderColor = v === val ? 'var(--brand)' : 'var(--border)';
     }
-    for(const[aField,stateKey]of Object.entries(REV_NOTES)){
-      if(f[aField])state.notes[stateKey]=f[aField];
-    }
-    for(const[aField,stateKey]of Object.entries(REV_LINKS)){
-      if(f[aField])state.links[stateKey]=f[aField];
-    }
+  });
+}
 
-    // Load consultant scores/notes using reverse maps
-    for(const[aField,stateKey]of Object.entries(REV_CS)){
-      if(f[aField]!==undefined&&f[aField]!=='')consultantState.scores[stateKey]=parseInt(f[aField]);
-    }
-    for(const[aField,stateKey]of Object.entries(REV_CN)){
-      if(f[aField])consultantState.notes[stateKey]=f[aField];
-    }
+function setConsultantNote(key, val) {
+  consultantState.notes[key] = val;
+}
 
-    // Switch to consultant view and populate
-    document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
-    document.getElementById('view-consultant').classList.add('active');
-    populateConsultantDashboard();
+function updateConsultantMeta() {
+  const name = document.getElementById('consultant-name')?.value?.trim();
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+  const ts = document.getElementById('review-timestamp');
+  if (ts) {
+    ts.textContent = name ? \`\${dateStr} at \${timeStr}\` : '';
+  }
+  // Store in consultantState
+  consultantState.reviewerName = name || '';
+  consultantState.reviewDate = name ? \`\${dateStr} at \${timeStr}\` : '';
+}
 
-    // Restore reviewer name/date in UI (populateConsultantDashboard already does this, but ensure it's set)
-    setTimeout(()=>{
-      const nameEl=document.getElementById('consultant-name');
-      if(nameEl&&consultantState.reviewerName) nameEl.value=consultantState.reviewerName;
-      const ts=document.getElementById('review-timestamp');
-      if(ts&&consultantState.reviewDate) ts.textContent=consultantState.reviewDate;
-    },100);
+async function saveConsultantScores() {
+  if (!consultantState.recordId) return;
+  const btn = document.getElementById('save-consultant-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
 
-    status.textContent='✓ Loaded: '+state.orgInfo.name;
-    document.querySelectorAll('.sidebar-item').forEach(s=>s.classList.remove('active'));
-    document.querySelectorAll('.sidebar-item')[0].classList.add('active');
-    document.querySelectorAll('.consultant-panel').forEach(p=>p.style.display='none');
-    document.getElementById('panel-overview').style.display='block';
-  }catch(err){
-    status.textContent='Error: '+err.message;
-    console.error('loadSubmission error:',err);
+  const fields = {};
+
+  // Add reviewer info
+  if (consultantState.reviewerName) {
+    fields.consultant_reviewer = consultantState.reviewerName;
+    fields.consultant_review_date = consultantState.reviewDate;
+  }
+
+  const CS_SAVE_MAP = {
+    'Goal Clarity|Mission & vision': 'cs_mission_vision', 'Goal Clarity|Strategy & theory of change': 'cs_strategy_theory',
+    'Goal Clarity|Impact measurement': 'cs_impact_measurement', 'Goal Clarity|Strategic planning & goal-setting process': 'cs_strategic_planning',
+    'Role Clarity|Role and/or project descriptions': 'cs_role_descriptions', 'Role Clarity|Decision-making authority & process': 'cs_decision_making',
+    'Role Clarity|Role and/or project success metrics': 'cs_success_metrics', 'Role Clarity|Board clarity': 'cs_board_clarity',
+    'Role Clarity|Roles & responsibilities directory': 'cs_responsibilities_directory',
+    'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation': 'cs_harassment_policies',
+    'Safety & Fairness|2+ decision makers for high-stakes decisions': 'cs_high_stakes_decisions',
+    'Safety & Fairness|Escalation process': 'cs_escalation', 'Safety & Fairness|Strategy to enable inclusion on the team': 'cs_inclusion',
+    'Safety & Fairness|Compensation formula (if relevant)': 'cs_compensation', 'Safety & Fairness|Termination process': 'cs_termination',
+    'Safety & Fairness|Independent board and/or a system to minimize conflict of interest': 'cs_conflict_of_interest',
+    'Feedback & Learning|Goal-tracking process': 'cs_goal_tracking', 'Feedback & Learning|Feedback norms & nudges': 'cs_feedback_norms',
+    'Feedback & Learning|Retrospectives': 'cs_retrospectives', 'Feedback & Learning|Performance assessments': 'cs_performance_assessments',
+    'Feedback & Learning|Engagement survey & action process': 'cs_engagement_survey', 'Feedback & Learning|Individual development plans': 'cs_development_plans',
+    'Feedback & Learning|Turnover tracking': 'cs_turnover_tracking', 'Feedback & Learning|Innovation & experimentation': 'cs_innovation',
+    'Feedback & Learning|Process to get team input on strategic decisions': 'cs_team_input',
+    'Leadership|Leader & manager role clarity': 'cs_leader_role_clarity', 'Leadership|Access to leaders': 'cs_access_to_leaders',
+    'Leadership|Leader & manager assessment': 'cs_leader_assessment', 'Leadership|Assessment of ED': 'cs_ed_assessment',
+    'Leadership|Leadership development': 'cs_leadership_development', 'Leadership|Leadership team structure (if relevant)': 'cs_leadership_structure',
+    'Collaboration & Communication|Org values': 'cs_org_values', 'Collaboration & Communication|Org norms or ways of working': 'cs_org_norms',
+    'Collaboration & Communication|Cadence and system of information sharing': 'cs_info_sharing',
+    'Collaboration & Communication|Org design that enables cross-team collaboration': 'cs_org_design',
+    'Collaboration & Communication|System for 1-1 relationships': 'cs_oneonone_relationships',
+    'Collaboration & Communication|System for org-wide relationships': 'cs_orgwide_relationships',
+    'Stability|Coverage plans': 'cs_coverage_plans', 'Stability|Succession plans': 'cs_succession_plans',
+    'Stability|Capacity': 'cs_capacity', 'Stability|Single source of truth for key information': 'cs_single_source',
+    'Stability|Strategy for expanding team diversity': 'cs_team_diversity',
+    'Scalability|Individualized support system': 'cs_individualized_support', 'Scalability|Weekly or bi-weekly 1-on-1s': 'cs_oneononemeetings',
+    'Scalability|Hiring process': 'cs_hiring_process', 'Scalability|Onboarding process': 'cs_onboarding',
+  };
+
+  for (const [key, field] of Object.entries(CS_SAVE_MAP)) {
+    const val = consultantState.scores[key];
+    if (val !== undefined) fields[field] = String(val);
+    const note = consultantState.notes[key];
+    if (note) fields[field.replace('cs_','cn_')] = note;
+  }
+
+  try {
+    await fetch(\`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}/\${consultantState.recordId}\`, {
+      method: 'PATCH',
+      headers: { 'Authorization': \`Bearer \${AIRTABLE_TOKEN}\`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields }),
+    });
+    if (btn) { btn.disabled = false; btn.textContent = '✓ Saved'; setTimeout(() => { btn.textContent = 'Save scores'; }, 2000); }
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = 'Save failed — retry'; }
+    console.error(e);
   }
 }
 
 // ═══════════════ PRINT SUMMARY ═══════════════
-function showPrintSummary(){
-  const el=document.getElementById('print-summary');
-  const container=document.getElementById('print-summary-content');
-  const SCORE_LABELS={
-    0:{label:'0 — Not in place',bg:'#FEE2E2',color:'#DC2626'},
-    1:{label:'1 — Needs improvement',bg:'#FEF3C7',color:'#D97706'},
-    2:{label:'2 — Good enough for now',bg:'#D1FAE5',color:'#059669'},
-    3:{label:'3 — Great',bg:'#EEF2FF',color:'#3B37B3'},
+function showPrintSummary() {
+  const el = document.getElementById('print-summary');
+  const container = document.getElementById('print-summary-content');
+
+  const SCORE_LABELS = {
+    0: { label: '0 — Not in place',       bg: '#FEE2E2', color: '#DC2626' },
+    1: { label: '1 — Needs improvement',  bg: '#FEF3C7', color: '#D97706' },
+    2: { label: '2 — Good enough for now',bg: '#D1FAE5', color: '#059669' },
+    3: { label: '3 — Great',              bg: '#EEF2FF', color: '#3B37B3' },
   };
-  const stage=state.orgInfo.stage?(STAGE_DEFS[state.orgInfo.stage]?.name||state.orgInfo.stage):'Not specified';
-  let html='<div class="summary-org-header"><div style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px">Organizational Health Assessment</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:2rem;font-weight:700;margin-bottom:12px">'+(state.orgInfo.name||'Your Organization')+'</div><div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.87rem;color:rgba(255,255,255,0.7)">'+(state.orgInfo.contact?'<span>👤 '+state.orgInfo.contact+(state.orgInfo.role?', '+state.orgInfo.role:'')+'</span>':'')+(state.orgInfo.email?'<span>✉ '+state.orgInfo.email+'</span>':'')+'<span>📍 Stage: '+stage+'</span><span>📅 '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+'</span></div></div>';
-  ORG_SYSTEMS.forEach(driver=>{
-    const dScores=driver.items.map(i=>state.scores[driver.driver+'|'+i.name]).filter(s=>s!==undefined);
-    const dAvg=dScores.length?(dScores.reduce((a,b)=>a+b,0)/dScores.length).toFixed(1):'—';
-    const itemsHtml=driver.items.map(item=>{
-      const key=driver.driver+'|'+item.name;
-      const score=state.scores[key];const notes=state.notes[key]||'';const link=state.links[key]||'';
-      if(score===undefined&&!notes&&!link)return'';
-      const sl=score!==undefined?SCORE_LABELS[score]:null;
-      return'<div class="summary-item"><div class="summary-item-name">'+item.name+'</div>'+(sl?'<span class="summary-item-score" style="background:'+sl.bg+';color:'+sl.color+'">'+sl.label+'</span>':'')+(notes?'<div class="summary-item-notes">'+notes+'</div>':'')+(link?'<div class="summary-item-link"><a href="'+link+'" target="_blank">'+link+'</a></div>':'')+'</div>';
+
+  const stage = state.orgInfo.stage
+    ? (STAGE_DEFS[state.orgInfo.stage]?.name || state.orgInfo.stage)
+    : 'Not specified';
+
+  let html = \`
+    <div class="summary-org-header">
+      <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px">Organizational Health Assessment</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;margin-bottom:12px">\${state.orgInfo.name || 'Your Organization'}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.87rem;color:rgba(255,255,255,0.7)">
+        \${state.orgInfo.contact ? \`<span>👤 \${state.orgInfo.contact}\${state.orgInfo.role ? ', ' + state.orgInfo.role : ''}</span>\` : ''}
+        \${state.orgInfo.email ? \`<span>✉ \${state.orgInfo.email}</span>\` : ''}
+        <span>📍 Stage: \${stage}</span>
+        <span>📅 \${new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'})}</span>
+      </div>
+    </div>\`;
+
+  ORG_SYSTEMS.forEach(driver => {
+    const dScores = driver.items.map(i => state.scores[\`\${driver.driver}|\${i.name}\`]).filter(s => s !== undefined);
+    const dAvg = dScores.length ? (dScores.reduce((a,b)=>a+b,0)/dScores.length).toFixed(1) : '—';
+
+    const itemsHtml = driver.items.map(item => {
+      const key = \`\${driver.driver}|\${item.name}\`;
+      const score = state.scores[key];
+      const notes = state.notes[key] || '';
+      const link  = state.links[key]  || '';
+      if (score === undefined && !notes && !link) return '';
+      const sl = score !== undefined ? SCORE_LABELS[score] : null;
+      return \`<div class="summary-item">
+        <div class="summary-item-name">\${item.name}</div>
+        \${sl ? \`<span class="summary-item-score" style="background:\${sl.bg};color:\${sl.color}">\${sl.label}</span>\` : ''}
+        \${notes ? \`<div class="summary-item-notes">\${notes}</div>\` : ''}
+        \${link  ? \`<div class="summary-item-link"><a href="\${link}" target="_blank">\${link}</a></div>\` : ''}
+      </div>\`;
     }).join('');
-    if(!itemsHtml.trim())return;
-    html+='<div class="summary-driver-block"><div class="summary-driver-header"><div class="summary-driver-title">'+driver.driver+'</div><div style="font-size:0.82rem;color:var(--mid);font-weight:600">Avg: '+dAvg+' / 3</div></div>'+itemsHtml+'</div>';
+
+    if (!itemsHtml.trim()) return;
+
+    html += \`<div class="summary-driver-block">
+      <div class="summary-driver-header">
+        <div class="summary-driver-title">\${driver.driver}</div>
+        <div style="font-size:0.82rem;color:var(--mid);font-weight:600">Avg: \${dAvg} / 3</div>
+      </div>
+      \${itemsHtml}
+    </div>\`;
   });
-  if(state.finalNotes||(state.extraLinks&&state.extraLinks.length>0)){
-    html+='<div class="summary-final"><div style="font-family:\'Cormorant Garamond\',serif;font-size:1.2rem;font-weight:700;margin-bottom:16px;color:var(--brand)">Additional notes</div>'+(state.finalNotes?'<div style="font-size:0.9rem;color:var(--mid);line-height:1.65;margin-bottom:12px">'+state.finalNotes+'</div>':'')+(state.extraLinks&&state.extraLinks.length>0?'<div style="font-size:0.85rem">'+state.extraLinks.map(l=>'<div style="margin-bottom:4px"><a href="'+l+'" target="_blank" style="color:var(--brand)">'+l+'</a></div>').join('')+'</div>':'')+'</div>';
+
+  if (state.finalNotes || (state.extraLinks && state.extraLinks.length > 0)) {
+    html += \`<div class="summary-final">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;margin-bottom:16px;color:var(--brand)">Additional notes</div>
+      \${state.finalNotes ? \`<div style="font-size:0.9rem;color:var(--mid);line-height:1.65;margin-bottom:12px">\${state.finalNotes}</div>\` : ''}
+      \${state.extraLinks && state.extraLinks.length > 0 ? \`<div style="font-size:0.85rem">\${state.extraLinks.map(l => \`<div style="margin-bottom:4px"><a href="\${l}" target="_blank" style="color:var(--brand)">\${l}</a></div>\`).join('')}</div>\` : ''}
+    </div>\`;
   }
-  container.innerHTML=html;
-  el.style.display='block';
-  el.style.position='relative';
-  el.style.zIndex='1';
-  el.scrollIntoView({behavior:'smooth'});
+
+  container.innerHTML = html;
+  el.style.display = 'block';
+  el.style.position = 'relative';
+  el.style.zIndex = '1';
+  el.scrollIntoView({ behavior: 'smooth' });
 }
 
-function hidePrintSummary(){
-  document.getElementById('print-summary').style.display='none';
-  document.getElementById('success-screen').scrollIntoView({behavior:'smooth'});
+function hidePrintSummary() {
+  document.getElementById('print-summary').style.display = 'none';
+  document.getElementById('success-screen').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ═══════════════ LOAD FROM AIRTABLE ═══════════════
+async function loadSubmissionsList() {
+  const btn = document.getElementById('load-btn');
+  const list = document.getElementById('submissions-list');
+  const status = document.getElementById('load-status');
+
+  btn.innerHTML = '<span class="spinner"></span> Fetching…';
+  btn.disabled = true;
+  status.textContent = '';
+  list.style.display = 'none';
+
+  try {
+    const res = await fetch(
+      \`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}?fields%5B%5D=org_name&fields%5B%5D=contact_name&fields%5B%5D=org_stage&fields%5B%5D=submitted_at&fields%5B%5D=status&sort%5B0%5D%5Bfield%5D=submitted_at&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=\${encodeURIComponent('OR({status}="submitted",{status}="")')}\`, 
+      { headers: { Authorization: \`Bearer \${AIRTABLE_TOKEN}\` } }
+    );
+    const data = await res.json();
+
+    if (!data.records || data.records.length === 0) {
+      status.textContent = 'No submissions found.';
+      btn.innerHTML = '⬇ Load from Airtable';
+      btn.disabled = false;
+      return;
+    }
+
+    list.innerHTML = data.records.map(r => \`
+      <div onclick="loadSubmission('\${r.id}')" style="padding:10px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.15s;font-size:0.83rem;color:rgba(255,255,255,0.85)" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">
+        <div style="font-weight:600">\${r.fields.org_name || 'Unnamed'}</div>
+        <div style="color:rgba(255,255,255,0.45);font-size:0.75rem;margin-top:2px">\${r.fields.org_stage || ''} · \${r.fields.submitted_at || ''}</div>
+      </div>\`).join('');
+
+    list.style.display = 'block';
+    btn.innerHTML = '⬇ Load from Airtable';
+    btn.disabled = false;
+    status.textContent = \`\${data.records.length} submission\${data.records.length !== 1 ? 's' : ''} found\`;
+  } catch (err) {
+    status.textContent = 'Error connecting to Airtable.';
+    btn.innerHTML = '⬇ Load from Airtable';
+    btn.disabled = false;
+    console.error(err);
+  }
+}
+
+async function loadSubmission(recordId) {
+  const status = document.getElementById('load-status');
+  const list = document.getElementById('submissions-list');
+  status.textContent = 'Loading…';
+  list.style.display = 'none';
+
+  try {
+    const res = await fetch(
+      \`https://api.airtable.com/v0/\${AIRTABLE_BASE}/\${AIRTABLE_TABLE}/\${recordId}\`,
+      { headers: { Authorization: \`Bearer \${AIRTABLE_TOKEN}\` } }
+    );
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(\`Airtable API error \${res.status}: \${data.error?.message || JSON.stringify(data)}\`);
+    }
+    if (!data.fields) {
+      throw new Error(\`No fields in response: \${JSON.stringify(data).slice(0, 200)}\`);
+    }
+    const f = data.fields;
+
+    // Populate state.orgInfo
+    state.orgInfo = {
+      name:    f.org_name    || '',
+      contact: f.contact_name || '',
+      role:    f.contact_role || '',
+      email:   f.contact_email || '',
+      stage:   f.org_stage   || '',
+    };
+    state.submitted = true;
+    state.finalNotes = f.final_notes || '';
+    state.extraLinks = f.extra_links ? f.extra_links.split(', ').filter(Boolean) : [];
+
+    // Store record ID and load existing consultant scores
+    consultantState.recordId = recordId;
+    consultantState.scores = {};
+    consultantState.notes  = {};
+    consultantState.reviewerName = f.consultant_reviewer || '';
+    consultantState.reviewDate = f.consultant_review_date || '';
+    // Restore to UI after dashboard populates
+    setTimeout(() => {
+      const nameEl = document.getElementById('consultant-name');
+      if (nameEl && consultantState.reviewerName) nameEl.value = consultantState.reviewerName;
+      updateConsultantMeta();
+    }, 300);
+
+    // Reverse field maps
+    const SCORE_FIELDS = {
+      score_mission_vision:           'Goal Clarity|Mission & vision',
+      score_strategy_theory:          'Goal Clarity|Strategy & theory of change',
+      score_impact_measurement:       'Goal Clarity|Impact measurement',
+      score_strategic_planning:       'Goal Clarity|Strategic planning & goal-setting process',
+      score_role_descriptions:        'Role Clarity|Role and/or project descriptions',
+      score_decision_making:          'Role Clarity|Decision-making authority & process',
+      score_success_metrics:          'Role Clarity|Role and/or project success metrics',
+      score_board_clarity:            'Role Clarity|Board clarity',
+      score_responsibilities_directory: 'Role Clarity|Roles & responsibilities directory',
+      score_harassment_policies:      'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation',
+      score_high_stakes_decisions:    'Safety & Fairness|2+ decision makers for high-stakes decisions',
+      score_escalation:               'Safety & Fairness|Escalation process',
+      score_inclusion:                'Safety & Fairness|Strategy to enable inclusion on the team',
+      score_compensation:             'Safety & Fairness|Compensation formula (if relevant)',
+      score_termination:              'Safety & Fairness|Termination process',
+      score_conflict_of_interest:     'Safety & Fairness|Independent board and/or a system to minimize conflict of interest',
+      score_goal_tracking:            'Feedback & Learning|Goal-tracking process',
+      score_feedback_norms:           'Feedback & Learning|Feedback norms & nudges',
+      score_retrospectives:           'Feedback & Learning|Retrospectives',
+      score_performance_assessments:  'Feedback & Learning|Performance assessments',
+      score_engagement_survey:        'Feedback & Learning|Engagement survey & action process',
+      score_development_plans:        'Feedback & Learning|Individual development plans',
+      score_turnover_tracking:        'Feedback & Learning|Turnover tracking',
+      score_innovation:               'Feedback & Learning|Innovation & experimentation',
+      score_team_input:               'Feedback & Learning|Process to get team input on strategic decisions',
+      score_leader_role_clarity:      'Leadership|Leader & manager role clarity',
+      score_access_to_leaders:        'Leadership|Access to leaders',
+      score_leader_assessment:        'Leadership|Leader & manager assessment',
+      score_ed_assessment:            'Leadership|Assessment of ED',
+      score_leadership_development:   'Leadership|Leadership development',
+      score_leadership_structure:     'Leadership|Leadership team structure (if relevant)',
+      score_org_values:               'Collaboration & Communication|Org values',
+      score_org_norms:                'Collaboration & Communication|Org norms or ways of working',
+      score_info_sharing:             'Collaboration & Communication|Cadence and system of information sharing',
+      score_org_design:               'Collaboration & Communication|Org design that enables cross-team collaboration',
+      score_oneonone_relationships:   'Collaboration & Communication|System for 1-1 relationships',
+      score_orgwide_relationships:    'Collaboration & Communication|System for org-wide relationships',
+      score_coverage_plans:           'Stability|Coverage plans',
+      score_succession_plans:         'Stability|Succession plans',
+      score_capacity:                 'Stability|Capacity',
+      score_single_source:            'Stability|Single source of truth for key information',
+      score_team_diversity:           'Stability|Strategy for expanding team diversity',
+      score_individualized_support:   'Scalability|Individualized support system',
+      score_oneononemeetings:         'Scalability|Weekly or bi-weekly 1-on-1s',
+      score_hiring_process:           'Scalability|Hiring process',
+      score_onboarding:               'Scalability|Onboarding process',
+    };
+
+    const NOTES_FIELDS = {
+      notes_mission_vision:           'Goal Clarity|Mission & vision',
+      notes_strategy_theory:          'Goal Clarity|Strategy & theory of change',
+      notes_impact_measurement:       'Goal Clarity|Impact measurement',
+      notes_strategic_planning:       'Goal Clarity|Strategic planning & goal-setting process',
+      notes_role_descriptions:        'Role Clarity|Role and/or project descriptions',
+      notes_decision_making:          'Role Clarity|Decision-making authority & process',
+      notes_success_metrics:          'Role Clarity|Role and/or project success metrics',
+      notes_board_clarity:            'Role Clarity|Board clarity',
+      notes_responsibilities_directory: 'Role Clarity|Roles & responsibilities directory',
+      notes_harassment_policies:      'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation',
+      notes_high_stakes_decisions:    'Safety & Fairness|2+ decision makers for high-stakes decisions',
+      notes_escalation:               'Safety & Fairness|Escalation process',
+      notes_inclusion:                'Safety & Fairness|Strategy to enable inclusion on the team',
+      notes_compensation:             'Safety & Fairness|Compensation formula (if relevant)',
+      notes_termination:              'Safety & Fairness|Termination process',
+      notes_conflict_of_interest:     'Safety & Fairness|Independent board and/or a system to minimize conflict of interest',
+      notes_goal_tracking:            'Feedback & Learning|Goal-tracking process',
+      notes_feedback_norms:           'Feedback & Learning|Feedback norms & nudges',
+      notes_retrospectives:           'Feedback & Learning|Retrospectives',
+      notes_performance_assessments:  'Feedback & Learning|Performance assessments',
+      notes_engagement_survey:        'Feedback & Learning|Engagement survey & action process',
+      notes_development_plans:        'Feedback & Learning|Individual development plans',
+      notes_turnover_tracking:        'Feedback & Learning|Turnover tracking',
+      notes_innovation:               'Feedback & Learning|Innovation & experimentation',
+      notes_team_input:               'Feedback & Learning|Process to get team input on strategic decisions',
+      notes_leader_role_clarity:      'Leadership|Leader & manager role clarity',
+      notes_access_to_leaders:        'Leadership|Access to leaders',
+      notes_leader_assessment:        'Leadership|Leader & manager assessment',
+      notes_ed_assessment:            'Leadership|Assessment of ED',
+      notes_leadership_development:   'Leadership|Leadership development',
+      notes_leadership_structure:     'Leadership|Leadership team structure (if relevant)',
+      notes_org_values:               'Collaboration & Communication|Org values',
+      notes_org_norms:                'Collaboration & Communication|Org norms or ways of working',
+      notes_info_sharing:             'Collaboration & Communication|Cadence and system of information sharing',
+      notes_org_design:               'Collaboration & Communication|Org design that enables cross-team collaboration',
+      notes_oneonone_relationships:   'Collaboration & Communication|System for 1-1 relationships',
+      notes_orgwide_relationships:    'Collaboration & Communication|System for org-wide relationships',
+      notes_coverage_plans:           'Stability|Coverage plans',
+      notes_succession_plans:         'Stability|Succession plans',
+      notes_capacity:                 'Stability|Capacity',
+      notes_single_source:            'Stability|Single source of truth for key information',
+      notes_team_diversity:           'Stability|Strategy for expanding team diversity',
+      notes_individualized_support:   'Scalability|Individualized support system',
+      notes_oneononemeetings:         'Scalability|Weekly or bi-weekly 1-on-1s',
+      notes_hiring_process:           'Scalability|Hiring process',
+      notes_onboarding:               'Scalability|Onboarding process',
+    };
+
+    const LINKS_FIELDS = {
+      link_mission_vision:            'Goal Clarity|Mission & vision',
+      link_strategy_theory:           'Goal Clarity|Strategy & theory of change',
+      link_impact_measurement:        'Goal Clarity|Impact measurement',
+      link_strategic_planning:        'Goal Clarity|Strategic planning & goal-setting process',
+      link_role_descriptions:         'Role Clarity|Role and/or project descriptions',
+      link_decision_making:           'Role Clarity|Decision-making authority & process',
+      link_success_metrics:           'Role Clarity|Role and/or project success metrics',
+      link_board_clarity:             'Role Clarity|Board clarity',
+      link_responsibilities_directory:'Role Clarity|Roles & responsibilities directory',
+      link_harassment_policies:       'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation',
+      link_high_stakes_decisions:     'Safety & Fairness|2+ decision makers for high-stakes decisions',
+      link_escalation:                'Safety & Fairness|Escalation process',
+      link_inclusion:                 'Safety & Fairness|Strategy to enable inclusion on the team',
+      link_compensation:              'Safety & Fairness|Compensation formula (if relevant)',
+      link_termination:               'Safety & Fairness|Termination process',
+      link_conflict_of_interest:      'Safety & Fairness|Independent board and/or a system to minimize conflict of interest',
+      link_goal_tracking:             'Feedback & Learning|Goal-tracking process',
+      link_feedback_norms:            'Feedback & Learning|Feedback norms & nudges',
+      link_retrospectives:            'Feedback & Learning|Retrospectives',
+      link_performance_assessments:   'Feedback & Learning|Performance assessments',
+      link_engagement_survey:         'Feedback & Learning|Engagement survey & action process',
+      link_development_plans:         'Feedback & Learning|Individual development plans',
+      link_turnover_tracking:         'Feedback & Learning|Turnover tracking',
+      link_innovation:                'Feedback & Learning|Innovation & experimentation',
+      link_team_input:                'Feedback & Learning|Process to get team input on strategic decisions',
+      link_leader_role_clarity:       'Leadership|Leader & manager role clarity',
+      link_access_to_leaders:         'Leadership|Access to leaders',
+      link_leader_assessment:         'Leadership|Leader & manager assessment',
+      link_ed_assessment:             'Leadership|Assessment of ED',
+      link_leadership_development:    'Leadership|Leadership development',
+      link_leadership_structure:      'Leadership|Leadership team structure (if relevant)',
+      link_org_values:                'Collaboration & Communication|Org values',
+      link_org_norms:                 'Collaboration & Communication|Org norms or ways of working',
+      link_info_sharing:              'Collaboration & Communication|Cadence and system of information sharing',
+      link_org_design:                'Collaboration & Communication|Org design that enables cross-team collaboration',
+      link_oneonone_relationships:    'Collaboration & Communication|System for 1-1 relationships',
+      link_orgwide_relationships:     'Collaboration & Communication|System for org-wide relationships',
+      link_coverage_plans:            'Stability|Coverage plans',
+      link_succession_plans:          'Stability|Succession plans',
+      link_capacity:                  'Stability|Capacity',
+      link_single_source:             'Stability|Single source of truth for key information',
+      link_team_diversity:            'Stability|Strategy for expanding team diversity',
+      link_individualized_support:    'Scalability|Individualized support system',
+      link_oneononemeetings:          'Scalability|Weekly or bi-weekly 1-on-1s',
+      link_hiring_process:            'Scalability|Hiring process',
+      link_onboarding:                'Scalability|Onboarding process',
+    };
+
+    // Populate client scores, notes, links
+    state.scores = {};
+    state.notes  = {};
+    state.links  = {};
+
+    for (const [aField, stateKey] of Object.entries(SCORE_FIELDS)) {
+      if (f[aField] !== undefined && f[aField] !== '') state.scores[stateKey] = parseInt(f[aField]);
+    }
+    for (const [aField, stateKey] of Object.entries(NOTES_FIELDS)) {
+      if (f[aField]) state.notes[stateKey] = f[aField];
+    }
+    for (const [aField, stateKey] of Object.entries(LINKS_FIELDS)) {
+      if (f[aField]) state.links[stateKey] = f[aField];
+    }
+
+    // Load consultant scores & notes
+    const CS_LOAD = {
+      cs_mission_vision:'Goal Clarity|Mission & vision', cs_strategy_theory:'Goal Clarity|Strategy & theory of change',
+      cs_impact_measurement:'Goal Clarity|Impact measurement', cs_strategic_planning:'Goal Clarity|Strategic planning & goal-setting process',
+      cs_role_descriptions:'Role Clarity|Role and/or project descriptions', cs_decision_making:'Role Clarity|Decision-making authority & process',
+      cs_success_metrics:'Role Clarity|Role and/or project success metrics', cs_board_clarity:'Role Clarity|Board clarity',
+      cs_responsibilities_directory:'Role Clarity|Roles & responsibilities directory',
+      cs_harassment_policies:'Safety & Fairness|Policies to prevent harassment, discrimination & retaliation',
+      cs_high_stakes_decisions:'Safety & Fairness|2+ decision makers for high-stakes decisions',
+      cs_escalation:'Safety & Fairness|Escalation process', cs_inclusion:'Safety & Fairness|Strategy to enable inclusion on the team',
+      cs_compensation:'Safety & Fairness|Compensation formula (if relevant)', cs_termination:'Safety & Fairness|Termination process',
+      cs_conflict_of_interest:'Safety & Fairness|Independent board and/or a system to minimize conflict of interest',
+      cs_goal_tracking:'Feedback & Learning|Goal-tracking process', cs_feedback_norms:'Feedback & Learning|Feedback norms & nudges',
+      cs_retrospectives:'Feedback & Learning|Retrospectives', cs_performance_assessments:'Feedback & Learning|Performance assessments',
+      cs_engagement_survey:'Feedback & Learning|Engagement survey & action process', cs_development_plans:'Feedback & Learning|Individual development plans',
+      cs_turnover_tracking:'Feedback & Learning|Turnover tracking', cs_innovation:'Feedback & Learning|Innovation & experimentation',
+      cs_team_input:'Feedback & Learning|Process to get team input on strategic decisions',
+      cs_leader_role_clarity:'Leadership|Leader & manager role clarity', cs_access_to_leaders:'Leadership|Access to leaders',
+      cs_leader_assessment:'Leadership|Leader & manager assessment', cs_ed_assessment:'Leadership|Assessment of ED',
+      cs_leadership_development:'Leadership|Leadership development', cs_leadership_structure:'Leadership|Leadership team structure (if relevant)',
+      cs_org_values:'Collaboration & Communication|Org values', cs_org_norms:'Collaboration & Communication|Org norms or ways of working',
+      cs_info_sharing:'Collaboration & Communication|Cadence and system of information sharing',
+      cs_org_design:'Collaboration & Communication|Org design that enables cross-team collaboration',
+      cs_oneonone_relationships:'Collaboration & Communication|System for 1-1 relationships',
+      cs_orgwide_relationships:'Collaboration & Communication|System for org-wide relationships',
+      cs_coverage_plans:'Stability|Coverage plans', cs_succession_plans:'Stability|Succession plans',
+      cs_capacity:'Stability|Capacity', cs_single_source:'Stability|Single source of truth for key information',
+      cs_team_diversity:'Stability|Strategy for expanding team diversity',
+      cs_individualized_support:'Scalability|Individualized support system', cs_oneononemeetings:'Scalability|Weekly or bi-weekly 1-on-1s',
+      cs_hiring_process:'Scalability|Hiring process', cs_onboarding:'Scalability|Onboarding process',
+    };
+    for (const [aField, stateKey] of Object.entries(CS_LOAD)) {
+      if (f[aField] !== undefined && f[aField] !== '') consultantState.scores[stateKey] = parseInt(f[aField]);
+      const nField = aField.replace('cs_','cn_');
+      if (f[nField]) consultantState.notes[stateKey] = f[nField];
+    }
+
+    // Restore reviewer name if previously saved
+    if (f.consultant_reviewer) {
+      consultantState.reviewerName = f.consultant_reviewer;
+      consultantState.reviewDate = f.consultant_review_date || '';
+      setTimeout(() => {
+        const nameInput = document.getElementById('consultant-name');
+        const ts = document.getElementById('review-timestamp');
+        if (nameInput) nameInput.value = f.consultant_reviewer;
+        if (ts) ts.textContent = f.consultant_review_date || '';
+      }, 300);
+    }
+
+    // Switch to consultant view and populate dashboard
+    document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
+    document.getElementById('view-consultant').classList.add('active');
+    populateConsultantDashboard();
+
+    status.textContent = \`✓ Loaded: \${state.orgInfo.name}\`;
+    // highlight overview in sidebar
+    document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.sidebar-item')[0].classList.add('active');
+    document.querySelectorAll('.consultant-panel').forEach(p => p.style.display = 'none');
+    document.getElementById('panel-overview').style.display = 'block';
+
+  } catch (err) {
+    status.textContent = \`Error: \${err.message}\`;
+    console.error('loadSubmission error:', err);
+  }
 }
 
 // ═══════════════ INIT ═══════════════
-buildDriverPages();
-window.addEventListener('load',()=>{ loadSessionFromUrl(); });
+buildClientForm();
+// Check for session in URL and restore if found
+window.addEventListener('load', () => {
+  loadSessionFromUrl();
+});
 </script>
 </body>
-</html>`;
+</html>
+`;
     return new Response(html, {
       headers: { 'Content-Type': 'text/html;charset=UTF-8' }
     });
