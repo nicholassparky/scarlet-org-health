@@ -1830,7 +1830,7 @@ function buildDriverPages(){
       '</div>'+
       itemsHtml+
       '<div class="page-nav">'+
-        '<button class="btn-back" onclick="goToPage('+(pageNum-1)+', &apos;back&apos;)">← Back</button>'+
+        '<button class="btn-back" onclick="goToPage('+(pageNum-1)+', \'back\')">← Back</button>'+
         '<span class="page-nav-section"><strong>'+driver.driver+'</strong> · '+pageNum+' of '+ORG_SYSTEMS.length+'</span>'+
         '<button class="btn-primary" onclick="completePage('+pageNum+')" style="padding:11px 28px">'+(pageNum===ORG_SYSTEMS.length?'Continue →':'Mark as complete →')+'</button>'+
       '</div>';
