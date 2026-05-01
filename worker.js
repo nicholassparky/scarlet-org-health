@@ -1813,30 +1813,39 @@ async function loadSessionFromUrl(){
 }
 
 // ═══════════════ PAGED FORM ═══════════════
-function buildDriverPages(){
-  const container=document.getElementById('driver-pages');
-  ORG_SYSTEMS.forEach((driver,di)=>{
-    const pageNum=di+1;
-    const pageEl=document.createElement('div');
-    pageEl.className='form-page';
-    pageEl.id='form-page-'+pageNum;
-    const itemsHtml=driver.items.map(item=>buildSystemItem(driver.driver,item)).join('');
-    pageEl.innerHTML=
-      '<div class="driver-page-header">'+
-        '<div class="driver-page-eyebrow">Section '+pageNum+' of '+ORG_SYSTEMS.length+'</div>'+
-        '<div class="driver-page-title">'+driver.driver+'</div>'+
-        '<div class="driver-page-desc">'+driver.desc+'</div>'+
-        (driver.url?'<a href="'+driver.url+'" target="_blank" rel="noopener" class="driver-page-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Scarlet Spark tools for this area</a>':'')+
-      '</div>'+
-      itemsHtml+
-      '<div class="page-nav">'+
-        '<button class="btn-back" onclick="goToPage('+(pageNum-1)+', \'back\')">← Back</button>'+
-        '<span class="page-nav-section"><strong>'+driver.driver+'</strong> · '+pageNum+' of '+ORG_SYSTEMS.length+'</span>'+
-        '<button class="btn-primary" onclick="completePage('+pageNum+')" style="padding:11px 28px">'+(pageNum===ORG_SYSTEMS.length?'Continue →':'Mark as complete →')+'</button>'+
-      '</div>';
+function buildDriverPages() {
+  const container = document.getElementById('driver-pages');
+  ORG_SYSTEMS.forEach((driver, di) => {
+    const pageNum = di + 1;
+    const pageEl = document.createElement('div');
+    pageEl.className = 'form-page';
+    pageEl.id = \`form-page-\${pageNum}\`;
+
+    const itemsHtml = driver.items.map((item) => buildSystemItem(driver.driver, item)).join('');
+
+    pageEl.innerHTML = \`
+      <div class="driver-page-header">
+        <div class="driver-page-eyebrow">Section \${pageNum} of \${ORG_SYSTEMS.length}</div>
+        <div class="driver-page-title">\${driver.driver}</div>
+        <div class="driver-page-desc">\${driver.desc}</div>
+        \${driver.url ? \`<a href="\${driver.url}" target="_blank" rel="noopener" class="driver-page-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Scarlet Spark tools for this area
+        </a>\` : ''}
+      </div>
+      \${itemsHtml}
+      <div class="page-nav">
+        <button class="btn-back" onclick="goToPage(\${pageNum - 1}, 'back')">← Back</button>
+        <span class="page-nav-section"><strong>\${driver.driver}</strong> · \${pageNum} of \${ORG_SYSTEMS.length}</span>
+        <button class="btn-primary" onclick="completePage(\${pageNum})" style="padding:11px 28px">
+          \${pageNum === ORG_SYSTEMS.length ? 'Continue →' : 'Mark as complete →'}
+        </button>
+      </div>\`;
+
     container.appendChild(pageEl);
   });
 }
+
 
 function completePage(pageNum){
   const stage=document.getElementById('org-stage').value;
@@ -1883,34 +1892,58 @@ function goToPage(targetPage,direction){
   updateProgress();
 }
 
-function buildSystemItem(driver,item){
-  const key=driver+'|'+item.name;
-  const enc=encodeKey(key);
-  const stageEmoji={'Launch':'🌱','First Hire':'🌿','Growth':'🌳'};
-  const stages=item.stages.map(s=>(stageEmoji[s]||'')+' '+s).join('  ');
-  return '<div class="system-item">'+
-    '<div class="system-name">'+item.name+' <span class="system-stage">'+stages+'</span>'+
-    '<span class="help-icon" onclick="toggleStageHelp(this)" title="What do these stages mean?">?<span class="stage-help-popup">These tags show which organizational stage this system is most important to prioritize.</span></span>'+
-    '</div>'+
-    (item.desc?'<div class="item-desc">'+item.desc+'</div>':'')+
-    '<div class="item-field-label">Self-Score</div>'+
-    '<div class="score-scale" id="scale-'+enc+'">'+
-      '<div class="score-option" data-val="0" id="sb-'+enc+'-0" onclick="selectScore(\''+enc+'\',\''+key+'\',0)"><div class="score-circle">✕</div><div class="score-label">Not in place</div><div class="score-num">0</div></div>'+
-      '<div class="score-option" data-val="1" id="sb-'+enc+'-1" onclick="selectScore(\''+enc+'\',\''+key+'\',1)"><div class="score-circle">△</div><div class="score-label">Needs improvement</div><div class="score-num">1</div></div>'+
-      '<div class="score-option" data-val="2" id="sb-'+enc+'-2" onclick="selectScore(\''+enc+'\',\''+key+'\',2)"><div class="score-circle">○</div><div class="score-label">Good enough for now</div><div class="score-num">2</div></div>'+
-      '<div class="score-option" data-val="3" id="sb-'+enc+'-3" onclick="selectScore(\''+enc+'\',\''+key+'\',3)"><div class="score-circle">★</div><div class="score-label">Great</div><div class="score-num">3</div></div>'+
-    '</div>'+
-    '<div class="item-field-label" style="margin-top:14px">Your response</div>'+
-    '<textarea class="item-textarea" id="notes-area-'+enc+'" placeholder="'+(ITEM_PLACEHOLDERS[key]||'Describe where things currently stand for this system…')+'" onchange="state.notes[\\''+key+'\\']=this.value; if(!sessionId){sessionId=generateSessionId();showSessionBar();} scheduleSave();"></textarea>'+
-    '<div class="item-field-label" style="margin-top:12px">Documentation</div>'+
-    '<div id="links-'+enc+'">'+
-      '<div class="item-doc-row" style="margin-bottom:6px">'+
-        '<input type="text" class="item-link-input" placeholder="Paste a link (e.g. Google Drive, Notion, website…)" onchange="updateItemLinks(\''+enc+'\',\''+key+'\')">'+
-      '</div>'+
-    '</div>'+
-    '<button onclick="addItemLink(\''+enc+'\',\''+key+'\')" style="background:none;border:none;font-family:\'DM Sans\',sans-serif;font-size:0.8rem;font-weight:600;color:var(--brand);cursor:pointer;padding:0;margin-top:2px">+ Add another link</button>'+
-  '</div>';
+function buildSystemItem(driver, item) {
+  const key = \`\${driver}|\${item.name}\`;
+  const enc = encodeKey(key);
+  const stageEmoji = { 'Launch': '🌱', 'First Hire': '🌿', 'Growth': '🌳' };
+  const stages = item.stages.map(s => \`\${stageEmoji[s] || ''} \${s}\`).join('  ');
+  const placeholder = ITEM_PLACEHOLDERS[key] || 'Describe where things currently stand for this system\u2026';
+  return \`
+    <div class="system-item">
+      <div class="system-name">\${item.name} <span class="system-stage">\${stages}</span><span class="help-icon" onclick="toggleStageHelp(this)" title="What do these stages mean?">?<span class="stage-help-popup">These tags show which organizational stage this system is most important to prioritize.</span></span></div>
+      \${item.desc ? \`<div class="item-desc">\${item.desc}</div>\` : ''}
+      <div class="item-field-label">Self-Score</div>
+      <div class="score-scale" id="scale-\${enc}">
+        <div class="score-option" data-val="0" id="sb-\${enc}-0" onclick="selectScore('\${enc}','\${key}',0)">
+          <div class="score-circle">✕</div>
+          <div class="score-label">Not in place</div>
+          <div class="score-num">0</div>
+        </div>
+        <div class="score-option" data-val="1" id="sb-\${enc}-1" onclick="selectScore('\${enc}','\${key}',1)">
+          <div class="score-circle">△</div>
+          <div class="score-label">Needs improvement</div>
+          <div class="score-num">1</div>
+        </div>
+        <div class="score-option" data-val="2" id="sb-\${enc}-2" onclick="selectScore('\${enc}','\${key}',2)">
+          <div class="score-circle">○</div>
+          <div class="score-label">Good enough for now</div>
+          <div class="score-num">2</div>
+        </div>
+        <div class="score-option" data-val="3" id="sb-\${enc}-3" onclick="selectScore('\${enc}','\${key}',3)">
+          <div class="score-circle">★</div>
+          <div class="score-label">Great</div>
+          <div class="score-num">3</div>
+        </div>
+      </div>
+
+      <div class="item-field-label" style="margin-top:14px">Your response</div>
+      <textarea
+        class="item-textarea"
+        id="notes-area-\${enc}"
+        placeholder="\${placeholder}"
+        onchange="state.notes['\${key}']=this.value; if(!sessionId){sessionId=generateSessionId();showSessionBar();} scheduleSave();"
+      ></textarea>
+
+      <div class="item-field-label" style="margin-top:12px">Documentation</div>
+      <div id="links-\${enc}">
+        <div class="item-doc-row" style="margin-bottom:6px">
+          <input type="text" class="item-link-input" placeholder="Paste a link (e.g. Google Drive, Notion, website\u2026)" onchange="updateItemLinks('\${enc}','\${key}')">
+        </div>
+      </div>
+      <button onclick="addItemLink('\${enc}','\${key}')" style="background:none;border:none;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;color:var(--brand);cursor:pointer;padding:0;margin-top:2px">+ Add another link</button>
+    </div>\`;
 }
+
 
 function toggleStageHelp(el){
   document.querySelectorAll('.help-icon.open').forEach(e=>{if(e!==el)e.classList.remove('open');});
