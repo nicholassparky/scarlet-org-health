@@ -2401,7 +2401,55 @@ const consultantState = {
   reviewerName: '',
   reviewDate: '',
 };
-
+// ═══════════════ SAMPLE ANSWER PLACEHOLDERS ═══════════════
+const ITEM_PLACEHOLDERS = {
+  "Goal Clarity|Mission & vision": "e.g. We have a one-page document that includes mission, vision, and values developed with the full team 3 years ago. We reference this document whenever we are onboarding new team members. See document linked below.",
+  "Goal Clarity|Strategy & theory of change": "e.g. We have a theory of change that maps our two core programs to our long-term vision. It explains our assumptions about how legislative change happens and why we prioritise the interventions we do. See document linked below.",
+  "Goal Clarity|Impact measurement": "e.g. We have metrics for our four program areas updated monthly by team leads and reviewed quarterly at leadership meetings. See document linked below.",
+  "Goal Clarity|Strategic planning & goal-setting process": "e.g. Every year during Q4 we run a week-long planning process involving the whole team, resulting in a one-page strategic priorities document broken into quarterly milestones.",
+  "Role Clarity|Role and/or project descriptions": "e.g. Every role has a role description reviewed annually. Role descriptions include purpose, core activities, and outcomes. See sample role descriptions linked below.",
+  "Role Clarity|Decision-making authority & process": "e.g. We use the consent model and have a one-page decision-making framework setting out what each level can decide independently, what requires consultation, and what requires ED or board sign-off. See framework linked below.",
+  "Role Clarity|Role and/or project success metrics": "e.g. Each role has 3-5 success metrics agreed at the start of the year and reviewed quarterly. Project metrics are set in the project brief and tracked at monthly team meetings.",
+  "Role Clarity|Board clarity": "e.g. We developed board member role descriptions setting out purpose, core activities, outcomes and authorities, and trying to distinguish governance from operational roles. See board role description linked below.",
+  "Role Clarity|Roles & responsibilities directory": "e.g. We have a one-page internal directory listing each team, what they are responsible for, and who to contact for common queries. See internal directory linked below.",
+  "Safety & Fairness|Policies to prevent harassment, discrimination & retaliation": "e.g. Our staff handbook includes a code of conduct, anti-harassment policy, and escalation procedure. All staff read and sign the handbook on joining. See handbook linked below.",
+  "Safety & Fairness|2+ decision makers for high-stakes decisions": "e.g. Any decision to dismiss, promote, or significantly change a staff member's role must involve at least two people. For hiring we involve three people including at least one peer. See section 7 in the handbook.",
+  "Safety & Fairness|Escalation process": "e.g. We have a grievance procedure in plain language covering formal and informal routes. Staff can raise issues directly with line managers or escalate to the ED or Board Chair via a form. See section 8 in the handbook.",
+  "Safety & Fairness|Strategy to enable inclusion on the team": "e.g. Our communication norms include sending agendas 48 hours in advance, rotating facilitators, and offering written input options. We ask all new starters about access needs in their first week. See section 4 of the handbook.",
+  "Safety & Fairness|Compensation formula (if relevant)": "e.g. We have a pay framework with three bands. Each band is a fixed amount with no negotiations. We offer cost of living adjustments annually and the same benefits for all full-time staff. See section 6 in the handbook.",
+  "Safety & Fairness|Termination process": "e.g. Our termination process sets out each stage from informal conversation to formal dismissal with clear timelines and a right of appeal. We review it annually with an HR adviser. See section 10 in the handbook.",
+  "Safety & Fairness|Independent board and/or a system to minimize conflict of interest": "e.g. Our board is fully independent with a conflicts of interest policy signed annually. The ED's salary is set by three board members without the ED present. See conflict of interest policy linked below.",
+  "Feedback & Learning|Goal-tracking process": "e.g. We use a shared document updated monthly to track progress against organizational goals. Quarterly we hold retrospectives to reflect on progress and extract learnings. The ED shares a summary with the board quarterly.",
+  "Feedback & Learning|Feedback norms & nudges": "e.g. Our feedback approach: timely, specific, and with an impact statement. Everyone takes a feedback skills workshop during onboarding and our 1-on-1 template includes a feedback nudge.",
+  "Feedback & Learning|Retrospectives": "e.g. Every team does a brief retrospective at the end of each quarter: what went well, what didn't, and one thing to do differently. We also run retrospectives after any major campaign within two weeks of its conclusion.",
+  "Feedback & Learning|Performance assessments": "e.g. We do a structured annual performance review for all staff covering progress against goals and values. See section 5 and template linked below.",
+  "Feedback & Learning|Engagement survey & action process": "e.g. We run an engagement survey every six months, share results within two weeks, and the leadership team identifies 2-3 commitments in response to each survey. See last year's survey linked below.",
+  "Feedback & Learning|Individual development plans": "e.g. Every staff member has a development plan agreed at their annual review and revisited in 1-on-1s. We have an annual training budget per person. See template linked below.",
+  "Feedback & Learning|Turnover tracking": "e.g. We conduct exit interviews with all departing staff and track voluntary and involuntary turnover separately. We share a summary with the board annually. See exit interview template linked below.",
+  "Feedback & Learning|Innovation & experimentation": "e.g. Innovation is one of our core values. During quarterly retrospectives we hold ideas sessions where staff can propose new approaches. We celebrate experiments that didn't work as much as ones that did.",
+  "Feedback & Learning|Process to get team input on strategic decisions": "e.g. We have two standing channels: an annual staff survey that feeds into our planning process, and monthly ED office hours any staff member can book.",
+  "Leadership|Leader & manager role clarity": "e.g. We have written role descriptions for each level of leadership setting out scope, decision rights, accountabilities, and success measures. These are shared with all staff. See document linked below.",
+  "Leadership|Access to leaders": "e.g. The ED runs monthly open office hours any staff member can book directly. We also invite a rotating staff member to each board meeting. We ask about access to leadership in every engagement survey.",
+  "Leadership|Leader & manager assessment": "e.g. We use a 360 feedback process for all managers annually. Results are shared during the annual review and used to shape development plans. We also include management quality questions in our engagement survey.",
+  "Leadership|Assessment of ED": "e.g. The board conducts an annual ED performance review using objectives agreed at the start of the year, led by the Chair with input from the full board and staff feedback.",
+  "Leadership|Leadership development": "e.g. All new managers receive a structured onboarding including sessions on giving feedback, running one-to-ones, and handling difficult conversations. The senior leadership team does a collective learning session quarterly.",
+  "Leadership|Leadership team structure (if relevant)": "e.g. The leadership team consists of one representative from each of our five departments meeting monthly. At annual planning we reflect on how we've been collaborating and adjust our norms as needed.",
+  "Collaboration & Communication|Org values": "e.g. We have five values with descriptions of what each looks like in practice and what it doesn't. The values are used in hiring, performance reviews, and giving feedback. See values document linked in mission and vision section.",
+  "Collaboration & Communication|Org norms or ways of working": "e.g. Our communication norms cover which channel to use for what, expected response times, how we run meetings, make decisions, and handle disagreement. All new starters receive it in their onboarding pack.",
+  "Collaboration & Communication|Cadence and system of information sharing": "e.g. We send a weekly Monday update covering key decisions and priorities. Monthly all-staff meetings cover organisational updates. Urgent matters go in Slack, strategic updates via email, documents in Google Drive.",
+  "Collaboration & Communication|Org design that enables cross-team collaboration": "e.g. Our policy, communications, and partnerships functions are structured as a single advocacy team with a shared quarterly plan rather than separate departments.",
+  "Collaboration & Communication|System for 1-1 relationships": "e.g. We run a cross-team buddy program pairing staff from different teams for three-month relationships. New starters are automatically paired with a buddy from outside their team.",
+  "Collaboration & Communication|System for org-wide relationships": "e.g. As a fully remote organisation we have a monthly all-staff meeting with a social segment, regular informal virtual touchpoints, and an annual in-person retreat. We track sense of belonging in our engagement survey.",
+  "Stability|Coverage plans": "e.g. We have a shared spreadsheet outlining a coverage plan for every role, naming primary and secondary cover persons and listing critical tasks. Coverage plans are reviewed annually. See document linked below.",
+  "Stability|Succession plans": "e.g. We have succession notes for the ED and all senior roles covering who could step up internally and what an external hiring process would look like. The board reviews ED succession annually.",
+  "Stability|Capacity": "e.g. Team leads do a monthly capacity check-in with each direct report using a red/amber/green rating. These are aggregated at the monthly leadership meeting. We also ask a workload question in every pulse survey.",
+  "Stability|Single source of truth for key information": "e.g. We have a shared Google Drive where everything lives. Documents have a named owner, last-reviewed date, and next-review date. New starters are shown the shared drive in their first week.",
+  "Stability|Strategy for expanding team diversity": "e.g. We advertise all roles on platforms that reach underrepresented groups, use structured interviews and scoring rubrics, and ensure diverse shortlists where possible. We collect and review diversity data annually.",
+  "Scalability|Individualized support system": "e.g. Every staff member has a named line manager. All new starters are paired with a peer buddy for their first three months. The ED has skip-level conversations with all non-management staff twice a year.",
+  "Scalability|Weekly or bi-weekly 1-on-1s": "e.g. All managers hold weekly or biweekly one-to-ones using a standard template covering wellbeing, priorities, blockers, feedback, and development. One-to-ones are the staff member's meeting. See linked template.",
+  "Scalability|Hiring process": "e.g. We have a written hiring process guide covering every stage from role sign-off to offer, including a role description template, interview structure, scoring rubric, work sample task, and reference check guidance.",
+  "Scalability|Onboarding process": "e.g. We have a structured onboarding document with goals for the first 30, 60, and 90 days. New starters have weekly check-ins with their manager in month one and a named buddy for 90 days. See document linked below.",
+};
 // ═══════════════ BUILD CLIENT FORM ═══════════════
 
 function encodeKey(k) { return btoa(unescape(encodeURIComponent(k))).replace(/=/g,'').replace(/\\+/g,'p').replace(/\\//g,'s'); }
@@ -2443,7 +2491,7 @@ function buildSystemItem(driver, item, isFirst) {
       <div class="item-field-label" style="margin-top:14px">Your response</div>
       <textarea
         class="item-textarea"
-        placeholder="Describe where things currently stand for this system…"
+        placeholder="${ITEM_PLACEHOLDERS[key] || 'Describe where things currently stand for this system…'}"
         onchange="state.notes['\${key}']=this.value; if(!sessionId){sessionId=generateSessionId();showSessionBar();} scheduleSave();"
       ></textarea>
 
