@@ -1754,7 +1754,7 @@ function buildDriverPages() {
     pageEl.className = 'form-page';
     pageEl.id = \`form-page-\${pageNum}\`;
 
-    const itemsHtml = driver.items.map((item, idx) => buildSystemItem(driver.driver, item, true)).join('');
+    const itemsHtml = driver.items.map((item, idx) => buildSystemItem(driver.driver, item, true, ITEM_PLACEHOLDERS[\`\${driver.driver}|\${item.name}\`])).join('');
 
     pageEl.innerHTML = \`
       <div class="driver-page-header">
@@ -2454,7 +2454,7 @@ const ITEM_PLACEHOLDERS = {
 
 function encodeKey(k) { return btoa(unescape(encodeURIComponent(k))).replace(/=/g,'').replace(/\\+/g,'p').replace(/\\//g,'s'); }
 
-function buildSystemItem(driver, item, isFirst) {
+function buildSystemItem(driver, item, isFirst, placeholder) {
   const key = \`\${driver}|\${item.name}\`;
   const enc = encodeKey(key);
   const stageEmoji = { 'Launch': '🌱', 'First Hire': '🌿', 'Growth': '🌳' };
@@ -2491,7 +2491,7 @@ function buildSystemItem(driver, item, isFirst) {
       <div class="item-field-label" style="margin-top:14px">Your response</div>
       <textarea
         class="item-textarea"
-        placeholder="${ITEM_PLACEHOLDERS[key] || 'Describe where things currently stand for this system…'}"
+        placeholder="\${placeholder || 'Describe where things currently stand for this system\u2026'}"
         onchange="state.notes['\${key}']=this.value; if(!sessionId){sessionId=generateSessionId();showSessionBar();} scheduleSave();"
       ></textarea>
 
