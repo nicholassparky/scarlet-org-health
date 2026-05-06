@@ -2459,10 +2459,11 @@ function buildSystemItem(driver, item, isFirst, placeholder) {
   const enc = encodeKey(key);
   const stageEmoji = { 'Launch': '🌱', 'First Hire': '🌿', 'Growth': '🌳' };
   const stages = item.stages.map(s => \`\${stageEmoji[s] || ''} \${s}\`).join('  ');
+  const questionNumber = driver.items.indexOf(item) + 1;
   const helpIcon = \`<span class="help-icon" onclick="toggleStageHelp(this)" title="What do these stages mean?">?<span class="stage-help-popup">These tags show which organizational stage this system is most important to prioritize.</span></span>\`;
   return \`
     <div class="system-item">
-      <div class="system-name">\${item.name} <span class="system-stage">\${stages}</span>\${helpIcon}</div>
+      <div class="system-name">\${questionNumber}.${item.name} <span class="system-stage">\${stages}</span>\${helpIcon}</div>
       \${item.desc ? \`<div class="item-desc">\${item.desc}</div>\` : ''}
       <div class="item-field-label">Self-Score</div>
       <div class="score-scale" id="scale-\${enc}">
